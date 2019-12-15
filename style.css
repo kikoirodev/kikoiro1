@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: the Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 1.96
+Version: 1.97
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -1317,14 +1317,15 @@ footer {
         #main section.article article div.entry-content ol.policy li {
           margin-bottom: 1em; }
       #main section.article article div.entry-content div.cafeHistory {
-        display: -webkit-box;
-        display: flex;
+        grid-template-columns: repeat(auto-fill, 100px);
+        display: grid;
+        grid-gap: 1em;
         font-size: 16px;
         font-weight: bold;
         flex-wrap: wrap; }
         #main section.article article div.entry-content div.cafeHistory div {
-          margin-right: 24px;
-          margin-bottom: 8px; }
+          display: inline-block;
+          padding: 8px; }
           #main section.article article div.entry-content div.cafeHistory div span {
             font-size: 12px;
             font-weight: normal; }
@@ -1829,12 +1830,12 @@ hr.wp-block-separator {
     line-height: 150% !important;
     margin-bottom: 0.5em !important; }
 
-ul.normalLink a, p.normalLink a, div.normalLink a, span.normalLink a {
+ul.normalLink a, p.normalLink a, div.normalLink a, #main section.article article div.entry-content div.cafeHistory a, span.normalLink a {
   text-decoration: underline;
   color: #000000 !important;
   -webkit-transition: color 0.2s;
   transition: color 0.2s; }
-  ul.normalLink a:hover, p.normalLink a:hover, div.normalLink a:hover, span.normalLink a:hover {
+  ul.normalLink a:hover, p.normalLink a:hover, div.normalLink a:hover, #main section.article article div.entry-content div.cafeHistory a:hover, span.normalLink a:hover {
     color: #871b1b !important;
     cursor: pointer; }
 
