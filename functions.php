@@ -11,6 +11,7 @@
  * License: No License
  */
 
+add_filter( 'auto_update_plugin', '__return_false' );
 
 function kikoiro1RegisterBlocks() {
     /*
@@ -37,12 +38,23 @@ function kikoiro1RegisterBlocks() {
 add_action('enqueue_block_editor_assets', 'kikoiro1RegisterBlocks');
 
 function kikoiro1EnqueueCss() {
+
+	add_theme_support( 'editor-styles' );
+
+}
+add_action('after_setup_theme', 'kikoiro1EnqueueCss');
+
+
+function kikoiro1EnqueueCss2() {
+
+
     wp_enqueue_style(
         'kikoiro1-style',
         get_template_directory_uri() . '/gutenberg/editor-style.css'
-    );
+	);
+
 }
-add_action('after_setup_theme', 'kikoiro1EnqueueCss' );
+add_action('enqueue_block_editor_assets', 'kikoiro1EnqueueCss2');
 
 
 function isFirstPage() {
