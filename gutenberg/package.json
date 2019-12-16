@@ -1,0 +1,21 @@
+{
+  "name": "gutenberg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "sass": "node-sass --include-path scss scss/style.scss ./editor-style.css",
+    "build:sass": "node-sass --include-path scss scss/style.scss ./editor-style.css --output-style compressed"
+  },
+  "author": "Emotionale",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@wordpress/scripts": "6.0.0"
+  },
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

@@ -11,6 +11,40 @@
  * License: No License
  */
 
+
+function kikoiro1RegisterBlocks() {
+    /*
+        Node automatically generates depandencies (such as "wp-blocks" "wp-element")
+        so pass $asset_file['dependencies'] to wp_register_script
+    */
+    $asset_file = include('../wp-content/themes/kikoiro1/gutenberg/build/index.asset.php');
+    /*  
+        current directory is wp-admin
+        can't use get_template_directory_uri() for include because it does not allow absolue path
+    */
+    wp_register_script(
+        'example-01-basic-esnext',
+        get_template_directory_uri() . '/gutenberg/build/index.js', 
+        $asset_file['dependencies'],
+        $asset_file['version']
+    );
+
+    register_block_type(
+        'gutenberg-examples/example-01-basic-esnext',
+        array('editor_script' => 'example-01-basic-esnext')
+    );
+}
+add_action('enqueue_block_editor_assets', 'kikoiro1RegisterBlocks');
+
+function kikoiro1EnqueueCss() {
+    wp_enqueue_style(
+        'kikoiro1-style',
+        get_template_directory_uri() . '/gutenberg/editor-style.css'
+    );
+}
+add_action('after_setup_theme', 'kikoiro1EnqueueCss' );
+
+
 function isFirstPage() {
 	global $multipage;
 	if ($multipage !== 0) {

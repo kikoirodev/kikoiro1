@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+$jpTitleFont: '游ゴシック体', 'YuGothic', '游ゴシック', 'Yu Gothic', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Meiryo', 'メイリオ', 'ＭＳ Pゴシック', 'MS PGothic', sans-serif;
+$jpTextFont: '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック', 'Yu Gothic', '游ゴシック体', 'YuGothic', 'メイリオ', 'ヒラギノ角ゴ Pro', 'Meiryo', 'メイリオ', 'ＭＳ Pゴシック', 'MS PGothic', sans-serif;
+
+$jpMinchoFont: '游明朝','Yu Mincho','YuMincho','Hiragino Mincho ProN','Hiragino Mincho Pro','ＭＳ明朝','メイリオ','Meiryo',serif;
+
+$normalFontJP: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Meiryo', 'メイリオ', 'ＭＳ Pゴシック', 'MS PGothic', sans-serif;
+$boldFontJP: 'HiraKakuProN-W6', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', 'Meiryo', 'メイリオ', 'ＭＳ Pゴシック', 'MS PGothic', sans-serif;
+
+$brandColorOrange: #ECA07E;
+$brandColorGreen: #BBD8B5;
+$brandColorBlue: #9EC1E4;
+$brandColorYellow: #FBD395;
+
+$brandColorOrangeBright: #ff9666;
+$brandColorGreenBright: #77cc66;
+
+$markerColorOrange: rgb(252, 216, 200);
+$categoryColorGreen: #CCECC6;
+$underLineGray: #636363;
+
+$bgColor: #F8F8F8;
+$bgColor_important: #F8F8F8 !important;
+
+$defaultTextColor: #000000;
+$grayTextColor: #777777;
+$featureColor: #871b1b;
+$newColor: #f13724;
+
+.test {
+	background: $brandColorBlue;
+	font-size: 16px;
+}
+
+
