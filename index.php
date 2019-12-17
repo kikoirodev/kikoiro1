@@ -13,15 +13,11 @@
 get_header();
 ?>
 <div id="container">
-	<!--
-	<div id="topImage"><img src="/wp-content/themes/kikoiro1/assets/images/mainImage.jpg" data-srcset="/wp-content/themes/kikoiro1/assets/images/mainImage.jpg 1x, /wp-content/themes/kikoiro1/assets/images/mainImage@2x.jpg 2x" class="lazyload" alt="聞こえ方は、いろいろ。" /></div>
--->
 <div id="topImage">
 <picture>
   <source media="(min-width: 641px)" srcset="/wp-content/themes/kikoiro1/assets/images/mainImage.jpg, /wp-content/themes/kikoiro1/assets/images/mainImage.jpg 1x, /wp-content/themes/kikoiro1/assets/images/mainImage@2x.jpg 2x" />
   <img srcset="/wp-content/themes/kikoiro1/assets/images/mainImageSp.jpg, /wp-content/themes/kikoiro1/assets/images/mainImageSp.jpg 1x, /wp-content/themes/kikoiro1/assets/images/mainImageSp@2x.jpg 2x" alt="聞こえ方は、いろいろ。" />
 </picture>
-
 </div>
 	<main id="main">
 	<section id="featured">
@@ -134,6 +130,14 @@ get_header();
 					</ul>
 				</section>
 				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area') ) : endif; ?>
+				<section>
+					<h4>MEDIA</h4>
+					<ul class="mediaList">
+						<li><a href="https://www.yomiuri.co.jp/local/kansai/news/20190914-OYO1T50024/"><img src="/wp-content/themes/kikoiro1/assets/images/media_yomiuri.png" class="lazyload" alt="読売新聞" /></a></li>
+						<li><img src="/wp-content/themes/kikoiro1/assets/images/media_iwatenp.jpg" class="lazyload" alt="岩手日報" /></li>
+						<li><a href="https://www.iwanichi.co.jp/2019/12/16/467354/"><img src="/wp-content/themes/kikoiro1/assets/images/media_iwatenn.png" class="lazyload" alt="岩手日日" /></a></li>
+					</ul>
+				</section>
 			</div>
 		</section>
 	</main>
