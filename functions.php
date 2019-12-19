@@ -24,22 +24,33 @@ function kikoiro1RegisterBlocks() {
         can't use get_template_directory_uri() for include because it does not allow absolue path
     */
     wp_register_script(
-        'example-01-basic-esnext',
+        'kikoiro1',
         get_template_directory_uri() . '/gutenberg/build/index.js', 
         $asset_file['dependencies'],
         $asset_file['version']
     );
 
     register_block_type(
-        'gutenberg-examples/example-01-basic-esnext',
-        array('editor_script' => 'example-01-basic-esnext')
-    );
+        'kikoiro1/test',
+        array('editor_script' => 'kikoiro1')
+	);
+	register_block_type(
+        'kikoiro1/sub-info',
+		array(
+			'editor_script' => 'kikoiro1', 
+			'attributes' => array(
+				'className' => 'test2'
+			)
+		)
+	);
+
 }
 add_action('enqueue_block_editor_assets', 'kikoiro1RegisterBlocks');
 
 function kikoiro1EnqueueCss() {
 
 	add_theme_support( 'editor-styles' );
+	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css' );
 
 }
 add_action('after_setup_theme', 'kikoiro1EnqueueCss');
@@ -47,12 +58,13 @@ add_action('after_setup_theme', 'kikoiro1EnqueueCss');
 
 function kikoiro1EnqueueCss2() {
 
-
+	
+	/*
     wp_enqueue_style(
         'kikoiro1-style',
         get_template_directory_uri() . '/gutenberg/editor-style.css'
 	);
-
+*/
 }
 add_action('enqueue_block_editor_assets', 'kikoiro1EnqueueCss2');
 

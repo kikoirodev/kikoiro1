@@ -134,7 +134,7 @@ get_header();
 					<h4>MEDIA</h4>
 					<ul class="mediaList">
 						<li><a href="https://www.yomiuri.co.jp/local/kansai/news/20190914-OYO1T50024/"><img src="/wp-content/themes/kikoiro1/assets/images/media_yomiuri.png" class="lazyload" alt="読売新聞" /></a></li>
-						<li><img src="/wp-content/themes/kikoiro1/assets/images/media_iwatenp.jpg" class="lazyload" alt="岩手日報" /></li>
+						<li><a href="/cafe10"><img src="/wp-content/themes/kikoiro1/assets/images/media_iwatenp.jpg" class="lazyload" alt="岩手日報" /></a></li>
 						<li><a href="https://www.iwanichi.co.jp/2019/12/16/467354/"><img src="/wp-content/themes/kikoiro1/assets/images/media_iwatenn.png" class="lazyload" alt="岩手日日" /></a></li>
 					</ul>
 				</section>

@@ -6,7 +6,7 @@ const blockStyle = {
     padding: '20px',
 };
  
-registerBlockType( 'gutenberg-examples/example-01-basic-esnext', {
+registerBlockType( 'kikoiro1/test', {
     title: 'Example: Basic (esnext)',
     icon: 'universal-access-alt',
     category: 'layout',
