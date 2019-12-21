@@ -5,7 +5,7 @@ import { getClassNameFromProperty } from './tools.js';
 registerBlockType( 'kikoiro1/point-list', {
     title: 'ポイントリスト',
     icon: 'universal-access-alt',
-    category: 'layout',
+    category: 'kikoiro1',
     attributes: {
         titleContent: {
             selector: 'span',

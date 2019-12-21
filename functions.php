@@ -11,7 +11,6 @@
  * License: No License
  */
 
-/*
 function my_plugin_block_categories( $categories, $post ) {
     return array_merge(
         $categories,
@@ -24,19 +23,17 @@ function my_plugin_block_categories( $categories, $post ) {
     );
 }
 add_filter( 'block_categories', 'my_plugin_block_categories', 10, 2 );
-*/
 
 function kikoiro1RegisterBlocks() {
 
-
     $asset_file = include('../wp-content/themes/kikoiro1/gutenberg/build/index.asset.php');
 
-	
 	$nameSpace = "kikoiro1";
+	$scriptPath = get_template_directory_uri() . '/gutenberg/build/index.js?v=' . $asset_file['version'];
 
     wp_register_script(
         $nameSpace,
-        get_template_directory_uri() . '/gutenberg/build/index1.js', 
+        $scriptPath, 
         $asset_file['dependencies'],
         $asset_file['version']
     );
@@ -56,7 +53,7 @@ function registerBlockTypes($nameSpace, $blockNames) {
 
 function kikoiro1EnqueueCss() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css' );
+	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css');
 }
 add_action('after_setup_theme', 'kikoiro1EnqueueCss');
 

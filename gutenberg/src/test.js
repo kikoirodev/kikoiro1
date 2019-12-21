@@ -9,7 +9,7 @@ const blockStyle = {
 registerBlockType( 'kikoiro1/test', {
     title: 'Example',
     icon: 'universal-access-alt',
-    category: 'layout',
+    category: 'kikoiro1',
     example: {},
     edit() {
         return <div class="test">AAA!</div>;

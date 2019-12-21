@@ -9,7 +9,7 @@ import { getClassNameFromProperty } from './tools.js';
 registerBlockType( 'kikoiro1/references', {
     title: '参考文献',
     icon: 'universal-access-alt',
-    category: 'layout',
+    category: 'kikoiro1',
     attributes: {
         titleContent: {
             selector: 'h2',
