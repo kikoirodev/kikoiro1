@@ -9,7 +9,7 @@ const blockStyle = {
 registerBlockType( 'kikoiro1/test', {
     title: 'Example: Basic (esnext)',
     icon: 'universal-access-alt',
-    category: 'kikoiro1',
+    category: 'common',
     example: {},
     edit() {
         return <div class="test">Hello World, step 1 (from the editor).</div>;

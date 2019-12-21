@@ -11,7 +11,59 @@
  * License: No License
  */
 
+/*
+function my_plugin_block_categories( $categories, $post ) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'kikoiro1',
+                'title' => 'kikoiro.com'
+            ),
+        )
+    );
+}
+add_filter( 'block_categories', 'my_plugin_block_categories', 10, 2 );
+*/
+function kikoiro1RegisterBlocks() {
 
+    /*
+        Node automatically generates depandencies (such as "wp-blocks" "wp-element")
+        so pass $asset_file['dependencies'] to wp_register_script
+    */
+    $asset_file = include('../wp-content/themes/kikoiro1/gutenberg/build/index.asset.php');
+    /*  
+        current directory is wp-admin
+        can't use get_template_directory_uri() for include because it does not allow absolue path
+	*/
+	
+	$nameSpace = "kikoiro1";
+
+    wp_register_script(
+        $nameSpace,
+        get_template_directory_uri() . '/gutenberg/build/index.js', 
+        $asset_file['dependencies'],
+        $asset_file['version']
+    );
+	registerBlockTypes($nameSpace, array('test', 'sub-info', 'references', 'point-list'));
+}
+
+add_action('enqueue_block_editor_assets', 'kikoiro1RegisterBlocks');
+
+function registerBlockTypes($nameSpace, $blockNames) {
+	foreach($blockNames as $blockName){
+		register_block_type(
+			"$nameSpace/$blockName",
+			array('editor_script' => $nameSpace)
+		);
+	}
+}
+
+function kikoiro1EnqueueCss() {
+	add_theme_support( 'editor-styles' );
+	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css' );
+}
+add_action('after_setup_theme', 'kikoiro1EnqueueCss');
 
 
 add_filter( 'auto_update_plugin', '__return_false' );

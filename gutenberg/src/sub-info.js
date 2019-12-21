@@ -10,7 +10,7 @@ const blockStyle = {
 registerBlockType( 'kikoiro1/sub-info', {
     title: '補足情報',
     icon: 'universal-access-alt',
-    category: 'kikoiro1',
+    category: 'common',
     example: {},
     edit( { className } ) {
         return (
