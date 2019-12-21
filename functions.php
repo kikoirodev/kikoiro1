@@ -25,7 +25,7 @@ function my_plugin_block_categories( $categories, $post ) {
 }
 add_filter( 'block_categories', 'my_plugin_block_categories', 10, 2 );
 */
-/*
+
 function kikoiro1RegisterBlocks() {
 
 
@@ -36,7 +36,7 @@ function kikoiro1RegisterBlocks() {
 
     wp_register_script(
         $nameSpace,
-        get_template_directory_uri() . '/gutenberg/build/index.js', 
+        get_template_directory_uri() . '/gutenberg/build/index1.js', 
         $asset_file['dependencies'],
         $asset_file['version']
     );
@@ -76,7 +76,7 @@ function isFirstPage() {
 	}
 	return true;
 }
-*/
+
  // to add svg to media library
 function add_file_types_to_uploads($file_types){
     $new_filetypes = array();
