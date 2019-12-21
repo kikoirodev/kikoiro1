@@ -1,8 +1,8 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/editor'; // or wp.editor
- 
+
 const blockStyle = {
-    backgroundColor: '#900',
+    backgroundColor: '#0000ff',
     color: '#fff',
     padding: '20px',
 };
