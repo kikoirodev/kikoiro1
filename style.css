@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: the Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 1.98
+Version: 1.99
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -1789,6 +1789,33 @@ figure.side240 > table, table.side240 {
     figure.side240 > table tbody tr td:first-child, table.side240 tbody tr td:first-child {
       width: 160px; }
 
+/* also has editor css */
+.references ul, .references ol, .references {
+  font-size: 14px !important;
+  margin-top: 48px;
+  /* frontend only */ }
+  .references ul li, .references ol li, .references li {
+    line-height: 150%;
+    margin-bottom: 0.5em; }
+    .references ul li a, .references ol li a, .references li a {
+      /* frontend only */ }
+
+div.point-list {
+  background: #ffffff;
+  padding: 1em;
+  font-size: 16px; }
+  div.point-list h4 {
+    text-align: center;
+    margin: 0.5em 0 1.5em 0 !important; }
+    div.point-list h4 span {
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(0%, #fcd8c8)) repeat scroll 0 0;
+      background: linear-gradient(transparent 60%, #fcd8c8 0%) repeat scroll 0 0; }
+  div.point-list ul li {
+    margin-bottom: 0.5em !important; }
+    div.point-list ul li:last-child {
+      margin-bottom: 0 !important; }
+
+/* */
 .whiteBackground {
   background-color: #ffffff !important; }
 
@@ -1832,13 +1859,6 @@ div.withPadding, p.withPadding {
 
 hr.wp-block-separator {
   margin-bottom: 32px; }
-
-.references ul, .references ol, .references {
-  margin-top: 48px;
-  font-size: 14px !important; }
-  .references ul li, .references ol li, .references li {
-    line-height: 150% !important;
-    margin-bottom: 0.5em !important; }
 
 .linkContent {
   font-size: 16px !important; }

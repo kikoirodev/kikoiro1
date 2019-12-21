@@ -11,6 +11,21 @@
  * License: No License
  */
 
+
+function my_plugin_block_categories( $categories, $post ) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'kikoiro1',
+                'title' => 'kikoiro.com'
+            ),
+        )
+    );
+}
+add_filter( 'block_categories', 'my_plugin_block_categories', 10, 2 );
+
+
 add_filter( 'auto_update_plugin', '__return_false' );
 
 function kikoiro1RegisterBlocks() {
@@ -22,43 +37,37 @@ function kikoiro1RegisterBlocks() {
     /*  
         current directory is wp-admin
         can't use get_template_directory_uri() for include because it does not allow absolue path
-    */
+	*/
+	
+	$nameSpace = "kikoiro1";
+
     wp_register_script(
-        'kikoiro1',
+        $nameSpace,
         get_template_directory_uri() . '/gutenberg/build/index.js', 
         $asset_file['dependencies'],
         $asset_file['version']
     );
-
-    register_block_type(
-        'kikoiro1/test',
-        array('editor_script' => 'kikoiro1')
-	);
-	register_block_type(
-        'kikoiro1/sub-info',
-		array(
-			'editor_script' => 'kikoiro1', 
-			'attributes' => array(
-				'className' => 'test2'
-			)
-		)
-	);
-
+	registerBlockTypes($nameSpace, array('test', 'sub-info', 'references', 'point-list'));
 }
+
 add_action('enqueue_block_editor_assets', 'kikoiro1RegisterBlocks');
 
-function kikoiro1EnqueueCss() {
+function registerBlockTypes($nameSpace, $blockNames) {
+	foreach($blockNames as $blockName){
+		register_block_type(
+			"$nameSpace/$blockName",
+			array('editor_script' => $nameSpace)
+		);
+	}
+}
 
+function kikoiro1EnqueueCss() {
 	add_theme_support( 'editor-styles' );
 	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css' );
-
 }
 add_action('after_setup_theme', 'kikoiro1EnqueueCss');
 
-
-function kikoiro1EnqueueCss2() {
-
-	
+function kikoiro1EnqueueCss2() {	
 	/*
     wp_enqueue_style(
         'kikoiro1-style',
