@@ -10,15 +10,15 @@ const blockStyle = {
 registerBlockType( 'kikoiro1/sub-info', {
     title: '補足情報',
     icon: 'universal-access-alt',
-    category: 'common',
+    category: 'layout',
     example: {},
     edit( { className } ) {
         return (
             <div class="test2">
                 <InnerBlocks allowedBlocks={ [ 'core/image', 'core/paragraph' ] }
                             template={[
-                                [ 'core/paragraph', { placeholder: 'Enter side content...' } ], 
-                                [ 'core/paragraph', { placeholder: 'Second Content' } ] 
+                                [ 'core/paragraph', { placeholder: 'title' } ], 
+                                [ 'core/paragraph', { placeholder: 'content' } ] 
                             ]}
                 />
             </div>

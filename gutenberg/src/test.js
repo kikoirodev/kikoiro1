@@ -7,14 +7,14 @@ const blockStyle = {
 };
  
 registerBlockType( 'kikoiro1/test', {
-    title: 'Example: Basic (esnext)',
+    title: 'Example',
     icon: 'universal-access-alt',
-    category: 'common',
+    category: 'layout',
     example: {},
     edit() {
-        return <div class="test">Hello World, step 1 (from the editor).</div>;
+        return <div class="test">AAA!</div>;
     },
     save() {
-        return <div style={ blockStyle }>Hello World, step 1 (from the frontend).</div>;
+        return <div style={ blockStyle }>BBB!</div>;
     },
 } );
