@@ -5,7 +5,7 @@
  * Theme Name: kikoiro1
  * Author: Hironobu Kimura
  * Author URI: https://www.emotionale.jp/
- * Version: 1
+ * Version: 1.02
  * kikoiro1 is based on Underscores twentynineteen by WordPress team.
  * twentynineteen is distributed under the terms of the GNU GPL v2 or later.
  * License: No License
@@ -25,17 +25,12 @@ function my_plugin_block_categories( $categories, $post ) {
 }
 add_filter( 'block_categories', 'my_plugin_block_categories', 10, 2 );
 */
+/*
 function kikoiro1RegisterBlocks() {
 
-    /*
-        Node automatically generates depandencies (such as "wp-blocks" "wp-element")
-        so pass $asset_file['dependencies'] to wp_register_script
-    */
+
     $asset_file = include('../wp-content/themes/kikoiro1/gutenberg/build/index.asset.php');
-    /*  
-        current directory is wp-admin
-        can't use get_template_directory_uri() for include because it does not allow absolue path
-	*/
+
 	
 	$nameSpace = "kikoiro1";
 
@@ -81,7 +76,7 @@ function isFirstPage() {
 	}
 	return true;
 }
-
+*/
  // to add svg to media library
 function add_file_types_to_uploads($file_types){
     $new_filetypes = array();
