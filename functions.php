@@ -13,22 +13,24 @@
 
 function my_plugin_block_categories( $categories, $post ) {
     return array_merge(
-        $categories,
         array(
             array(
                 'slug' => 'kikoiro1',
                 'title' => 'kikoiro.com'
             ),
-        )
+		), 
+		$categories
     );
 }
 add_filter( 'block_categories', 'my_plugin_block_categories', 10, 2 );
 
 function kikoiro1RegisterBlocks() {
 
+	//can't use absolute path for include
     $asset_file = include('../wp-content/themes/kikoiro1/gutenberg/build/index.asset.php');
 
 	$nameSpace = "kikoiro1";
+	//to avoid js cache, append build version ($asset_file['version']) to js file path
 	$scriptPath = get_template_directory_uri() . '/gutenberg/build/index.js?v=' . $asset_file['version'];
 
     wp_register_script(
@@ -37,7 +39,19 @@ function kikoiro1RegisterBlocks() {
         $asset_file['dependencies'],
         $asset_file['version']
     );
-	registerBlockTypes($nameSpace, array('test', 'sub-info', 'references', 'point-list'));
+	registerBlockTypes(
+		$nameSpace, 
+		array(
+			'test', 
+			'sub-info', 
+			'references', 
+			'point-list', 
+			'interview-q', 
+			'interview-a', 
+			'interviewee-profile', 
+			'interviewee-profile-f', 
+			'nextpage', 
+		));
 }
 
 add_action('enqueue_block_editor_assets', 'kikoiro1RegisterBlocks');
@@ -53,7 +67,7 @@ function registerBlockTypes($nameSpace, $blockNames) {
 
 function kikoiro1EnqueueCss() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css');
+	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css?v=12');
 }
 add_action('after_setup_theme', 'kikoiro1EnqueueCss');
 

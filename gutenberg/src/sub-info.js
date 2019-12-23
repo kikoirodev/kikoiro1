@@ -1,15 +1,9 @@
 import { registerBlockType } from '@wordpress/blocks';
-import { InnerBlocks } from '@wordpress/editor'; // or wp.editor
-
-const blockStyle = {
-    backgroundColor: '#0000ff',
-    color: '#fff',
-    padding: '20px',
-};
+import { InnerBlocks } from '@wordpress/editor';
 
 registerBlockType( 'kikoiro1/sub-info', {
     title: '補足情報',
-    icon: 'universal-access-alt',
+    icon: 'editor-ul',
     category: 'kikoiro1',
     example: {},
     edit( { className } ) {

@@ -8,7 +8,7 @@ import { getClassNameFromProperty } from './tools.js';
 
 registerBlockType( 'kikoiro1/references', {
     title: '参考文献',
-    icon: 'universal-access-alt',
+    icon: 'editor-ol',
     category: 'kikoiro1',
     attributes: {
         titleContent: {
@@ -37,12 +37,10 @@ registerBlockType( 'kikoiro1/references', {
             <div class={"references" + getClassNameFromProperty(props.attributes, "className") }>
             <RichText 
                 tagName="h2"
-                className="a"
                 value={ titleContent } 
                 onChange={ onChangeTitleContent } />
             <RichText
                 tagName="ol"
-                className="references"
                 value={ content }
                 multiline="li"
                 onChange={ onChangeContent } />

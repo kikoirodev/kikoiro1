@@ -6,14 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "wp-scripts start",
-    "build": "wp-scripts build",
+    "build": "concurrently \"wp-scripts build\" \"node-sass --include-path scss scss/style.scss ./editor-style.css --output-style compressed\"",
     "sass": "node-sass --include-path scss scss/style.scss ./editor-style.css",
-    "build:sass": "node-sass --include-path scss scss/style.scss ./editor-style.css --output-style compressed"
+    "build:sass": "node-sass --include-path scss scss/style.scss ./editor-style.css --output-style compressed",
+    "watch": "node-sass --include-path scss scss/style.scss ./editor-style.css -w"
   },
   "author": "Emotionale",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@wordpress/scripts": "6.0.0"
+    "@wordpress/scripts": "6.0.0",
+    "concurrently": "^5.0.2"
   },
   "dependencies": {
     "node-sass": "^4.13.0"

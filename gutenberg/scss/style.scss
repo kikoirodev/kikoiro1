@@ -28,9 +28,6 @@ $grayTextColor: #777777;
 $featureColor: #871b1b;
 $newColor: #f13724;
 
-	.editor-styles-wrapper {
-	}
-
 	.test {
 		background: $brandColorBlue;
 		font-size: 16px;
@@ -40,25 +37,28 @@ $newColor: #f13724;
 		font-size: 24px;
 	}
 
-	/* references.js */
+	/*
+	  references
+	*/
 	.references ul, .references ol, .references {
-		background-color: $bgColor; /* editor only */
-		padding-left: 28px !important; /* editor only */
 		font-size: 14px !important;
 		li {
 			line-height: 150%;
 			margin-bottom: 0.5em;
 		}
 	}
-
-	/* almost same as frontend css */
-	div.point-list {
+	
+	/* 	
+	  point-list
+	*/
+	.point-list {
 		background: #ffffff;
 		padding: 1em;
 		font-size: 16px;
+		border: 1px solid #aaaaaa;
 		h4 {
 			text-align: center;
-			margin: 0.5em 0 1.5em 0 !important;
+			margin: 0 0 1.5em 0 !important;
 			span {
 				background: linear-gradient(transparent 60%, $markerColorOrange 0%) repeat scroll 0 0;
 			}
@@ -71,10 +71,88 @@ $newColor: #f13724;
 					margin-bottom: 0 !important;
 				}
 			}
+			margin-bottom: 0 !important;
 		}
 	}
 	
+	/*
+	  interview
+	*/
+	.interview_q {
+		font-size: 16px; /* editor only */
+		font-weight: bold;
+		&:before {
+			content: "――";
+			font-weight: bold;
+		}
+	}
+	.interview_a {
+		font-size: 16px; /* editor only */
+		text-indent: 1em;
+	}
+	.interviewee_profile {
+		h4 {
+			font-size: 16px !important;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 0 !important;
+		}
+		background: #ffffff;
+		border-radius: 8px;
+		padding: 16px;
+		border: 1px solid #999999;
+		p {
+			font-size: 14px !important;
+			font-weight: bold;
+			margin: 0 0 0 1em;
+		}
+		ul {
+			margin-bottom: 0 !important;
+			font-size: 14px !important;
+		}
+	}
+	
+	/*
+	  nextpage
+	*/
+	.nextpage {
+		text-align: center;
+		strong {
+			font-weight: bold;
+			font-size: 16px;
+			a {
+				&:before {
+					content: "次ページ → ";
+				}
+			}
+		}
+		span {
+			display: none;
+		}
+	}
+	
+	/*
+	  css only
+	*/
+	p.rich-text {
+		font-size: 16px !important; /* editor only */
+	}
 
+	h2.rich-text {
+		font-size: 24px !important; /* editor only */
+		font-feature-settings : "palt";
+	}
+	h3.rich-text {
+		font-size: 20px !important; /* editor only */
+		font-feature-settings : "palt";
+	}
+	h4.rich-text {
+		font-size: 16px !important; /* editor only */
+		font-feature-settings : "palt";
+	}
+
+
+	
 
 
 
