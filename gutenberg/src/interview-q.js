@@ -1,5 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/editor';
+import { createBlock } from '@wordpress/blocks';
 
 registerBlockType( 'kikoiro1/interview-q', {
     title: 'インタビュー設問',
@@ -12,6 +13,26 @@ registerBlockType( 'kikoiro1/interview-q', {
             source: 'html',
             default: '設問'
         },
+    },
+    transforms: {
+        from: [
+            {
+                type: 'block',
+                blocks: [ 'core/paragraph' ],
+                transform: ( { content } ) => {
+                    return createBlock( 'kikoiro1/interview-q', {
+                        content,
+                    } );
+                },
+            },
+        ],
+        to: [
+            {
+                type: 'block',
+                blocks: [ 'core/paragraph' ],
+                transform: ( { content } ) => createBlock('core/paragraph', { content } ),
+            }
+        ],
     },
     edit(props) {
         let content = props.attributes.content;
