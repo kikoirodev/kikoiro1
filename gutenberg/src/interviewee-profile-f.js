@@ -10,7 +10,7 @@ registerBlockType( 'kikoiro1/interviewee-profile-f', {
         return (
             <div class={ "interviewee_profile" + getClassNameFromProperty(props.attributes, "className") }>
                 <h4>お話を伺った方のプロフィール</h4>
-                <InnerBlocks allowedBlocks={ [ 'core/list', 'core/paragraph' ] }
+                <InnerBlocks 
                             templateLock='all' 
                             template={[
                                 [ 'core/list', {} ],

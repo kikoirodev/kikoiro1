@@ -89,7 +89,7 @@ registerBlockType( 'kikoiro1/medical-desc-disease', {
                     value={ titleContent } 
                     placeholder='表題' 
                     onChange={ onChangeTitleContent } />
-                <InnerBlocks allowedBlocks={ [ 'core/table' ] }
+                <InnerBlocks 
                                 templateLock='all' 
                                 template={[
                                     [ 'core/table', {} ]
