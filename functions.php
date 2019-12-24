@@ -5,7 +5,7 @@
  * Theme Name: kikoiro1
  * Author: Hironobu Kimura
  * Author URI: https://www.emotionale.jp/
- * Version: 1.03
+ * Version: 1.10
  * kikoiro1 is based on Underscores twentynineteen by WordPress team.
  * twentynineteen is distributed under the terms of the GNU GPL v2 or later.
  * License: No License
@@ -74,7 +74,6 @@ function kikoiro1EnqueueCss() {
 	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css');
 }
 add_action('after_setup_theme', 'kikoiro1EnqueueCss');
-
 
 add_filter( 'auto_update_plugin', '__return_false' );
 
