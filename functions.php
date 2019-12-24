@@ -28,16 +28,16 @@ function kikoiro1RegisterBlocks() {
 
 	//can't use absolute path for include
     $asset_file = include('../wp-content/themes/kikoiro1/gutenberg/build/index.asset.php');
-
+	$versionNum = "" . time();
 	$nameSpace = "kikoiro1";
 	//to avoid js cache, append build version ($asset_file['version']) to js file path
-	$scriptPath = get_template_directory_uri() . '/gutenberg/build/index.js?v=' . $asset_file['version'];
+	$scriptPath = get_template_directory_uri() . '/gutenberg/build/index.js?v=' . $versionNum;
 
     wp_register_script(
         $nameSpace,
         $scriptPath, 
         $asset_file['dependencies'],
-        $asset_file['version']
+        $versionNum
     );
 	registerBlockTypes(
 		$nameSpace, 
