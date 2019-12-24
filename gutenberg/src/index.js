@@ -7,7 +7,7 @@ import './interview-a.js';
 import './interviewee-profile.js';
 import './interviewee-profile-f.js';
 import './nextpage.js';
-import './medical-desc';
+import './medical-desc.js';
 /*
 import './p.js';
 import './h.js';
