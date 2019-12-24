@@ -8,6 +8,7 @@ import './interviewee-profile.js';
 import './interviewee-profile-f.js';
 import './nextpage.js';
 import './medical-desc.js';
+import './t.js';
 /*
 import './p.js';
 import './h.js';
