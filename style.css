@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: the Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.01
+Version: 2.02
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -2865,7 +2865,8 @@ table.contactList {
 div.point-list {
   background: #ffffff;
   padding: 1em;
-  font-size: 16px; }
+  font-size: 16px;
+  margin: 32px 0 32px 0; }
   div.point-list h4 {
     text-align: center;
     margin: 0 0 1.5em 0 !important; }
@@ -2880,6 +2881,7 @@ div.point-list {
         margin-bottom: 0 !important; }
 
 .interviewee_profile {
+  margin: 32px 0 32px 0;
   background: #ffffff;
   border-radius: 8px;
   padding: 16px;
@@ -2898,6 +2900,7 @@ div.point-list {
     margin-bottom: 0 !important; }
 
 .nextpage {
+  margin: 32px 0 32px 0;
   text-align: center; }
   .nextpage strong {
     font-weight: bold;
@@ -2906,3 +2909,32 @@ div.point-list {
       content: "次ページ → "; }
   .nextpage span {
     display: none; }
+
+.medical-desc {
+  margin: 32px 0 32px 0;
+  background: #ffffff;
+  padding: 16px; }
+  .medical-desc h3 {
+    margin-top: 0 !important;
+    text-align: center; }
+  .medical-desc h4 {
+    text-align: center;
+    font-weight: normal;
+    margin: 0 0 32px 0 !important;
+    font-size: 16px; }
+  .medical-desc .medical-desc-disease h4 {
+    margin: 32px 0 16px 0 !important;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px; }
+  .medical-desc .medical-desc-disease figure {
+    margin: 0 !important; }
+  .medical-desc .medical-desc-disease table {
+    margin-bottom: 0 !important; }
+  .medical-desc .medical-desc-point h4 {
+    margin: 32px 0 0 0 !important;
+    text-align: left;
+    font-weight: normal;
+    font-size: 16px; }
+  .medical-desc .medical-desc-point ul {
+    margin-bottom: 0 !important; }

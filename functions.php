@@ -51,6 +51,9 @@ function kikoiro1RegisterBlocks() {
 			'interviewee-profile', 
 			'interviewee-profile-f', 
 			'nextpage', 
+			'medical-desc',
+			'medical-desc-disease',
+			'medical-desc-point',
 		));
 }
 

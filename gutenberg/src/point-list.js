@@ -4,7 +4,7 @@ import { getClassNameFromProperty } from './tools.js';
 
 registerBlockType( 'kikoiro1/point-list', {
     title: 'ポイントリスト',
-    icon: 'universal-access-alt',
+    icon: 'editor-ul',
     category: 'kikoiro1',
     attributes: {
         titleContent: {
@@ -38,7 +38,7 @@ registerBlockType( 'kikoiro1/point-list', {
             </h4>
             <RichText
                 tagName="ul"
-                value={content}
+                value={ content }
                 multiline="li"
                 onChange={ onChangeContent } />
             </div>

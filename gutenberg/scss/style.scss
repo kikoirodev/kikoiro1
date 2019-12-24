@@ -52,6 +52,7 @@ $newColor: #f13724;
 	  point-list
 	*/
 	.point-list {
+		margin: 32px 0 32px 0;
 		background: #ffffff;
 		padding: 1em;
 		font-size: 16px;
@@ -91,6 +92,7 @@ $newColor: #f13724;
 		text-indent: 1em;
 	}
 	.interviewee_profile {
+		margin: 32px 0 32px 0;
 		h4 {
 			font-size: 16px !important;
 			font-weight: bold;
@@ -116,6 +118,7 @@ $newColor: #f13724;
 	  nextpage
 	*/
 	.nextpage {
+		margin: 32px 0 32px 0;
 		text-align: center;
 		strong {
 			font-weight: bold;
@@ -130,6 +133,52 @@ $newColor: #f13724;
 			display: none;
 		}
 	}
+
+	/*
+	  medical-desc
+	*/
+	.medical-desc {
+		margin: 32px 0 32px 0;
+		background: #ffffff;
+		padding: 16px 16px 0 16px;
+		h3 {
+			margin-top: 0 !important;
+			text-align: center;
+		}
+		h4 {
+			text-align: center;
+			font-weight: normal;
+			margin: 0 0 32px 0 !important;
+			font-size: 16px;
+		}
+		.medical-desc-disease {
+			h4 {
+				margin: 32px 0 16px 0 !important;
+				text-align: left;
+				font-weight: bold;
+				font-size: 16px;
+			}
+			figure {
+				margin: 0 !important;
+			}
+			table {
+				margin-bottom: 0 !important;
+			}
+		}
+		.medical-desc-point {
+			h4 {
+				margin: 32px 0 0 0 !important;
+				text-align: left;
+				font-weight: normal;
+				font-size: 16px;
+			}
+			ul {
+				padding-left: 28px !important; /* editor only */
+				margin-bottom: 0 !important;
+			}
+		}
+	}
+
 	
 	/*
 	  css only

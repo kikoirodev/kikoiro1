@@ -8,7 +8,7 @@ registerBlockType( 'kikoiro1/interviewee-profile-f', {
     category: 'kikoiro1',
     edit(props) {
         return (
-            <div class={"interviewee_profile" + getClassNameFromProperty(props.attributes, "className") }>
+            <div class={ "interviewee_profile" + getClassNameFromProperty(props.attributes, "className") }>
                 <h4>お話を伺った方のプロフィール</h4>
                 <InnerBlocks allowedBlocks={ [ 'core/list', 'core/paragraph' ] }
                             template={[
@@ -22,7 +22,7 @@ registerBlockType( 'kikoiro1/interviewee-profile-f', {
     },
     save(props) {
         return (
-            <div class={"interviewee_profile" + getClassNameFromProperty(props.attributes, "className") }>
+            <div class={ "interviewee_profile" + getClassNameFromProperty(props.attributes, "className") }>
                 <h4>お話を伺った方のプロフィール</h4>
                 <InnerBlocks.Content />
             </div>
