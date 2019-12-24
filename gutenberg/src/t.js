@@ -3,7 +3,7 @@ import { InnerBlocks } from '@wordpress/editor';
 import { getClassNameFromProperty } from './tools.js';
 
 registerBlockType( 'kikoiro1/t', {
-    title: 't',
+    title: 't2',
     icon: 'admin-users',
     category: 'kikoiro1',
     edit(props) {
