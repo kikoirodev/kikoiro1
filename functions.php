@@ -70,7 +70,7 @@ function registerBlockTypes($nameSpace, $blockNames) {
 
 function kikoiro1EnqueueCss() {
 	add_theme_support( 'editor-styles' );
-	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css?v=12');
+	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css');
 }
 add_action('after_setup_theme', 'kikoiro1EnqueueCss');
 

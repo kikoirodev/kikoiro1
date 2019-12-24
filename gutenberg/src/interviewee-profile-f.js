@@ -11,6 +11,7 @@ registerBlockType( 'kikoiro1/interviewee-profile-f', {
             <div class={ "interviewee_profile" + getClassNameFromProperty(props.attributes, "className") }>
                 <h4>お話を伺った方のプロフィール</h4>
                 <InnerBlocks allowedBlocks={ [ 'core/list', 'core/paragraph' ] }
+                            templateLock='all' 
                             template={[
                                 [ 'core/list', {} ],
                                 [ 'core/paragraph', { placeholder:'誰が当事者か（例：「娘さんのこと」）' } ],
