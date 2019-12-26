@@ -180,6 +180,44 @@ $newColor: #f13724;
 	}
 
 	
+.whiteBackground {
+	background-color: #ffffff; /* editor only */
+	border: 1px solid #aaaaaa; /* editor only */
+}
+ul.withPadding, ol.withPadding {
+	padding-right: 1.5em !important;
+	padding-bottom: 1em !important;
+	padding-top: 1em !important;
+	padding-left: 28px !important; /* editor only */
+	&.withItemBottomMargin {
+		li {
+			margin-bottom: 0.5em !important;
+			&:last-child {
+				margin-bottom: 0 !important;
+			}
+		}
+	}
+	&.withItemBottomMarginWide {
+		li {
+			margin-bottom: 1em !important;
+			&:last-child {
+				margin-bottom: 0 !important;
+			}
+			br {
+				display: block;
+				content: '';
+				margin-bottom: 0.5em;
+			}
+		}
+	}
+}
+
+div.withPadding, p.withPadding {
+	padding-right: 1em !important;
+	padding-bottom: 0.5em !important;
+	padding-top: 0.5em !important;
+}
+
 	/*
 	  css only
 	*/

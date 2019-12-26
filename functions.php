@@ -30,7 +30,7 @@ function kikoiro1RegisterBlocks() {
     $asset_file = include('../wp-content/themes/kikoiro1/gutenberg/build/index.asset.php');
 	$versionNum = "" . time();
 	$nameSpace = "kikoiro1";
-	//to avoid js cache, append build version ($asset_file['version']) to js file path
+	//to avoid js cache, append timestapm (build version ($asset_file['version']) seems not working...)
 	$scriptPath = get_template_directory_uri() . '/gutenberg/build/index.js?v=' . $versionNum;
 
     wp_register_script(
@@ -54,7 +54,7 @@ function kikoiro1RegisterBlocks() {
 			'medical-desc',
 			'medical-desc-disease',
 			'medical-desc-point',
-			't',
+			'main-ul',
 		));
 }
 
