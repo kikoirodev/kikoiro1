@@ -1,5 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/editor';
+import { InnerBlocks } from '@wordpress/editor';
 import { getClassNameFromProperty } from './tools.js';
 
 registerBlockType( 'kikoiro1/point-list', {
