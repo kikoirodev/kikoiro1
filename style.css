@@ -2946,3 +2946,20 @@ div.point-list {
     font-size: 16px; }
   .medical-desc .medical-desc-point ul {
     margin-bottom: 0 !important; }
+
+.faqItem {
+  margin: 32px 0 32px 0;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0; }
+  .faqItem h2 {
+    color: 333333;
+    font-size: 20px !important;
+    margin: 0 0 1em 0 !important; }
+    .faqItem h2:before {
+      content: "Q: ";
+      font-family: Arial, Helvetica, sans-serif; }
+  .faqItem p {
+    font-size: 14px;
+    margin: 0 !important;
+    padding-left: 1.75em; }
