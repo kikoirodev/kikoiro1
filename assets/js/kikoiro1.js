@@ -1,5 +1,10 @@
 $(function() {
 
+	var clipboard = new ClipboardJS('.copy-button');
+	clipboard.on('success',function(e) {
+		$('.copy-button').hide().fadeIn(300).addClass('success').text('コピーしました');
+	});
+
 	var members = $("#members");
 
 	objectFitImages('img.articleTopImage');

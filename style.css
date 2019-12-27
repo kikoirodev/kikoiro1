@@ -2966,3 +2966,21 @@ div.point-list {
     padding-left: 1.75em; }
     .faqItem p:last-child {
       margin-bottom: 0 !important; }
+
+.copy-button {
+  display: inline-block;
+  border-radius: 5px;
+  margin: 0 0 0 1em;
+  padding: 2px 4px;
+  border: 1px solid #e0e0e0;
+  color: #000000;
+  background: #eeeeee;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer; }
+
+.copy-button.success {
+  background: transparent;
+  border-color: transparent;
+  color: #bbbbbb;
+  font-weight: bold; }

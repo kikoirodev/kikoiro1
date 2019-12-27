@@ -11,6 +11,8 @@
  * License: No License
  */
 
+ wp_enqueue_script('clipboard');
+
 function my_plugin_block_categories( $categories, $post ) {
     return array_merge(
         array(
