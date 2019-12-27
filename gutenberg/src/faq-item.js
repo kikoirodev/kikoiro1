@@ -4,14 +4,14 @@ import { getClassNameFromProperty } from './tools.js';
 
 registerBlockType( 'kikoiro1/faq-item', {
     title: 'FAQアイテム',
-    icon: 'editor-ul',
+    icon: 'editor-help',
     category: 'kikoiro1',
     attributes: {
         titleContent: {
             selector: 'span',
             type: 'string',
             source: 'html',
-            default: "タイトル"
+            default: ''
         },
         content: {
             type: 'string',
@@ -34,11 +34,13 @@ registerBlockType( 'kikoiro1/faq-item', {
             <RichText 
                 tagName="span"
                 value={ titleContent } 
+                placeholder="質問タイトル"
                 onChange={ onChangeTitleContent } />
             </h2>
             <RichText
                 tagName="p"
                 value={ content }
+                placeholder="回答内容"
                 onChange={ onChangeContent } />
             </div>
         );
