@@ -2986,3 +2986,14 @@ div.point-list {
   border-color: transparent;
   color: #bbbbbb;
   font-weight: bold; }
+
+hr.contentSeparator {
+  height: 2px;
+  width: 100px;
+  margin: 8px auto 32px auto;
+  border: 0;
+  background: #000000;
+  color: #000000; }
+  hr.contentSeparator.fullWidth {
+    width: 100% !important;
+    height: 1px; }

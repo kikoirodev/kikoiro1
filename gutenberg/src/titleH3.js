@@ -44,7 +44,7 @@ registerBlockType( 'kikoiro1/h3-underline', {
             <RichText 
                 tagName="h3" 
                 multiline="false"
-                className={ `withUnderline noBottomMargin ${getClassNameFromProperty(props.attributes, 'className')} ${(props.attributes.isWhiteBackground === true) ? 'whiteBackground' : ''}` }
+                className={ `withUnderline noBottomMargin ${getClassNameFromProperty(props.attributes, 'className')}` }
                 value={ content } 
                 onChange={ onChangeContent } />
         );
@@ -54,7 +54,7 @@ registerBlockType( 'kikoiro1/h3-underline', {
             <RichText.Content
                 tagName="h3" 
                 multiline="false"
-                className={ `withUnderline noBottomMargin ${getClassNameFromProperty(props.attributes, 'className')} ${(props.attributes.isWhiteBackground === true) ? 'whiteBackground' : ''}` }
+                className={ `withUnderline noBottomMargin ${getClassNameFromProperty(props.attributes, 'className')}` }
                 value={ props.attributes.content } />
         );
     },

@@ -238,6 +238,23 @@ div.withPadding, p.withPadding {
 	}
 }
 
+span.emphasize {
+	background: linear-gradient(transparent 60%, $markerColorOrange 0%) repeat scroll 0 0;
+}
+
+hr.contentSeparator {
+	height: 2px;
+	width: 100px;
+	margin: 8px auto 32px auto;
+	border: 0;
+	background: #000000;
+	color: #000000;
+	&.fullWidth {
+		width: 100% !important;
+		height: 1px;
+	}
+}
+
 	/*
 	  css only
 	*/

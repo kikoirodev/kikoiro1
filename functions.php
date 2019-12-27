@@ -11,6 +11,7 @@
  * License: No License
  */
 
+
  wp_enqueue_script('clipboard');
 
 function my_plugin_block_categories( $categories, $post ) {
@@ -44,7 +45,6 @@ function kikoiro1RegisterBlocks() {
 	registerBlockTypes(
 		$nameSpace, 
 		array(
-			'test', 
 			'sub-info', 
 			'references', 
 			'point-list', 
@@ -59,6 +59,7 @@ function kikoiro1RegisterBlocks() {
 			'main-ul',
 			'h3-underline',
 			'faq-item',
+			'separator',
 		));
 }
 

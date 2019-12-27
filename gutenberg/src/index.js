@@ -1,4 +1,3 @@
-import './test.js';
 import './sub-info.js';
 import './references.js';
 import './point-list.js';
@@ -11,6 +10,8 @@ import './medical-desc.js';
 import './main-ul.js';
 import './titleH3.js';
 import './faq-item';
+import './marker';
+import './separator';
 /*
 import './p.js';
 import './h.js';
