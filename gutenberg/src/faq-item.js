@@ -1,5 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/editor';
+import { InnerBlocks } from '@wordpress/editor';
 import { getClassNameFromProperty } from './tools.js';
 
 registerBlockType( 'kikoiro1/faq-item', {
@@ -13,20 +14,11 @@ registerBlockType( 'kikoiro1/faq-item', {
             source: 'html',
             default: ''
         },
-        content: {
-            type: 'string',
-            source: 'html',
-            default: ''
-        },
     },
     edit(props) {
-        let content = props.attributes.content;
         let titleContent = props.attributes.titleContent;
         let onChangeTitleContent = function( content ) {
             props.setAttributes( { titleContent: content } );
-        }
-        let onChangeContent = function( content ) {
-            props.setAttributes( { content: content } );
         }
         return (
             <div class={ "faqItem" + getClassNameFromProperty(props.attributes, "className") }>
@@ -37,11 +29,11 @@ registerBlockType( 'kikoiro1/faq-item', {
                 placeholder="質問タイトル"
                 onChange={ onChangeTitleContent } />
             </h2>
-            <RichText
-                tagName="p"
-                value={ content }
-                placeholder="回答内容"
-                onChange={ onChangeContent } />
+            <InnerBlocks allowedBlocks={ [ 'core/paragraph' ] }
+                                template={[
+                                    [ 'core/paragraph', {} ] 
+                                ]}
+                />
             </div>
         );
     },
@@ -53,9 +45,7 @@ registerBlockType( 'kikoiro1/faq-item', {
                 tagName="span"
                 value={ props.attributes.titleContent } />
             </h2>
-            <RichText.Content
-                tagName="p"
-                value={ props.attributes.content } />
+            <InnerBlocks.Content />
             </div>
         );
     },
