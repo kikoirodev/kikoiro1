@@ -12,21 +12,12 @@ registerBlockType( 'kikoiro1/point-list', {
             type: 'string',
             source: 'html',
             default: "タイトル"
-        },
-        content: {
-            selector: 'ul',
-            type: 'array',
-            source: 'children'
-        },
+        }
     },
     edit(props) {
-        let content = props.attributes.content;
         let titleContent = props.attributes.titleContent;
         let onChangeTitleContent = function( content ) {
             props.setAttributes( { titleContent: content } );
-        }
-        let onChangeContent = function( content ) {
-            props.setAttributes( { content: content } );
         }
         return (
             <div class={ "point-list" + getClassNameFromProperty(props.attributes, "className") }>
@@ -36,11 +27,10 @@ registerBlockType( 'kikoiro1/point-list', {
                 value={ titleContent } 
                 onChange={ onChangeTitleContent } />
             </h4>
-            <RichText
-                tagName="ul"
-                value={ content }
-                multiline="li"
-                onChange={ onChangeContent } />
+            <InnerBlocks allowedBlocks={ [ 'core/list', 'core/paragraph' ] }
+                                template={[
+                                    [ 'core/list', {} ] 
+                                ]} />
             </div>
         );
     },
@@ -52,9 +42,7 @@ registerBlockType( 'kikoiro1/point-list', {
                 tagName="span"
                 value={ props.attributes.titleContent } />
             </h4>
-            <RichText.Content
-                tagName="ul"
-                value={ props.attributes.content } />
+            <InnerBlocks.Content />
             </div>
         );
     },
