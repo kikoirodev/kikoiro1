@@ -2,6 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { RichText, InspectorControls } from '@wordpress/editor';
 import { getClassNameFromProperty } from './tools.js';
 import { CheckboxControl, PanelBody } from '@wordpress/components';
+import { createBlock } from '@wordpress/blocks';
 
 registerBlockType( 'kikoiro1/main-ul', {
     title: '本文-リスト',
@@ -10,13 +11,42 @@ registerBlockType( 'kikoiro1/main-ul', {
     attributes: {
         content: {
             selector: 'ul',
-            type: 'array',
-            source: 'children'
+            type: 'string',
+            source: 'html',
+            multiline: 'li',
+            default: '',
         },
         isWhiteBackground: { 
             type: 'boolean', 
             default: false,
         },
+    },
+    transforms: {
+        from: [
+            {
+                type: 'block',
+                blocks: [ 'core/list' ],
+                transform: ( value ) => {
+                    console.log(value);
+                    return createBlock( 'kikoiro1/main-ul', {
+                        content: value.values,
+                    });
+                }            
+            },
+        ],
+        to: [
+            {
+                type: 'block',
+                blocks: [ 'core/list' ],
+                transform: ( content ) => {
+                    console.log(content);
+                    return createBlock( 'core/list', {
+                        values: content.content,
+                        ordered: false,
+                    });
+                }
+            }
+        ],
     },
     edit(props) {
         let content = props.attributes.content;
