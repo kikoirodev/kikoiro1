@@ -55,6 +55,7 @@ function kikoiro1RegisterBlocks() {
 			'medical-desc-disease',
 			'medical-desc-point',
 			'main-ul',
+			'h3-underline',
 		));
 }
 
