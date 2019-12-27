@@ -94,7 +94,7 @@ get_header();
 				</div>
 				<div id="itemsFooter">
 					<?php
-						$count = countPostsInNewsAndColumn();
+						$count = countPostsInNewsAndColumn(true);
 						if ($count > 6) {
 							echo '<span class="showMore" id="showMoreNews">Show More</span>';
 						}

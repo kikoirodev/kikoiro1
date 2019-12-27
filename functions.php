@@ -196,13 +196,21 @@ function isNewsAndColumnCagetory() {
 	return $parentCategory->slug == "news-and-column";
 }
 
-function countPostsInNewsAndColumn() {
+function countPostsInNewsAndColumn($excludePostsWithNewTag = false) {
 	$categories = get_categories(array('exclude' => getNotNewsAndColumnCategoryIDsString(false)));
 	$count = 0;
+
+	$countWithNewTag = 0;
+	if ($excludePostsWithNewTag) {
+		$taxonomy = 'post_tag';
+		$term_slug = 'new';
+		$term = get_term_by('slug', $term_slug, $taxonomy);
+		$countWithNewTag = $term->count;
+	}
 	foreach( $categories as $category ){
 		$count += $category->category_count;
 	}
-	return $count;
+	return $count - $countWithNewTag;
 }
 
 function echoKikoiroPager($pagerRequired, $needKeepVerticalSpace = false) {
