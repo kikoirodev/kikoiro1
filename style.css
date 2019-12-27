@@ -2954,7 +2954,8 @@ div.point-list {
   border: 1px solid #e0e0e0; }
   .faqItem h2 {
     font-size: 18px !important;
-    margin: 0 0 1em 0 !important; }
+    margin: 0 0 1em 0 !important;
+    font-feature-settings: normal !important; }
     .faqItem h2:before {
       content: "Q: ";
       font-family: Arial, Helvetica, sans-serif;
