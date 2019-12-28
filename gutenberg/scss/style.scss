@@ -257,8 +257,8 @@ hr.contentSeparator {
 		height: 1px;
 	}
 }
-div.editor-rich-text {
-	h4 {
+
+	h4.editor-rich-text__editable {
 		font-size: 16px;
 		&.underline {
 			border-bottom: 1px solid #000000;
@@ -273,7 +273,7 @@ div.editor-rich-text {
 			}
 		}
 	}
-}
+
 	/*
 	  css only
 	*/
