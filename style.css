@@ -1215,8 +1215,14 @@ footer {
         font-feature-settings: "palt"; }
       #main section.article article div.entry-content h4 {
         margin: 32px 0 16px 0;
-        font-size: 16px;
-        font-feature-settings: "palt"; }
+        font-size: 16px; }
+        #main section.article article div.entry-content h4.underline {
+          border-bottom: 1px solid #000000; }
+        #main section.article article div.entry-content h4.normal {
+          border: 0; }
+        #main section.article article div.entry-content h4.dot:before {
+          content: "●";
+          color: #ECA07E; }
       #main section.article article div.entry-content figure.wp-block-image, #main section.article article div.entry-content div.wp-block-image {
         padding: 0;
         margin: 0 0 56px 0;

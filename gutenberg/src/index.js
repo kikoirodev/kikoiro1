@@ -9,6 +9,7 @@ import './nextpage.js';
 import './medical-desc.js';
 import './main-ul.js';
 import './titleH3.js';
+import './titleH4.js';
 import './faq-item';
 import './marker';
 import './separator';
