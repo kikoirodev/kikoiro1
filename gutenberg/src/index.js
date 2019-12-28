@@ -13,10 +13,9 @@ import './titleH4.js';
 import './faq-item';
 import './marker';
 import './separator';
-
+import './p.js';
 
 /*
-import './p.js';
 import './h.js';
 */
 

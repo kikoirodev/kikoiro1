@@ -1,13 +1,12 @@
 import { createBlock } from '@wordpress/blocks';
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/editor';
-import { getClassNameFromProperty } from './tools.js';
-
 import { InspectorControls } from '@wordpress/editor';
 import { RadioControl, PanelBody } from '@wordpress/components';
+import { getClassNameFromProperty } from './tools.js';
 
 registerBlockType( 'kikoiro1/h4', {
-    title: '小見出し',
+    title: 'H4（小見出し）',
     icon: 'editor-textcolor',
     category: 'kikoiro1',
     attributes: {

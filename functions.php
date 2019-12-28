@@ -61,7 +61,7 @@ function kikoiro1RegisterBlocks() {
 			'h4',
 			'faq-item',
 			'separator',
-
+			'p',
 		));
 }
 

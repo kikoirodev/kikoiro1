@@ -4,7 +4,7 @@ import { RichText } from '@wordpress/editor';
 import { getClassNameFromProperty } from './tools.js';
 
 registerBlockType( 'kikoiro1/h3-underline', {
-    title: '中見出し（下線付き）',
+    title: 'H3（中見出し）',
     icon: 'editor-textcolor',
     category: 'kikoiro1',
     attributes: {
