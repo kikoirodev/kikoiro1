@@ -20,6 +20,10 @@ registerBlockType( 'kikoiro1/main-ul', {
             type: 'boolean', 
             default: false,
         },
+        isWideVerticalMargin: {
+            type: 'boolean', 
+            default: false,
+        }
     },
     transforms: {
         from: [
@@ -65,11 +69,22 @@ registerBlockType( 'kikoiro1/main-ul', {
                             } );
                         } }
                     />
+                    <CheckboxControl
+                        label="行マージン広め"
+                        checked={ props.attributes.isWideVerticalMargin || false }
+                        onChange={ ( nextValue ) => {
+                            props.setAttributes( {
+                                isWideVerticalMargin: nextValue,
+                            } );
+                        } }
+                    />
                 </PanelBody>
             </InspectorControls>,
             <RichText
                 tagName="ul"
-                className={ `withItemBottomMargin withPadding ${getClassNameFromProperty(props.attributes, 'className')} ${(props.attributes.isWhiteBackground === true) ? 'whiteBackground' : ''}` }
+                className={ `withPadding ${getClassNameFromProperty(props.attributes, 'className')} 
+                    ${(props.attributes.isWhiteBackground === true) ? 'whiteBackground' : ''} 
+                    ${(props.attributes.isWideVerticalMargin === true) ? 'withItemBottomMarginWide' : 'withItemBottomMargin'}` }
                 multiline="li"
                 value={ content }
                 onChange={ onChangeContent } />
@@ -79,7 +94,9 @@ registerBlockType( 'kikoiro1/main-ul', {
         return (
             <RichText.Content
                 tagName="ul"
-                className={ `withItemBottomMargin withPadding ${getClassNameFromProperty(props.attributes, 'className')} ${(props.attributes.isWhiteBackground === true) ? 'whiteBackground' : ''}` }
+                className={ `withPadding ${getClassNameFromProperty(props.attributes, 'className')} 
+                    ${(props.attributes.isWhiteBackground === true) ? 'whiteBackground' : ''} 
+                    ${(props.attributes.isWideVerticalMargin === true) ? 'withItemBottomMarginWide' : 'withItemBottomMargin'}` }
                 value={ props.attributes.content } />
         );
     },
