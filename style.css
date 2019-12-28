@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: the Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.18
+Version: 2.19
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -1918,6 +1918,25 @@ blockquote {
     margin-top: 1em !important;
     padding: 0 0 0 32px; }
 
+figure.wp-block-embed-youtube {
+  -webkit-margin-before: 0 !important;
+          margin-block-start: 0 !important;
+  -webkit-margin-after: 0 !important;
+          margin-block-end: 0 !important;
+  -webkit-margin-start: 0 !important;
+          margin-inline-start: 0 !important;
+  -webkit-margin-end: 0 !important;
+          margin-inline-end: 0 !important;
+  margin-bottom: 0.5em !important; }
+  figure.wp-block-embed-youtube div iframe {
+    margin: 0 !important;
+    width: 720px !important;
+    height: 400px !important; }
+  @media screen and (max-width: 876px) {
+    figure.wp-block-embed-youtube div iframe {
+      width: 100% !important;
+      height: calc((100vw - 32px) * 0.5625) !important; } }
+
 iframe {
   display: block;
   margin: 0 !important; }
@@ -2084,8 +2103,7 @@ iframe {
     #main section.article figure.wp-block-embed-wordpress {
       margin: 0 !important; }
     #main section.article iframe {
-      width: 100%;
-      height: calc((100vw - 32px) * 0.5625); }
+      /* for wordpress embed */ }
       #main section.article iframe.wp-embedded-content {
         margin: 0;
         height: calc(100vw * 1.28); }

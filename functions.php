@@ -60,6 +60,7 @@ function kikoiro1RegisterBlocks() {
 			'h3-underline',
 			'faq-item',
 			'separator',
+
 		));
 }
 
