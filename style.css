@@ -3038,6 +3038,6 @@ hr.contentSeparator {
 div.annotation hr {
   margin-bottom: 0 !important; }
 div.annotation ul {
-  font-size: 14px;
+  font-size: 14px !important;
   list-style-type: none;
   padding-left: 0 !important; }
