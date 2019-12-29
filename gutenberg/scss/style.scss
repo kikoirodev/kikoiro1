@@ -63,7 +63,7 @@ $newColor: #f13724;
 			span {
 				background: linear-gradient(transparent 60%, $markerColorOrange 0%) repeat scroll 0 0;
 				sup {
-					background: transparent;
+					background-image: none;
 					font-weight: normal;
 					font-size: 12px;
 				}
