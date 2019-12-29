@@ -57,6 +57,7 @@ function kikoiro1RegisterBlocks() {
 			'medical-desc-disease',
 			'medical-desc-point',
 			'main-ul',
+			'main-ol',
 			'h3-underline',
 			'h4',
 			'faq-item',

@@ -8,6 +8,7 @@ import './interviewee-profile-f.js';
 import './nextpage.js';
 import './medical-desc.js';
 import './main-ul.js';
+import './main-ol.js';
 import './titleH3.js';
 import './titleH4.js';
 import './faq-item';
