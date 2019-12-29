@@ -15,7 +15,8 @@ import './faq-item';
 import './marker';
 import './separator';
 import './p.js';
-
+import './annotation.js';
+import './process.js';
 /*
 import './h.js';
 */

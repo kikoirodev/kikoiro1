@@ -281,6 +281,21 @@ hr.contentSeparator {
 		}
 	}
 
+	div.annotation {
+		hr {
+			margin-bottom: 0 !important;
+		}
+		ul {
+			font-size: 14px;
+			list-style-type: none;
+			padding-left: 0 !important;
+		}
+	}
+	.process {
+		font-size: 18px;
+		margin: 0 0 0.5em 0 !important;
+		font-weight: bold;
+	}
 	/*
 	  css only
 	*/

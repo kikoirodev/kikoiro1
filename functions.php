@@ -63,6 +63,8 @@ function kikoiro1RegisterBlocks() {
 			'faq-item',
 			'separator',
 			'p',
+			'annotation',
+			'process',
 		));
 }
 
