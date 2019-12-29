@@ -21,7 +21,7 @@ registerBlockType( 'kikoiro1/detail-button', {
                 type: 'block',
                 blocks: [ 'core/paragraph' ],
                 transform: ( { content } ) => {
-                    return createBlock( 'kikoiro1/detailButton', {
+                    return createBlock( 'kikoiro1/detail-button', {
                         content,
                     } );
                 },
