@@ -65,6 +65,7 @@ function kikoiro1RegisterBlocks() {
 			'p',
 			'annotation',
 			'process',
+			'detail-button',
 		));
 }
 

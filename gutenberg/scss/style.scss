@@ -296,6 +296,23 @@ hr.contentSeparator {
 		margin: 0 0 0.5em 0 !important;
 		font-weight: bold;
 	}
+	p.readMore {
+		a {
+			display: block;
+			text-align: center;
+			margin: 0 auto;
+			height: 32px;
+			line-height: 28px; /* editor only */
+			width: 140px;
+			text-decoration: none !important;
+			color: #000000;
+			background-color: #ffffff;
+			border: 2px solid #000000;
+			font-weight: bold;
+			font-size: 14px;
+		}
+	}
+
 	/*
 	  css only
 	*/
