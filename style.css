@@ -2908,9 +2908,11 @@ div.point-list {
       background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(0%, #fcd8c8)) repeat scroll 0 0;
       background: linear-gradient(transparent 60%, #fcd8c8 0%) repeat scroll 0 0; }
       div.point-list h4 span sup {
-        background-image: none;
+        display: inline-block;
+        background: white;
         font-weight: normal;
-        font-size: 12px; }
+        font-size: 12px;
+        height: 24px; }
   div.point-list p {
     margin: 0 !important; }
   div.point-list ul {
