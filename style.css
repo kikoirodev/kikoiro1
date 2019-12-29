@@ -3041,3 +3041,11 @@ div.annotation ul {
   font-size: 14px !important;
   list-style-type: none;
   padding-left: 0 !important; }
+  div.annotation ul li a {
+    text-decoration: underline;
+    color: #000000 !important;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s; }
+    div.annotation ul li a:hover {
+      color: #871b1b !important;
+      cursor: pointer; }
