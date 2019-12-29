@@ -43,7 +43,6 @@ registerBlockType( 'kikoiro1/process', {
         return ([
             <RichText 
                 tagName="p" 
-                multiline="false"
                 className={ `process ${getClassNameFromProperty(props.attributes, 'className')}`}
                 value={ content } 
                 onChange={ onChangeContent } />
@@ -53,7 +52,6 @@ registerBlockType( 'kikoiro1/process', {
         return (
             <RichText.Content
                 tagName="p" 
-                multiline="false"
                 className={ `process ${getClassNameFromProperty(props.attributes, 'className')}`}
                 value={ props.attributes.content } />
         );
