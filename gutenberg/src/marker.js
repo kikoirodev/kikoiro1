@@ -11,7 +11,7 @@ const markerButton = props => {
 		onClick={ () => {
 			props.onChange( toggleFormat(
 				props.value,
-				{ type: 'my-custom-format/sample-output' }
+				{ type: 'kikoiro1/marker' }
 			) );
 		} }
 		isActive={ props.isActive }
