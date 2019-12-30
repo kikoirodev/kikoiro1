@@ -25,7 +25,7 @@ registerBlockType( 'kikoiro1/h4', {
         from: [
             {
                 type: 'block',
-                blocks: [ 'core/heading', 'kikoiro1/h3' ],
+                blocks: [ 'core/heading' ],
                 transform: ( { content } ) => {
                     return createBlock( 'kikoiro1/h4', {
                         content,
@@ -38,11 +38,6 @@ registerBlockType( 'kikoiro1/h4', {
                 type: 'block',
                 blocks: [ 'core/heading' ],
                 transform: ({ content }) => createBlock('core/heading', { content: content, level: 4 }),
-            }, 
-            {
-                type: 'block',
-                blocks: [ 'kikoiro1/h3' ],
-                transform: ({ content }) => createBlock('kikoiro1/h3', { content: content }),
             }
         ],
     },
