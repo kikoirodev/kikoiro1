@@ -2118,6 +2118,7 @@ iframe {
     #main section.article iframe {
       /* for wordpress embed */ }
       #main section.article iframe.wp-embedded-content {
+        width: 100%;
         margin: 0;
         height: calc(100vw * 1.28); }
     #main section.article article div.categoryPath {
