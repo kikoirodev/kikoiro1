@@ -1,10 +1,12 @@
 import { createBlock } from '@wordpress/blocks';
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/editor';
+import { InspectorControls } from '@wordpress/editor';
+import { RadioControl, PanelBody } from '@wordpress/components';
 import { getClassNameFromProperty } from './tools.js';
 
-registerBlockType( 'kikoiro1/h3-underline', {
-    title: 'H3（中見出し）',
+registerBlockType( 'kikoiro1/h3', {
+    title: '見出し（H3）',
     icon: 'editor-textcolor',
     category: 'kikoiro1',
     attributes: {
@@ -14,14 +16,18 @@ registerBlockType( 'kikoiro1/h3-underline', {
             source: 'html',
             default: ''
         },
+        headingStyle: {
+            type: 'string', 
+            default: 'normal',
+        }
     },
     transforms: {
         from: [
             {
                 type: 'block',
-                blocks: [ 'core/heading' ],
+                blocks: [ 'core/heading', 'kikoiro1/h4' ],
                 transform: ( { content } ) => {
-                    return createBlock( 'kikoiro1/h3-underline', {
+                    return createBlock( 'kikoiro1/h3', {
                         content,
                     } );
                 },
@@ -32,6 +38,11 @@ registerBlockType( 'kikoiro1/h3-underline', {
                 type: 'block',
                 blocks: [ 'core/heading' ],
                 transform: ({ content }) => createBlock('core/heading', { content: content, level: 3 }),
+            }, 
+            {
+                type: 'block',
+                blocks: [ 'kikoiro1/h4' ],
+                transform: ({ content }) => createBlock('kikoiro1/h4', { content: content }),
             }
         ],
     },
@@ -40,21 +51,40 @@ registerBlockType( 'kikoiro1/h3-underline', {
         let onChangeContent = function( content ) {
             props.setAttributes( { content: content } );
         }
-        return (
+        return ([
+            <InspectorControls>
+                <PanelBody title='設定'>
+                    <RadioControl
+                        label="スタイル"
+                        help=""
+                        selected={ props.attributes.headingStyle || 'normal' }
+                        options={ [
+                            { label: 'ノーマル', value: 'normal' },
+                            { label: '下線付き', value: 'underline' },
+                            { label: '●付き', value: 'dot' },
+                        ] }
+                        onChange={ ( nextValue ) => {
+                            props.setAttributes( {
+                                headingStyle: nextValue,
+                            } );
+                        } }
+                    />
+                </PanelBody>
+            </InspectorControls>,
             <RichText 
                 tagName="h3" 
                 multiline="false"
-                className={ `withUnderline noBottomMargin ${getClassNameFromProperty(props.attributes, 'className')}` }
+                className={ `${props.attributes.headingStyle} ${getClassNameFromProperty(props.attributes, 'className')}`}
                 value={ content } 
                 onChange={ onChangeContent } />
-        );
+        ]);
     },
     save(props) {
         return (
             <RichText.Content
                 tagName="h3" 
                 multiline="false"
-                className={ `withUnderline noBottomMargin ${getClassNameFromProperty(props.attributes, 'className')}` }
+                className={ `${props.attributes.headingStyle} ${getClassNameFromProperty(props.attributes, 'className')}`}
                 value={ props.attributes.content } />
         );
     },

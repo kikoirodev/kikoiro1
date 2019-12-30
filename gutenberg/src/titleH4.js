@@ -6,7 +6,7 @@ import { RadioControl, PanelBody } from '@wordpress/components';
 import { getClassNameFromProperty } from './tools.js';
 
 registerBlockType( 'kikoiro1/h4', {
-    title: 'H4（小見出し）',
+    title: '見出し（H4）',
     icon: 'editor-textcolor',
     category: 'kikoiro1',
     attributes: {
@@ -25,7 +25,7 @@ registerBlockType( 'kikoiro1/h4', {
         from: [
             {
                 type: 'block',
-                blocks: [ 'core/heading' ],
+                blocks: [ 'core/heading', 'kikoiro1/h3' ],
                 transform: ( { content } ) => {
                     return createBlock( 'kikoiro1/h4', {
                         content,
@@ -38,6 +38,11 @@ registerBlockType( 'kikoiro1/h4', {
                 type: 'block',
                 blocks: [ 'core/heading' ],
                 transform: ({ content }) => createBlock('core/heading', { content: content, level: 4 }),
+            }, 
+            {
+                type: 'block',
+                blocks: [ 'kikoiro1/h3' ],
+                transform: ({ content }) => createBlock('kikoiro1/h3', { content: content }),
             }
         ],
     },

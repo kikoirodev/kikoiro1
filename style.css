@@ -1213,6 +1213,13 @@ footer {
         margin: 48px 0 20px 0;
         font-size: 20px;
         font-feature-settings: "palt"; }
+        #main section.article article div.entry-content h3.underline {
+          border-bottom: 1px solid #000000; }
+        #main section.article article div.entry-content h3.normal {
+          border: 0; }
+        #main section.article article div.entry-content h3.dot:before {
+          content: "●";
+          color: #ECA07E; }
       #main section.article article div.entry-content h4 {
         margin: 32px 0 16px 0;
         font-size: 16px; }
