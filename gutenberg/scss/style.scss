@@ -199,6 +199,7 @@ ul.withPadding, ol.withPadding {
 	padding-bottom: 1em !important;
 	padding-top: 1em !important;
 	padding-left: 28px !important; /* editor only */
+	font-size: 16px;
 	&.withItemBottomMargin {
 		li {
 			margin-bottom: 0.5em !important;
@@ -263,6 +264,10 @@ hr.contentSeparator {
 		width: 100% !important;
 		height: 1px;
 	}
+}
+
+ul.rich-text, ol.rich-text {
+	font-size: 16px;
 }
 
 	h4.editor-rich-text__editable, h3.editor-rich-text__editable {
