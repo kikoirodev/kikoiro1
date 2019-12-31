@@ -318,6 +318,93 @@ ul.rich-text, ol.rich-text {
 		}
 	}
 
+	.wp-block-table > table, table.wp-block-table {
+		border-collapse: collapse;
+		width: auto;
+		min-width: 240px;
+		margin: 0 0 32px 0;
+		font-size: 16px;
+		thead {
+			tr {
+				border-color: $bgColor !important;
+				th {
+					border-width: 1px !important;
+					border-color: #bbbbbb !important;
+					font-weight: bold;
+					background: #d9ecff;
+				}
+			}
+		}
+		tbody {
+			tr {
+				border-color: $bgColor !important;
+				td {
+					border-width: 1px !important;
+					&:first-child {
+						font-weight: bold;
+						background: #f0f0f0;
+						white-space: nowrap;
+					}
+					&:not(:first-child) {
+						background: #ffffff;
+					}
+				}
+				border-bottom: 1px solid #bbbbbb !important;
+			}
+			td {
+				img {
+					margin: 0 !important;
+				}
+				vertical-align: middle;
+				border-width: 1px !important;
+				border-color: #bbbbbb !important;
+			}
+		}
+	}
+
+	figure.withPadding > table, table.withPadding {
+		tbody {
+			tr {
+				td {
+					padding: 0.5em 1em !important;
+				}
+			}
+		}
+	}
+	
+	figure.fullWidth > table, table.fullWidth {
+		width: 100%;
+		tbody {
+			tr {
+				td {
+					padding: 0.5em 1em !important;
+					ul, ol {
+						margin: 1em 0 0 0 !important;
+						padding: 0 0 0 2em !important;
+					}
+					p {
+						margin: 1em 0 0 0 !important;
+					}
+				}
+			}
+		}
+	}
+	
+	figure.side240 > table, table.side240 {
+		width: 100%;
+		tbody {
+			tr {
+				td {
+					padding: 1em 1em !important;
+					vertical-align: top;
+					&:first-child {
+						width: 160px;				
+					}
+				}
+			}
+		}
+	}
+
 	/*
 	  css only
 	*/
