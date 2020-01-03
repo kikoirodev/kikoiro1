@@ -14,11 +14,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<figure class="post-thumbnail">
-		<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<?php echoPostThumbnail('post-thumbnail-large', true); ?>
-		</a>
-	</figure>
+	<figure class="post-thumbnail"><a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1"><?php echoPostThumbnail('post-thumbnail-large', true); ?></a></figure>
     <?php
         $url = get_permalink();
 		$categories = get_the_category();
