@@ -13,8 +13,7 @@
 
 ?>
 <div class="richTitlePart">
-	<img src="<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); echo $large_image_url[0]; ?>" 
-	class="articleTopImage" />
+	<?php echoPostThumbnail('large', false, "articleTopImage"); ?>
 	<div class="articleInfo">
 		<div class="categoryPath">
 		<?php

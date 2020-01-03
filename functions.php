@@ -11,8 +11,7 @@
  * License: No License
  */
 
-
- wp_enqueue_script('clipboard');
+wp_enqueue_script('clipboard');
 
 function my_plugin_block_categories( $categories, $post ) {
     return array_merge(
@@ -29,11 +28,11 @@ add_filter( 'block_categories', 'my_plugin_block_categories', 10, 2 );
 
 function kikoiro1RegisterBlocks() {
 
-	//can't use absolute path for include
+	// can't use absolute path for include
     $asset_file = include('../wp-content/themes/kikoiro1/gutenberg/build/index.asset.php');
 	$versionNum = "" . time();
 	$nameSpace = "kikoiro1";
-	//to avoid js cache, append timestapm (build version ($asset_file['version']) seems not working...)
+	// to avoid js cache, append timestapm (build version ($asset_file['version']) seems not working...)
 	$scriptPath = get_template_directory_uri() . '/gutenberg/build/index.js?v=' . $versionNum;
 
     wp_register_script(
@@ -80,13 +79,39 @@ function registerBlockTypes($nameSpace, $blockNames) {
 	}
 }
 
-function kikoiro1EnqueueCss() {
+function kikoiro1AfterSetupTheme() {
+	// enqueue css for gutenberg
 	add_theme_support( 'editor-styles' );
 	add_editor_style(get_template_directory_uri() . '/gutenberg/editor-style.css');
-}
-add_action('after_setup_theme', 'kikoiro1EnqueueCss');
 
+	// set pot thumbnail size
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size(280, 210, true);
+	add_image_size('post-thumbnail2x', 560, 420);
+	add_image_size('post-thumbnail-large', 500, 375);
+	add_image_size('post-thumbnail-large2x', 1000, 750);
+}
+add_action('after_setup_theme', 'kikoiro1AfterSetupTheme');
+
+// avoid plugin auto update
 add_filter( 'auto_update_plugin', '__return_false' );
+
+function echoPostThumbnail($sizeKey, $useSrcSet=false, $classes='') {
+	$tid = get_post_thumbnail_id();
+	$url1x = wp_get_attachment_image_src($tid, $sizeKey);
+	$alt = get_post_meta($tid, '_wp_attachment_image_alt', true);
+	$classNames = 'lazyload';
+	if (strlen($classes) != 0) {
+		$classNames .= ' ' . $classes;
+	}
+	if ($useSrcSet) {
+		$url2x = wp_get_attachment_image_src($tid, $sizeKey. '2x');
+		echo '<img src="' . $url1x[0] .'" srcset="' . $url1x[0] . ' 1x, ' . $url2x[0] . ' 2x" alt="' . $alt . '" class="' . $classNames . '" />';
+	}
+	else {
+		echo '<img src="' . $url1x[0] .'" alt="' . $alt . '" class="' . $classNames . '" />';
+	}
+} 
 
 function isFirstPage() {
 	global $multipage;
@@ -407,7 +432,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 1568, 9999 );
+		/* set_post_thumbnail_size( 1568, 9999 ); */
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(

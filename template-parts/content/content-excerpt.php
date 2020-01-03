@@ -14,7 +14,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php twentynineteen_post_thumbnail(); ?>
+	<figure class="post-thumbnail">
+		<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<?php echoPostThumbnail('post-thumbnail', true); ?>
+		</a>
+	</figure>
 	<?php
 		$categories = get_the_category();
 		$output = '<div class="postCategories">';
