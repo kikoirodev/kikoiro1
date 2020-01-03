@@ -100,7 +100,7 @@ function echoPostThumbnail($sizeKey, $useSrcSet=false, $classes='') {
 	$tid = get_post_thumbnail_id();
 	$url1x = wp_get_attachment_image_src($tid, $sizeKey);
 	$alt = get_post_meta($tid, '_wp_attachment_image_alt', true);
-	$classNames = 'lazyload';
+	$classNames = 'lazyload postThumbs';
 	if (strlen($classes) != 0) {
 		$classNames .= ' ' . $classes;
 	}
