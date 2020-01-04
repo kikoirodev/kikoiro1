@@ -163,7 +163,7 @@ get_header();
 
             <div class="person">
                 <div class="avatar">
-                    <img src="https://kikoiro.com/wp-content/uploads/2019/10/square_face_w512.png" class="lazyload" alt="瀬川">
+                    <img src="https://kikoiro.com/wp-content/uploads/2019/10/square_face_w512.png" class="lazyload" alt="瀬川 勝盛">
                 </div>
                 <h2 class="name">
                     瀬川 勝盛
@@ -213,6 +213,23 @@ get_header();
                 </h2>
                 <div class="description">
                     <p>武蔵野音楽大学大学院修士課程ピアノ専攻。上智大学理工学部荒井研究室共同研究員。難聴者音楽感受研究所研究協力員。「片耳難聴における音楽の感受・音楽活動への影響」をテーマに研究を行う。物心つく前からの片耳難聴。</p>
+                </div>
+            </div>
+            
+            <div class="person">
+                <div class="avatar">
+                    <img src="https://kikoiro.com/wp-content/uploads/2019/10/square_face_w512.png" class="lazyload" alt="前川 あずさ">
+                </div>
+                <h2 class="name">
+                    前川 あずさ
+                    <div class="role">
+                        ライター
+                    </div>
+                </h2>
+                <div class="description">
+                    <p>1996年生まれ。聖心女子大学文学部哲学科卒。人事・給与業務のアウトソーシング企業勤務。哲学の視点から物事を捉えた執筆活動を行う。生まれつき右耳が聴こえない片耳難聴。</p>
+                    <hr/>
+                    <p class="message">自分自身では、片耳難聴はアイデンティティだと思っています。目に見えない、困り感を伝えづらい障害だからこそ、異なるひととひと同士の共生を考えるための、とてもよい素材になると考えています。等身大の体験や言葉を通して、ひとつでも多くのつながりをつくっていきたいです。</p>
                 </div>
             </div>
             
