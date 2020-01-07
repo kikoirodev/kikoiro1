@@ -18,6 +18,7 @@ import './p.js';
 import './annotation.js';
 import './process.js';
 import './detail-button.js';
+import './sources.js';
 /*
 import './h.js';
 */
