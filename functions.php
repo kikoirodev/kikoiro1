@@ -66,6 +66,7 @@ function kikoiro1RegisterBlocks() {
 			'process',
 			'detail-button',
 			'sources',
+			'author-profile.js',
 		));
 }
 
