@@ -2,18 +2,18 @@ import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/editor';
 import { getClassNameFromProperty } from './tools.js';
 
-registerBlockType( 'kikoiro1/interviewee-profile', {
-    title: 'インタビュイープロフィール（当事者本人）',
+registerBlockType( 'kikoiro1/author-profile', {
+    title: '序文（著者紹介）',
     icon: 'admin-users',
     category: 'kikoiro1',
     edit(props) {
         return (
             <div class={"interviewee_profile" + getClassNameFromProperty(props.attributes, "className") }>
-                <h4>お話を伺った方のプロフィール</h4>
                 <InnerBlocks 
-                            templateLock='all' 
+                            allowedBlocks={ [ 'core/paragraph' ] } 
+                            templateLock='' 
                             template={[
-                                [ 'core/list', {} ] 
+                                [ 'core/paragraph', {} ] 
                             ]}
                 />
             </div>
@@ -22,7 +22,6 @@ registerBlockType( 'kikoiro1/interviewee-profile', {
     save(props) {
         return (
             <div class={"interviewee_profile" + getClassNameFromProperty(props.attributes, "className") }>
-                <h4>お話を伺った方のプロフィール</h4>
                 <InnerBlocks.Content />
             </div>
         );
