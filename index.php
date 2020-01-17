@@ -79,7 +79,7 @@ get_header();
 			<div id="itemsContainer">
 				<div class="items">
 					<?php
-						query_posts('cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('new') . 
+						query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('new') . 
 									'&posts_per_page=6');
 						if ( have_posts() ) {
 							while ( have_posts() ) {

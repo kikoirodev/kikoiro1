@@ -163,7 +163,7 @@ function load_next_6posts_for_home() {
     	wp_send_json_error("NG");
 	}
 	else {
-		query_posts('cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('new') . '&posts_per_page=6&paged=2');
+		query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('new') . '&posts_per_page=6&paged=2');
 		$source = "";
 		if ( have_posts() ) {
 			while ( have_posts() ) {
