@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="448px" height="384px" viewBox="0 0 448 384" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+<svg viewBox="0 0 448 448" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>form</title>
-    <desc>Created with Sketch.</desc>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="form" transform="translate(0.000000, -32.000000)" fill-rule="nonzero">
             <path d="M432,32 C440.823,32 448,39.178 448,48 L448,400 C448,408.822 440.823,416 432,416 L16,416 C7.177,416 0,408.822 0,400 L0,48 C0,39.178 7.177,32 16,32 L432,32" id="Shape-Copy" fill="#613FB0"></path>
