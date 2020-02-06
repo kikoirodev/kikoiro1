@@ -53,6 +53,7 @@ get_header();
 					<a href="/category/all-about-uhl/uhl" class="thumb"><img src="/wp-content/themes/kikoiro1/assets/images/allAbout2d.jpg" data-srcset="/wp-content/themes/kikoiro1/assets/images/allAbout2d.jpg 1x, /wp-content/themes/kikoiro1/assets/images/allAbout2d@2x.jpg 2x" class="lazyload" alt="片耳難聴について" /></a>
 					<h3><a href="/category/all-about-uhl/uhl">片耳難聴について</a></h3>
 					<ul>
+						<li><a href="/causes-of-dizziness">原因（めまいを伴う病気）</a></li>
 						<li><a href="/difficulty-reason">片耳難聴が聞こえにくい理由（両耳聴効果について）</a></li>
 						<li><a href="/questionnaire-results">片耳難聴だと困る場面</a></li>
 						<li><a href="/language-development">ことばの発達や学業への影響</a></li>

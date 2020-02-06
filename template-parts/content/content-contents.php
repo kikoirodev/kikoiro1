@@ -33,7 +33,7 @@
 			<ol>
 				<li><span class="underConstruction">原因（子供の場合）<span class="comingSoon">coming soon!</span></span></li>
 				<li><span class="underConstruction">原因（大人の場合）<span class="comingSoon">coming soon!</span></span></li>
-				<li><span class="underConstruction">原因（めまいを伴う病気）<span class="comingSoon">coming soon!</span></span></li>
+				<li><a href="/causes-of-dizziness"><span class="title">原因（めまいを伴う病気）</span></a></li>
 				<li><a href="/difficulty-reason"><span class="title">片耳難聴が聞こえにくい理由（両耳聴効果について）</span></a></li>
 				<li><a href="/questionnaire-results"><span class="title">片耳難聴だと困る場面</span></a></li>
 				<li><a href="/language-development"><span class="title">ことばの発達や学業への影響</span></a></li>
