@@ -144,20 +144,9 @@ get_header();
                     </div>
                 </h2>
                 <div class="description"> 
-                    <p>早稲田大学卒業後、IT企業や制作会社を経て独立。様々なサイトやサービスを手がけている。片耳難聴者向け音楽プレーヤーアプリ「New Monaural」作者。先天性の片耳難聴者。<br/>きこいろでは公式サイトのデザイン、開発、ディレクション全般を担当。</p>
+                    <p>早稲田大学卒業後、IT企業や制作会社を経て独立。様々なサイトやサービスを手がけている。先天性の片耳難聴者。<br/>きこいろでは公式サイトのデザイン、開発、ディレクション全般を担当。</p>
                     <hr/>
                     <p class="message">きこいろは様々なバックグラウンドを持つ当事者たちが集まって制作されている点に独自性があり、それは他のサイトにはない強みです。片耳難聴者としての経験や知見を当事者自身が広めていくことで、世界を変えられる可能性があると思います。<br/>デザインを通じてそのチャレンジができれば嬉しいです</p>
-                </div>
-                <div class="web">
-                    <a href="https://www.emotionale.jp/">https://www.emotionale.jp/</a>
-                </div>
-                <div class="social">
-                    <a href="https://twitter.com/hiro_kimu" rel="nofollow" class="saboxplugin-icon-grey">
-                      <?php echoTwitterSvg("kimura"); ?>
-                    </a>
-                    <a href="https://www.facebook.com/hironobu.kimura" rel="nofollow" class="saboxplugin-icon-grey">
-                        <?php echoFacebookSvg("kimura"); ?>
-                    </a>
                 </div>
             </div>
 
