@@ -79,7 +79,6 @@ get_header();
             <?php
                 $items = array('<img src="https://kikoiro.com/wp-content/uploads/2019/10/okano-1.png" alt="岡野 由実" class="lazyload" />',
                     '<img src="https://kikoiro.com/wp-content/uploads/2019/10/asano.png" alt="麻野 美和" class="lazyload" />',
-                    '<img src="https://kikoiro.com/wp-content/uploads/2019/12/kimura.jpg" alt="木村 博信" class="lazyload" />',
                     '<img src="https://kikoiro.com/wp-content/uploads/2019/11/tsuji.png" alt="辻 慎也" class="lazyload" />',
                     '<img src="https://kikoiro.com/wp-content/uploads/2019/12/takaki.jpg" alt="高木 健" class="lazyload" />',
                     '<img src="https://kikoiro.com/wp-content/uploads/2019/12/mizuna.png" alt="みずな" class="lazyload" />');
