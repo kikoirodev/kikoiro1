@@ -137,7 +137,7 @@ get_header();
                 </div>
                 <h2 class="name">
                     <a href="https://kikoiro.com/author/hironobukimura/">
-                        木村 博信
+                        hirokimu
                     </a>
                     <div class="role">
                         ディレクター、デザイナー、デペロッパー
