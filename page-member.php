@@ -133,7 +133,7 @@ get_header();
 
             <div class="person">
                 <div class="avatar">
-                    <img src="https://kikoiro.com/wp-content/uploads/2019/12/kimura.jpg" class="lazyload" alt="木村 博信">
+                    <img src="https://kikoiro.com/wp-content/uploads/2019/10/square_face_w512.png" class="lazyload" alt="hirokimu">
                 </div>
                 <h2 class="name">
                     <a href="https://kikoiro.com/author/hironobukimura/">
