@@ -246,7 +246,7 @@ get_header();
         </div>
         <section id="recruiting">
             <h2>RECRUITING</h2>
-            <p class="normalLink">きこいろは上記の有志プロジェクトメンバーにより運営されています。一緒に企画運営を担ってくださる方、ボランティアでご協力下さる方を随時募集しております。ご希望の方は<a href="/join">入会案内</a>ページからお申し込みください。</p>
+            <p class="normalLink">きこいろは上記の有志プロジェクトメンバーにより運営されています。一緒に企画運営を担ってくださる方、ボランティアでご協力下さる方を随時募集しております。ご希望の方はこちらの<a href="https://docs.google.com/forms/d/e/1FAIpQLSdjrXp2-vWL0i8sqH6U1XTMixEzIsseorrC0sbFQZiy3pQZsw/viewform">お申し込みフォーム</a>よりご連絡ください。</p>
         </section>
         </section>
 	</main>
