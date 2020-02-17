@@ -2942,6 +2942,7 @@ div.point-list {
   div.point-list p {
     margin: 0 !important; }
   div.point-list ul {
+    padding-left: 1em !important;
     margin-bottom: 0 !important; }
     div.point-list ul li {
       margin-bottom: 0.5em !important; }
