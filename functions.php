@@ -309,6 +309,8 @@ function echoFacebookSvg($idBaseString) {
 	</svg>';
 }
 
+
+
 function getChevronRSvg() {
 	return '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" aria-labelledby="pageNext" role="img">
 	<title id="pageNext">次へ</title>
@@ -390,7 +392,6 @@ function new_excerpt_more($more) {
 	return '…';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
-
 
 /**
  * Twenty Nineteen only works in WordPress 4.7 or later.
