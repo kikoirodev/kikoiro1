@@ -20,22 +20,22 @@ get_header();
 </picture>
 </div>
 	<main id="main">
-	<section id="featured">
+		<section id="featured">
 		<?php 
-			/*
-	query_posts('cat=' . getNotNewsAndColumnCategoryIDsString(true));
-	if (have_posts()) {
-		the_post();
-		the_title( sprintf( '<div class="headline"><span class="new">NEW!</span><a href="%s" rel="bookmark"><span class="date">' . get_the_date() . "</span><", esc_url( get_permalink() ) ), '</a></div>' );
-	}
-	*/
-	echo '<h2>FEATURED</h2>';
-	query_posts('tag=new');
-	if (have_posts()) {
-		the_post();
-		get_template_part( 'template-parts/content/content-excerpt-more');
-	}
-	?>
+			query_posts('tag=new');
+			if (have_posts()) {
+				echo '<h2>FEATURED</h2>';
+				the_post();
+				get_template_part( 'template-parts/content/content-excerpt-more');
+			}
+			else {
+				query_posts('cat=' . getNotNewsAndColumnCategoryIDsString(true));
+				if (have_posts()) {
+					the_post();
+					the_title( sprintf( '<div class="headline"><span class="new">NEW!</span><a href="%s" rel="bookmark"><span class="date">' . get_the_date() . "</span><", esc_url( get_permalink() ) ), '</a></div>' );
+				}
+			}
+		?>
 		</section>
 		<section id="allAbout">
 			<h2 class="topSection"><a href="/category/all-about-uhl">片耳難聴のすべて</a><br/><span>片耳難聴の専門家による専門的なガイダンスとアドバイス</span></h2>
