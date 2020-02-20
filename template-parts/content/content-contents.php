@@ -22,8 +22,8 @@
 			<ol>
 			<?php 
 				$cat = get_category_by_slug('basic')->term_id;
-				$exclude = get_category_by_slug('allabout-subpage')->term_id;
-				query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
+				$exclude = getTagIdWithSlug('allabout_subpage');
+				query_posts('order=ASC&cat=' . $cat . '&tag__not_in=' . $exclude);
 				while ( have_posts() ) {
 					the_post();
 					get_template_part( 'template-parts/content/content', 'contents-allabout-menu' );
@@ -39,8 +39,8 @@
 			<ol>
 			<?php 
 				$cat = get_category_by_slug('uhl')->term_id;
-				$exclude = get_category_by_slug('allabout-subpage')->term_id;
-				query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
+				$exclude = getTagIdWithSlug('allabout_subpage');
+				query_posts('order=ASC&cat=' . $cat . '&tag__not_in=' . $exclude);
 				while ( have_posts() ) {
 					the_post();
 					get_template_part( 'template-parts/content/content', 'contents-allabout-menu' );
@@ -56,8 +56,8 @@
 			<ol>
 			<?php 
 				$cat = get_category_by_slug('hint')->term_id;
-				$exclude = get_category_by_slug('allabout-subpage')->term_id;
-				query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
+				$exclude = getTagIdWithSlug('allabout_subpage');
+				query_posts('order=ASC&cat=' . $cat . '&tag__not_in=' . $exclude);
 				while ( have_posts() ) {
 					the_post();
 					get_template_part( 'template-parts/content/content', 'contents-allabout-menu' );
