@@ -42,6 +42,7 @@
 			<ol>
 			<?php 
 				$cat = get_category_by_slug('uhl')->term_id;
+				$exclude = get_category_by_slug('allabout-subpage')->term_id;
 				query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
 				if ( have_posts() ) {
 					while ( have_posts() ) {
@@ -60,6 +61,7 @@
 			<ol>
 			<?php 
 				$cat = get_category_by_slug('hint')->term_id;
+				$exclude = get_category_by_slug('allabout-subpage')->term_id;
 				query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
 				if ( have_posts() ) {
 					while ( have_posts() ) {
