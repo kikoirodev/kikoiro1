@@ -13,7 +13,7 @@
 ?>
 <?php 
 	$title = get_the_title();
-	if (in_category('comingsoon')) {
+	if (has_tag('comingsoon')) {
 		echo '<li><span class="underConstruction">' . $title . '<span class="comingSoon">coming soon!</span></span></li>';
 	}
 	else {

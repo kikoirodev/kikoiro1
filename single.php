@@ -38,7 +38,8 @@ get_header();
 				}
 				elseif ( is_singular( 'post' ) ) {
 					// Previous/next post navigation.
-					$exclude = get_category_by_slug('comingsoon')->term_id;
+					$tag = get_term_by('slug', 'comingsoon', 'post_tag');
+					$exclude = $tag->term_id;
 					$source = get_the_post_navigation(
 						array(
 							'in_same_term' => true,
