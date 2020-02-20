@@ -23,7 +23,7 @@
 			<?php 
 				//query_posts('post_status=publish&cat=' . $cat);
 				$cat = get_category_by_slug('basic')->term_id;
-				query_posts('cat=' . $cat);
+				query_posts('order=ASC&cat=' . $cat);
 				if ( have_posts() ) {
 					while ( have_posts() ) {
 						the_post();
@@ -41,7 +41,7 @@
 			<ol>
 			<?php 
 				$cat = get_category_by_slug('uhl')->term_id;
-				query_posts('cat=' . $cat);
+				query_posts('order=ASC&cat=' . $cat);
 				if ( have_posts() ) {
 					while ( have_posts() ) {
 						the_post();
@@ -59,7 +59,7 @@
 			<ol>
 			<?php 
 				$cat = get_category_by_slug('hint')->term_id;
-				query_posts('cat=' . $cat);
+				query_posts('order=ASC&cat=' . $cat);
 				if ( have_posts() ) {
 					while ( have_posts() ) {
 						the_post();
