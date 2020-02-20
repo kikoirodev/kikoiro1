@@ -72,7 +72,7 @@ get_header();
 							echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
 						}
 						echo '</ul>';
-						if ($itemCount >= 6) {
+						if ($itemCount >= 5) {
 							echo '<div class="listBottom"><span class="showMore">Show More</span></div>';
 						}
 					?>
@@ -92,7 +92,7 @@ get_header();
 							$itemCount++;
 						}
 						echo '</ul>';
-						if ($itemCount >= 6) {
+						if ($itemCount >= 5) {
 							echo '<div class="listBottom"><span class="showMore">Show More</span></div>';
 						}
 					?>					
