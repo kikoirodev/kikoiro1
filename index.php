@@ -47,11 +47,10 @@ get_header();
 					<?php 
 						echo '<ul>';
 						$cat = get_category_by_slug('basic')->term_id;
-						$exclude = get_category_by_slug('allabout-subpage')->term_id;
-						query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
+						query_posts('order=ASC&cat=' . $cat);
 						while ( have_posts() ) {
 							the_post();
-							if (has_tag('comingsoon')) { continue; }
+							if (has_tag('comingsoon') || has_tag('allabout_subpage')) { continue; }
 							echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
 						}
 						echo '</ul>';
@@ -66,11 +65,10 @@ get_header();
 					<?php 
 						echo '<ul>';
 						$cat = get_category_by_slug('uhl')->term_id;
-						$exclude = get_category_by_slug('allabout-subpage')->term_id;
-						query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
+						query_posts('order=ASC&cat=' . $cat);
 						while ( have_posts() ) {
 							the_post();
-							if (has_tag('comingsoon')) { continue; }
+							if (has_tag('comingsoon') || has_tag('allabout_subpage')) { continue; }
 							echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
 						}
 						echo '</ul>';
@@ -85,12 +83,11 @@ get_header();
 					<?php 
 						echo '<ul>';
 						$cat = get_category_by_slug('hint')->term_id;
-						$exclude = get_category_by_slug('allabout-subpage')->term_id;
-						query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
+						query_posts('order=ASC&cat=' . $cat);
 						$itemCount = 0;
 						while ( have_posts() ) {
 							the_post();
-							if (has_tag('comingsoon')) { continue; }
+							if (has_tag('comingsoon') || has_tag('allabout_subpage')) { continue; }
 							echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
 							$itemCount++;
 						}
