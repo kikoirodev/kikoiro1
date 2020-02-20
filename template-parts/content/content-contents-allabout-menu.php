@@ -13,10 +13,9 @@
 ?>
 <?php 
 	$title = get_the_title();
-	if (get_post_status() === 'publish') {
-		echo '<li><a href="' . get_the_permalink() . '"><span class="title">' . $title  . '</span></a></li>';
+	if (in_category('comingsoon')) {
+		echo '<li><span class="underConstruction">' . $title . '<span class="comingSoon">coming soon!</span></span></li>';
 	}
 	else {
-		$title = str_replace("非公開: ", "", $title);
-		echo '<li><span class="underConstruction">' . $title . '<span class="comingSoon">coming soon!</span></span></li>';
+		echo '<li><a href="' . get_the_permalink() . '"><span class="title">' . $title  . '</span></a></li>';
 	}
