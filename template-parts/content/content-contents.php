@@ -21,15 +21,12 @@
 			<img src="/wp-content/themes/kikoiro1/assets/images/allAbout1d.jpg" data-srcset="/wp-content/themes/kikoiro1/assets/images/allAbout1d.jpg 1x, /wp-content/themes/kikoiro1/assets/images/allAbout1d@2x.jpg 2x" class="lazyload" alt="聞こえの基本" />
 			<ol>
 			<?php 
-				//query_posts('post_status=publish&cat=' . $cat);
 				$cat = get_category_by_slug('basic')->term_id;
 				$exclude = get_category_by_slug('allabout-subpage')->term_id;
 				query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
-				if ( have_posts() ) {
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'template-parts/content/content', 'contents-allabout-menu' );
-					}
+				while ( have_posts() ) {
+					the_post();
+					get_template_part( 'template-parts/content/content', 'contents-allabout-menu' );
 				}
 			?>
 			</ol>
@@ -44,11 +41,9 @@
 				$cat = get_category_by_slug('uhl')->term_id;
 				$exclude = get_category_by_slug('allabout-subpage')->term_id;
 				query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
-				if ( have_posts() ) {
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'template-parts/content/content', 'contents-allabout-menu' );
-					}
+				while ( have_posts() ) {
+					the_post();
+					get_template_part( 'template-parts/content/content', 'contents-allabout-menu' );
 				}
 			?>
 			</ol>
@@ -63,11 +58,9 @@
 				$cat = get_category_by_slug('hint')->term_id;
 				$exclude = get_category_by_slug('allabout-subpage')->term_id;
 				query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
-				if ( have_posts() ) {
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'template-parts/content/content', 'contents-allabout-menu' );
-					}
+				while ( have_posts() ) {
+					the_post();
+					get_template_part( 'template-parts/content/content', 'contents-allabout-menu' );
 				}
 			?>
 			</ol>

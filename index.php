@@ -44,34 +44,61 @@ get_header();
 					<a href="/category/all-about-uhl/basic" class="thumb"><img src="/wp-content/themes/kikoiro1/assets/images/allAbout1d.jpg" data-srcset="/wp-content/themes/kikoiro1/assets/images/allAbout1d.jpg 1x, /wp-content/themes/kikoiro1/assets/images/allAbout1d@2x.jpg 2x" class="lazyload" alt="聞こえの基本" /></a>
 					<h3><a href="/category/all-about-uhl/basic">聞こえの基本</a></h3>
 					<ul>
-						<li><a href="/hearing-mechanism">耳・聞こえの仕組み</a></li>
-						<li><a href="/audiogram">オージオグラムの読み方</a></li>
-						<li><a href="/symptom">難聴に伴う症状</a></li>
-					</ul>
+					<?php 
+						echo '<ul>';
+						$cat = get_category_by_slug('basic')->term_id;
+						$exclude = get_category_by_slug('allabout-subpage')->term_id;
+						query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
+						while ( have_posts() ) {
+							the_post();
+							if (has_tag('comingsoon')) { continue; }
+							echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+						}
+						echo '</ul>';
+						if ($itemCount >= 6) {
+							echo '<div class="listBottom"><span class="showMore">Show More</span></div>';
+						}
+					?>
 				</article>
 				<article class="allAboutCategory">
 					<a href="/category/all-about-uhl/uhl" class="thumb"><img src="/wp-content/themes/kikoiro1/assets/images/allAbout2d.jpg" data-srcset="/wp-content/themes/kikoiro1/assets/images/allAbout2d.jpg 1x, /wp-content/themes/kikoiro1/assets/images/allAbout2d@2x.jpg 2x" class="lazyload" alt="片耳難聴について" /></a>
 					<h3><a href="/category/all-about-uhl/uhl">片耳難聴について</a></h3>
-					<ul>
-						<li><a href="/causes-of-dizziness">原因（めまいを伴う病気）</a></li>
-						<li><a href="/difficulty-reason">片耳難聴が聞こえにくい理由（両耳聴効果について）</a></li>
-						<li><a href="/questionnaire-results">片耳難聴だと困る場面</a></li>
-						<li><a href="/language-development">ことばの発達や学業への影響</a></li>
-					</ul>
-					<!--<div class="listBottom"><span class="showMore">Show More</span></div>-->
+					<?php 
+						echo '<ul>';
+						$cat = get_category_by_slug('uhl')->term_id;
+						$exclude = get_category_by_slug('allabout-subpage')->term_id;
+						query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
+						while ( have_posts() ) {
+							the_post();
+							if (has_tag('comingsoon')) { continue; }
+							echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+						}
+						echo '</ul>';
+						if ($itemCount >= 6) {
+							echo '<div class="listBottom"><span class="showMore">Show More</span></div>';
+						}
+					?>
 				</article>
 				<article class="allAboutCategory">
 					<a href="/category/all-about-uhl/hint" class="thumb"><img src="/wp-content/themes/kikoiro1/assets/images/allAbout3d.jpg" data-srcset="/wp-content/themes/kikoiro1/assets/images/allAbout3d.jpg 1x, /wp-content/themes/kikoiro1/assets/images/allAbout3d@2x.jpg 2x" class="lazyload" alt="対応や対策" /></a>
 					<h3><a href="/category/all-about-uhl/hint">対応や対策</a></h3>
-					<ul>
-						<li><a href="/hint-for-family">家族が生活の中での工夫できること</a></li>
-						<li><a href="/hint-in-school">周りの人が学校生活で工夫できること</a></li>
-						<li><a href="/welfare">片耳難聴者が利用できる福祉制度</a></li>
-						<li><a href="/not-applicable">片耳難聴者が利用できない福祉制度</a></li>
-						<li><a href="/devices">片耳難聴に使える補聴機器</a></li>
-						<li><a href="/uhl-and-music">片耳難聴と音楽</a></li>						
-					</ul>
-					<div class="listBottom"><span class="showMore">Show More</span></div>
+					<?php 
+						echo '<ul>';
+						$cat = get_category_by_slug('hint')->term_id;
+						$exclude = get_category_by_slug('allabout-subpage')->term_id;
+						query_posts('order=ASC&cat=' . $cat . ',-' . $exclude);
+						$itemCount = 0;
+						while ( have_posts() ) {
+							the_post();
+							if (has_tag('comingsoon')) { continue; }
+							echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+							$itemCount++;
+						}
+						echo '</ul>';
+						if ($itemCount >= 6) {
+							echo '<div class="listBottom"><span class="showMore">Show More</span></div>';
+						}
+					?>					
 				</article>
 			</div>
 		</section>
