@@ -147,10 +147,17 @@ add_filter('get_image_tag_class','add_image_class');
 
 // exclude pages from search
 function wpb_search_filter($query) {
-	if ($query->is_search) {
-		$query->set('post_type', 'post');
+	if ( is_admin() || ! $query->is_main_query() ){
+		return;
+	}
+	$query->set('post_type', 'post');
+	if ($query->is_archive() || $query->is_search) {
 		$catUncategorized = get_category_by_slug('uncategorized')->term_id;
 		$query->set('cat', '' . $catUncategorized * -1);
+	}
+	if ($query->is_archive() || $query->is_search) {
+		$exclude = getTagIdWithSlug('comingsoon');
+		$query->set('tag__not_in', array($exclude));
 	}
 	return $query;
 }
