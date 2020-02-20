@@ -17,5 +17,6 @@
 		echo '<li><a href="' . get_the_permalink() . '"><span class="title">' . $title  . '</span></a></li>';
 	}
 	else {
+		$title = str_replace("非公開 ", "", $title);
 		echo '<li><span class="underConstruction">' . $title . '<span class="comingSoon">coming soon!</span></span></li>';
 	}
