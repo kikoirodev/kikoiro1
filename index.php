@@ -47,7 +47,7 @@ get_header();
 					<?php 
 						echo '<ul>';
 						$cat = get_category_by_slug('basic')->term_id;
-						query_posts('order=ASC&cat=' . $cat);
+						query_posts('posts_per_page=9999&order=ASC&cat=' . $cat);
 						$itemCount = 0;
 						while ( have_posts() ) {
 							the_post();
@@ -67,7 +67,7 @@ get_header();
 					<?php 
 						echo '<ul>';
 						$cat = get_category_by_slug('uhl')->term_id;
-						query_posts('order=ASC&cat=' . $cat);
+						query_posts('posts_per_page=9999&order=ASC&cat=' . $cat);
 						$itemCount = 0;
 						while ( have_posts() ) {
 							the_post();
@@ -87,7 +87,7 @@ get_header();
 					<?php 
 						echo '<ul>';
 						$cat = get_category_by_slug('hint')->term_id;
-						query_posts('order=ASC&cat=' . $cat);
+						query_posts('posts_per_page=9999&order=ASC&cat=' . $cat);
 						$itemCount = 0;
 						while ( have_posts() ) {
 							the_post();
