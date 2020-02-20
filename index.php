@@ -48,13 +48,15 @@ get_header();
 						echo '<ul>';
 						$cat = get_category_by_slug('basic')->term_id;
 						query_posts('order=ASC&cat=' . $cat);
+						$itemCount = 0;
 						while ( have_posts() ) {
 							the_post();
 							if (has_tag('comingsoon') || has_tag('allabout_subpage')) { continue; }
 							echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+							$itemCount++;
 						}
 						echo '</ul>';
-						if ($itemCount >= 6) {
+						if ($itemCount >= 5) {
 							echo '<div class="listBottom"><span class="showMore">Show More</span></div>';
 						}
 					?>
@@ -66,10 +68,12 @@ get_header();
 						echo '<ul>';
 						$cat = get_category_by_slug('uhl')->term_id;
 						query_posts('order=ASC&cat=' . $cat);
+						$itemCount = 0;
 						while ( have_posts() ) {
 							the_post();
 							if (has_tag('comingsoon') || has_tag('allabout_subpage')) { continue; }
 							echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+							$itemCount++;
 						}
 						echo '</ul>';
 						if ($itemCount >= 5) {
