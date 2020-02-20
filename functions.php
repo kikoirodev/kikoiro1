@@ -150,12 +150,13 @@ function wpb_search_filter($query) {
 	if ( is_admin() || ! $query->is_main_query() ){
 		return;
 	}
-	$query->set('post_type', 'post');
 	if ($query->is_archive() || $query->is_search) {
+		$query->set('post_type', 'post');
 		$catUncategorized = get_category_by_slug('uncategorized')->term_id;
 		$query->set('cat', '' . $catUncategorized * -1);
 	}
 	if ($query->is_archive() || $query->is_search) {
+		$query->set('post_type', 'post');
 		$exclude = getTagIdWithSlug('comingsoon');
 		$query->set('tag__not_in', array($exclude));
 	}
