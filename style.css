@@ -3107,3 +3107,6 @@ div.annotation ul {
     color: #ECA07E;
     border-color: #ECA07E;
     cursor: pointer; }
+
+div.topContainer #main #newsAndColumn #itemsContainer div.items article.tag-new {
+  display: none; }

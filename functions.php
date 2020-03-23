@@ -171,7 +171,7 @@ function load_next_6posts_for_home() {
     	wp_send_json_error("NG");
 	}
 	else {
-		query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('new') . '&posts_per_page=6&paged=2');
+		query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('') . '&posts_per_page=6&paged=2');
 		$source = "";
 		if ( have_posts() ) {
 			while ( have_posts() ) {
@@ -261,7 +261,7 @@ function countPostsInNewsAndColumn($excludePostsWithNewTag = false) {
 	return $count - $countWithNewTag;
 }
 
-function echoKikoiroPager($pagerRequired, $needKeepVerticalSpace = false) {
+function echoKikoiroPager($pagerRequired, $needKeepVerticalSpace = false, $insertCategoryPath = null) {
 	if ($pagerRequired) {
 		$s = get_the_posts_pagination(
 			array(
@@ -271,7 +271,12 @@ function echoKikoiroPager($pagerRequired, $needKeepVerticalSpace = false) {
 			)
 		);
 		$s2 = preg_replace('/<h2[^<]+<\/h2>/', '', $s);
-		echo $s2;
+		if ($insertCategoryPath) {
+			echo preg_replace('#("https?://[^/]+/)([^"]*)#', '$1' . $insertCategoryPath . '$2', $s2);
+		}
+		else {
+			echo $s2;
+		}
 	}
 	else if ($needKeepVerticalSpace) {
 		echo "<nav class='pagination'><div class='nav-links'></div></nav>";

@@ -12,7 +12,7 @@
 */
 get_header();
 ?>
-<div id="container">
+<div id="container" class="topContainer">
 <div id="topImage">
 <picture>
   <source media="(min-width: 641px)" srcset="/wp-content/themes/kikoiro1/assets/images/mainImage.jpg, /wp-content/themes/kikoiro1/assets/images/mainImage.jpg 1x, /wp-content/themes/kikoiro1/assets/images/mainImage@2x.jpg 2x" />
@@ -108,25 +108,27 @@ get_header();
 			<div id="itemsContainer">
 				<div class="items">
 					<?php
-						query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('new') . '&posts_per_page=6');
+						query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('') . '&posts_per_page=12');
+						$limit = 0;
 						if ( have_posts() ) {
 							while ( have_posts() ) {
 								the_post();
+								if ($limit == 6) continue;
 								get_template_part( 'template-parts/content/content-excerpt' );
+								$limit++;
 							}
 						}
 						else {
 							get_template_part( 'template-parts/content/content', 'none' );
 						}
-					?>
-				</div>
-				<div id="itemsFooter">
-					<?php
+	
+						echo '</div>';
+						echo '<div id="itemsFooter">';
 						$count = countPostsInNewsAndColumn(true);
 						if ($count > 6) {
 							echo '<span class="showMore" id="showMoreNews">Show More</span>';
 						}
-						echoKikoiroPager($count > 12, true);
+						echoKikoiroPager($count > 12, true, "category/news-and-column/");
 					?>
 				</div>
 			</div>
