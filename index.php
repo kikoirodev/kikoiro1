@@ -37,7 +37,7 @@ get_header();
 				query_posts('cat=' . getNotNewsAndColumnCategoryIDsString(true));
 				if (have_posts()) {
 					the_post();
-					the_title( sprintf( '<div class="headline"><span class="new">NEW!</span><a href="%s" rel="bookmark"><span class="date">' . get_the_date() . "</span>", esc_url( get_permalink() ) ), '</a></div>' );
+					the_title( sprintf( '<div class="headline"><span class="new">NEW!</span><a href="%s" rel="bookmark"><span class="date">' . get_the_date() . "</span>&nbsp;", esc_url( get_permalink() ) ), '</a></div>' );
 				}
 			}
 		?>
