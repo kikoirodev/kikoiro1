@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: the Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.49
+Version: 2.50
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -622,9 +622,11 @@ div.richTitlePart {
 			font-size: 0;
 			a {
 				transition: opacity 0.3s;
-				&:hover {
-					opacity: 0.7;
-					cursor: pointer;
+				@media (hover: hover) {
+					&:hover {
+						opacity: 0.7;
+						cursor: pointer;
+					}
 				}
 				img {
 					width: 500px;
@@ -743,8 +745,10 @@ div.richTitlePart {
 				background: #ffffff;
 				box-sizing: border-box;
 				transition: opacity 0.3s;
-				&:hover {
-					opacity: 0.7;
+				@media (hover: hover) {
+					&:hover {
+						opacity: 0.7;
+					}
 				}
 				img {
 					width: 280px;
@@ -926,10 +930,12 @@ div.items {
 			height: 210px;
 			background: #ffffff;
 			a {
-				transition: opacity 0.3s;	
-				&:hover {
-					opacity: 0.7;
-					cursor: pointer;
+				transition: opacity 0.3s;
+				@media (hover: hover) {
+					&:hover {
+						opacity: 0.7;
+						cursor: pointer;
+					}
 				}
 				img {
 					width: 280px;
@@ -1143,9 +1149,11 @@ a.newTag, span.newTag {
 			li {
 				a {
 					transition: opacity 0.2s;	
-					&:hover {
-						cursor: pointer;
-						opacity: 0.7;
+					@media (hover: hover) {
+						&:hover {
+							cursor: pointer;
+							opacity: 0.7;
+						}
 					}
 				}
 				margin: 0 0px 0.5em 0px;
@@ -1178,12 +1186,14 @@ section.widget_top-posts {
 					max-width: 48px !important; 
 					width: 48px !important;
 					height: 48px !important;
-					transition: opacity 0.3s;	
-					&:hover {
-						cursor: pointer;
-						opacity: 0.7;
+					transition: opacity 0.3s;
+					@media (hover: hover) {
+						&:hover {
+							cursor: pointer;
+							opacity: 0.7;
+						}
+						float: none;
 					}
-					float: none;
 				}
 			}
 			div.widgets-list-layout-links {
@@ -1213,10 +1223,12 @@ section.widget_top-posts {
 					width: 48px;
 					height: 48px;
 					margin-right: 8px;
-					transition: opacity 0.3s;	
-					&:hover {
-						cursor: pointer;
-						opacity: 0.7;
+					transition: opacity 0.3s;
+					@media (hover: hover) {
+						&:hover {
+							cursor: pointer;
+							opacity: 0.7;
+						}
 					}
 				}
 				&.wpp-post-title {
@@ -1235,10 +1247,12 @@ div.heateor_sss_sharing_container {
 		li {
 			width: 32px !important;
 			i {
-				transition: opacity 0.3s;	
-				&:hover {
-					cursor: pointer;
-					opacity: 0.7;
+				transition: opacity 0.3s;
+				@media (hover: hover) {
+					&:hover {
+						cursor: pointer;
+						opacity: 0.7;
+					}
 				}
 				margin: 0 !important;
 				float: none !important;
@@ -1499,10 +1513,12 @@ footer {
 							width: 240px; 
 							height: 44px;
 							line-height: 44px;
-							transition: opacity 0.3s;	
-							&:hover {
-								cursor: pointer !important;
-								opacity: 0.7;
+							transition: opacity 0.3s;
+							@media (hover: hover) {
+								&:hover {
+									cursor: pointer !important;
+									opacity: 0.7;
+								}
 							}
 						}
 					}
@@ -2278,10 +2294,12 @@ ul.normalLink, p.normalLink, div.normalLink, span.normalLink {
 	
 		font-weight: bold;
 		padding: 8px 8px 8px 8px;
-		transition: opacity 0.3s;	
-		&:hover {
-			opacity: 0.7;
-			cursor: pointer;
+		transition: opacity 0.3s;
+		@media (hover: hover) {
+			&:hover {
+				opacity: 0.7;
+				cursor: pointer;
+			}
 		}
 	}
 }
@@ -3167,9 +3185,11 @@ iframe {
 								text-decoration: underline;
 								color: $defaultTextColor;
 								transition: color 0.3s;	
-								&:hover {
-									color: $featureColor;
-									cursor: pointer;
+								@media (hover: hover) {
+									&:hover {
+										color: $featureColor;
+										cursor: pointer;
+									}
 								}
 							}
 						}
@@ -3211,10 +3231,12 @@ iframe {
 				}
 				article {
 					a {
-						transition: opacity 0.3s;	
-						&:hover {
-							opacity: 0.7;
-							cursor: pointer;
+						transition: opacity 0.3s;
+						@media (hover: hover) {
+							&:hover {
+								opacity: 0.7;
+								cursor: pointer;
+							}
 						}
 						img {
 							width: 100%;
@@ -3806,8 +3828,10 @@ div.topContainer {
 
 		text-decoration: none;
 		transition: opacity 0.3s;
-		&:hover {
-			opacity: 0.7;
+		@media (hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
 		}
 		div {
 

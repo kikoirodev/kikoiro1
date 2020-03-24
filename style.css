@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: the Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.49
+Version: 2.50
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -604,9 +604,10 @@ div.richTitlePart {
         -webkit-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s; }
-        #featured article figure a:hover {
-          opacity: 0.7;
-          cursor: pointer; }
+        @media (hover: hover) {
+          #featured article figure a:hover {
+            opacity: 0.7;
+            cursor: pointer; } }
         #featured article figure a img {
           width: 500px;
           height: auto;
@@ -711,8 +712,9 @@ div.richTitlePart {
         -webkit-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s; }
-        #allAbout div.allAboutItems article.allAboutCategory a.thumb:hover {
-          opacity: 0.7; }
+        @media (hover: hover) {
+          #allAbout div.allAboutItems article.allAboutCategory a.thumb:hover {
+            opacity: 0.7; } }
         #allAbout div.allAboutItems article.allAboutCategory a.thumb img {
           width: 280px;
           height: auto;
@@ -864,9 +866,10 @@ div.items {
         -webkit-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s; }
-        div.items article figure a:hover {
-          opacity: 0.7;
-          cursor: pointer; }
+        @media (hover: hover) {
+          div.items article figure a:hover {
+            opacity: 0.7;
+            cursor: pointer; } }
         div.items article figure a img {
           width: 280px;
           height: 210px;
@@ -1054,9 +1057,10 @@ a.newTag, span.newTag {
         -webkit-transition: opacity 0.2s;
         -o-transition: opacity 0.2s;
         transition: opacity 0.2s; }
-        #sideBar section ul.mediaList li a:hover {
-          cursor: pointer;
-          opacity: 0.7; }
+        @media (hover: hover) {
+          #sideBar section ul.mediaList li a:hover {
+            cursor: pointer;
+            opacity: 0.7; } }
     #sideBar section ul.mediaList img {
       height: auto;
       max-width: 120px;
@@ -1081,11 +1085,13 @@ section.widget_top-posts ul {
       height: 48px !important;
       -webkit-transition: opacity 0.3s;
       -o-transition: opacity 0.3s;
-      transition: opacity 0.3s;
-      float: none; }
-      section.widget_top-posts ul li a img:hover {
-        cursor: pointer;
-        opacity: 0.7; }
+      transition: opacity 0.3s; }
+      @media (hover: hover) {
+        section.widget_top-posts ul li a img {
+          float: none; }
+          section.widget_top-posts ul li a img:hover {
+            cursor: pointer;
+            opacity: 0.7; } }
     section.widget_top-posts ul li div.widgets-list-layout-links {
       float: none;
       width: auto;
@@ -1109,9 +1115,10 @@ section.widget_top-posts ul {
         -webkit-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s; }
-        #wpp-8 ul li a img:hover {
-          cursor: pointer;
-          opacity: 0.7; }
+        @media (hover: hover) {
+          #wpp-8 ul li a img:hover {
+            cursor: pointer;
+            opacity: 0.7; } }
 
 /* SNS */
 div.heateor_sss_sharing_container {
@@ -1126,9 +1133,10 @@ div.heateor_sss_sharing_container {
       margin: 0 !important;
       float: none !important;
       display: inline-block !important; }
-      div.heateor_sss_sharing_container ul li i:hover {
-        cursor: pointer;
-        opacity: 0.7; }
+      @media (hover: hover) {
+        div.heateor_sss_sharing_container ul li i:hover {
+          cursor: pointer;
+          opacity: 0.7; } }
     div.heateor_sss_sharing_container ul li .heateor_sss_square_count {
       display: inline-block !important;
       font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "メイリオ", "ヒラギノ角ゴ Pro", "Meiryo", "メイリオ", "ＭＳ Pゴシック", "MS PGothic", sans-serif !important;
@@ -1354,9 +1362,10 @@ footer {
             -webkit-transition: opacity 0.3s;
             -o-transition: opacity 0.3s;
             transition: opacity 0.3s; }
-            #main section.article article div.entry-content p.buttonContainer a:hover {
-              cursor: pointer !important;
-              opacity: 0.7; }
+            @media (hover: hover) {
+              #main section.article article div.entry-content p.buttonContainer a:hover {
+                cursor: pointer !important;
+                opacity: 0.7; } }
         #main section.article article div.entry-content p a {
           border-bottom: 0;
           -webkit-transition: opacity 0.2s;
@@ -2011,9 +2020,10 @@ ul.normalLink a, p.normalLink a, div.normalLink a, #main section.article article
       background-size: 6px 11px;
       margin: 0 6px 0 0;
       white-space: pre-wrap; }
-    .detailButton a:hover {
-      opacity: 0.7;
-      cursor: pointer; }
+    @media (hover: hover) {
+      .detailButton a:hover {
+        opacity: 0.7;
+        cursor: pointer; } }
 
 .process {
   font-size: 18px;
@@ -2719,9 +2729,10 @@ iframe {
           -webkit-transition: color 0.3s;
           -o-transition: color 0.3s;
           transition: color 0.3s; }
-          #main.about #page section article p.origin a:hover {
-            color: #871b1b;
-            cursor: pointer; }
+          @media (hover: hover) {
+            #main.about #page section article p.origin a:hover {
+              color: #871b1b;
+              cursor: pointer; } }
     #main.about #page section h3 {
       font-size: 14px;
       text-align: center;
@@ -2764,9 +2775,10 @@ iframe {
       -webkit-transition: opacity 0.3s;
       -o-transition: opacity 0.3s;
       transition: opacity 0.3s; }
-      #main.about #page section article a:hover {
-        opacity: 0.7;
-        cursor: pointer; }
+      @media (hover: hover) {
+        #main.about #page section article a:hover {
+          opacity: 0.7;
+          cursor: pointer; } }
       #main.about #page section article a img {
         width: 100%; }
     #main.about #page section article img {
@@ -3254,8 +3266,9 @@ div.topContainer #main #newsAndColumn #itemsContainer div.items article.tag-new 
       #contentBanner a {
         width: 100%;
         margin-bottom: 16px; } }
-    #contentBanner a:hover {
-      opacity: 0.7; }
+    @media (hover: hover) {
+      #contentBanner a:hover {
+        opacity: 0.7; } }
     #contentBanner a div {
       height: 156px;
       position: relative;
