@@ -1,0 +1,32 @@
+{
+  "name": "kikoiro1",
+  "version": "1.0.0",
+  "description": "Custom WordPress Theme",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://hirokimu@github.com/hirokimu/kikoiro1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hirokimu/kikoiro1/issues"
+  },
+  "homepage": "https://github.com/hirokimu/kikoiro1#readme",
+  "dependencies": {
+    "autoprefixer": "^9.7.5",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0"
+  },
+  "scripts": {
+    "sass:dev": "node-sass -w ./ -o ./css",
+    "sass": "node-sass ./style.scss ./style.css",
+    "post": "postcss ./style.css -r --no-map -u autoprefixer",
+    "build": "npm-run-all -s sass post"
+  },
+  "browserslist": [
+    "IE >= 11",
+    "last 4 versions"
+  ]
+}

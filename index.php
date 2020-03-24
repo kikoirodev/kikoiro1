@@ -20,6 +20,11 @@ get_header();
 </picture>
 </div>
 	<main id="main">
+		<section id="contentBanner">
+			<a href="/about/cafe"><div id="banner-cafe"><div><p class="description">気軽に参加できる・話せる交流会</p><p class="service">片耳難聴Cafe</p></div></div></a>
+			<a href="/about/lecture"><div id="banner-lecture"><div><p class="description">正しい知識と理解を広めるための勉強会</p><p class="service">片耳難聴レクチャー</p></div></div></a>
+			<a href="/join"><div id="banner-join"><p class="service">MEMBERSHIP</p><p class="description">入会のご案内</p></div></a>
+		</section>
 		<section id="featured">
 		<?php 
 			query_posts('tag=new');
