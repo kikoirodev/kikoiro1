@@ -50,7 +50,7 @@ $(function() {
 				url: "/wp-admin/admin-ajax.php",
 				data: {
 					action: 'mark_message_as_read',
-					message_id: "12345"
+					message_id: "com.kikoiro.load-next-6posts-for-home"
 				},
 				success: function (output) {
 					items.append(output.data);

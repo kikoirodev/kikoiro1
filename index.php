@@ -29,7 +29,7 @@ get_header();
 		<?php 
 			query_posts('tag=new');
 			if (have_posts()) {
-				echo '<h2>FEATURED</h2>';
+				echo '<h2 id="featuredPost">FEATURED</h2>';
 				the_post();
 				get_template_part( 'template-parts/content/content-excerpt-more');
 			}
@@ -113,27 +113,35 @@ get_header();
 			<div id="itemsContainer">
 				<div class="items">
 					<?php
-						query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('') . '&posts_per_page=12');
-						$limit = 0;
+						$maxInitialPostsToShow = 6; //初期表示件数。
+						$postsPerPage = 12; //1ページに表示する最大件数
+						//postsPerPage + 1をクエリし、ページャーが必要かどうかを判断する
+						query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . 
+									'&tag__not_in=' . getTagIdWithSlug('') . 
+									'&posts_per_page=' . ($postsPerPage + 1));
+						$addedPostCount = 0;
+						$loadedPostCount = 0;
 						if ( have_posts() ) {
 							while ( have_posts() ) {
 								the_post();
-								if ($limit == 6) continue;
-								get_template_part( 'template-parts/content/content-excerpt' );
-								$limit++;
+								if ($addedPostCount < $maxInitialPostsToShow) {
+									if (!has_tag('new')) {
+										get_template_part( 'template-parts/content/content-excerpt' );
+										$addedPostCount++;
+									}
+								}
+								$loadedPostCount++;
 							}
 						}
 						else {
 							get_template_part( 'template-parts/content/content', 'none' );
 						}
-	
 						echo '</div>';
-						echo '<div id="itemsFooter">';
-						$count = countPostsInNewsAndColumn(true);
-						if ($count > 6) {
+						echo '<div id="itemsFooter">';				
+						if ($loadedPostCount > $maxInitialPostsToShow) {
 							echo '<span class="showMore" id="showMoreNews">Show More</span>';
 						}
-						echoKikoiroPager($count > 12, true, "category/news-and-column/");
+						echoKikoiroPager($loadedPostCount > $postsPerPage, true, "category/news-and-column/");
 					?>
 				</div>
 			</div>

@@ -165,17 +165,27 @@ function wpb_search_filter($query) {
 add_filter('pre_get_posts','wpb_search_filter');
 
 // ajax request
-function load_next_6posts_for_home() {
+function load_next_posts_for_home() {
 	$message_id = $_REQUEST['message_id'];
-	if ($message_id != "12345") {
+	if ($message_id != "com.kikoiro.load-next-6posts-for-home") {
     	wp_send_json_error("NG");
 	}
 	else {
-		query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . '&tag__not_in=' . getTagIdWithSlug('') . '&posts_per_page=6&paged=2');
+		query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . 
+					'&tag__not_in=' . getTagIdWithSlug('') . 
+					'&posts_per_page=12');
 		$source = "";
+		$addedPostCount = 0;
+		$maxInitialPostsToShow = 6;
 		if ( have_posts() ) {
 			while ( have_posts() ) {
 				the_post();
+				if ($addedPostCount < $maxInitialPostsToShow) {
+					if (!has_tag('new')) {
+						$addedPostCount++;
+					}
+					continue;
+				}
 				ob_start();
 				get_template_part('template-parts/content/content-excerpt');
 				$return = ob_get_contents();
@@ -186,8 +196,8 @@ function load_next_6posts_for_home() {
     	wp_send_json_success($source);
 	}
 }
-add_action('wp_ajax_mark_message_as_read', 'load_next_6posts_for_home');
-add_action('wp_ajax_nopriv_mark_message_as_read', 'load_next_6posts_for_home');
+add_action('wp_ajax_mark_message_as_read', 'load_next_posts_for_home');
+add_action('wp_ajax_nopriv_mark_message_as_read', 'load_next_posts_for_home');
 
 // get category ids string in News & Column
 function getNotNewsAndColumnCategoryIDsString($isNegative) {
