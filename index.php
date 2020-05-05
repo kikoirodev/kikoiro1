@@ -31,7 +31,7 @@ get_header();
 			if (have_posts()) {
 				echo '<h2 id="featuredPost">FEATURED</h2>';
 				the_post();
-				get_template_part( 'template-parts/content/content-excerpt-more');
+				get_template_part('template-parts/content/content-excerpt-more');
 			}
 			else {
 				query_posts('cat=' . getNotNewsAndColumnCategoryIDsString(true));
