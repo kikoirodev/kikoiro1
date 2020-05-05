@@ -96,7 +96,7 @@ get_header();
             <ul>
                 <li><a href="https://www.phonak.com/jp/ja.html">ソノヴァ・ジャパン株式会社</a></li>
                 <li>デザイン・イラスト制作： 荒屋デザイン 小野寺真希</li>
-                <li>デサイトデザイン・開発・ディレクション： 木村博信</li>
+                <li>サイトデザイン・開発・ディレクション： 木村博信</li>
             </ul>
         </section>
     </section>
