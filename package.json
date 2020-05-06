@@ -5,14 +5,14 @@
   "main": "postcss.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://hirokimu@github.com/hirokimu/kikoiro1.git"
+    "url": "git+https://github.com/kikoirodev/kikoiro1"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hirokimu/kikoiro1/issues"
+    "url": "https://github.com/kikoirodev/kikoiro1/issues"
   },
-  "homepage": "https://github.com/hirokimu/kikoiro1#readme",
+  "homepage": "https://github.com/kikoirodev/kikoiro1#readme",
   "dependencies": {
     "autoprefixer": "^9.7.5",
     "node-sass": "^4.13.1",
