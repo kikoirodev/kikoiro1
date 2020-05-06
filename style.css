@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
 Theme Name: kikoiro1
-Author: the Hironobu Kimura
+Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
 Version: 2.52
 
@@ -3230,12 +3230,6 @@ div.annotation ul {
     border-color: #ECA07E;
     cursor: pointer; }
 
-div.topContainer #main #newsAndColumn #itemsContainer div.items article.tag-new {
-  display: none; }
-
-/*
-
-*/
 #contentBanner {
   display: -webkit-box;
   display: -ms-flexbox;
