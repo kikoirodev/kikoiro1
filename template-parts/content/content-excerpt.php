@@ -14,22 +14,24 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<a href="<?php echo esc_url( get_permalink() ); ?>">
-		<figure class="post-thumbnail">
+	<figure class="post-thumbnail">
+		<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php echoPostThumbnail('post-thumbnail', true); ?>
-		</figure>
-		<?php
-			$categories = get_the_category();
-			$output = '<div class="postCategories">';
-			if ( $categories ) {
-				foreach ( $categories as $category ) {
-					$output .= '<span class="categoryTag">' . $category->cat_name . '</span>';
-				}
+		</a>
+	</figure>
+	<?php
+		$categories = get_the_category();
+		if ( $categories ) {
+			foreach ( $categories as $category ) {
+				$output = '<a class="postCategories" href="' . get_category_link( $category->term_id ) . '">';
+				$output .= '<span class="categoryTag">' . $category->cat_name . '</span>';
+				$output .= '</a>';
+				echo $output;
 			}
-			$output .= '</div>';
-			echo $output;
-			the_title( '<h3 class="entry-title"><span>', '</span></h3>' );
-		?>
+		}
+	?>
+	<a href="<?php echo esc_url( get_permalink() ); ?>">
+		<?php the_title( '<h3 class="entry-title"><span>', '</span></h3>' ); ?>
 		<?php echo wp_trim_excerpt(); ?>
 		<div class="postDate"><?php echo get_the_date(); ?></div>
 	</a>

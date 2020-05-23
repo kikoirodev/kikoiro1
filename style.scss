@@ -924,32 +924,32 @@ div.items {
 		display: block;
 		width: 280px;
 		line-height: 150%;
-
-		> a {
+		cursor: pointer;
+		a {
 			color: #000000;
-			cursor: pointer;
 			display: block;
-			@media (hover: hover) {
-				&:hover {
-					figure {
-							opacity: 0.7;
-					}
-					h3 span {
-						border-bottom: 1px solid $underLineGray;
-					}
+		}
+		@media (hover: hover) {
+			&:hover {
+				figure {
+					opacity: 0.7;
+				}
+				h3 span {
+					border-bottom: 1px solid $underLineGray;
 				}
 			}
 		}
-
 		figure {
 			margin: 0;
 			height: 210px;
 			background: #ffffff;
 			transition: opacity 0.3s;
-			img {
-				width: 280px;
-				height: 210px;
-				object-fit: cover;
+			a {
+				img {
+					width: 280px;
+					height: 210px;
+					object-fit: cover;
+				}
 			}
 		}
 		h3 {
@@ -1094,6 +1094,10 @@ span.showMore {
 
 div.postCategories {
 	margin: 12px 0 4px 0;
+}
+a.postCategories {
+	display: block;
+	padding: 12px 0 4px 0;
 }
 a.categoryTag,
 span.categoryTag {
@@ -2437,11 +2441,11 @@ iframe {
 
 		article {
 			width: calc((100vw - 36px) / 2);
-			a {
-				figure {
+			figure {
 				margin: 0;
 				height: calc(((100vw - 36px) / 2) / 4 * 3);
 				background: transparent;
+				a {
 					img {
 						width: calc((100vw - 36px) / 2);
 						height: calc(((100vw - 36px) / 2) / 4 * 3);
