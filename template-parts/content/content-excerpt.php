@@ -21,14 +21,14 @@
 	</figure>
 	<?php
 		$categories = get_the_category();
+		$output = '<div class="postCategories">';
 		if ( $categories ) {
 			foreach ( $categories as $category ) {
-				$output = '<a class="postCategories" href="' . get_category_link( $category->term_id ) . '">';
-				$output .= '<span class="categoryTag">' . $category->cat_name . '</span>';
-				$output .= '</a>';
-				echo $output;
+				$output .= '<a href="' . get_category_link( $category->term_id ) . '" class="categoryTag">' . $category->cat_name . '</a>';
 			}
 		}
+		$output .= '</div>';
+		echo $output;
 	?>
 	<a href="<?php echo esc_url( get_permalink() ); ?>">
 		<?php the_title( '<h3 class="entry-title"><span>', '</span></h3>' ); ?>

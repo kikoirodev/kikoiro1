@@ -857,11 +857,11 @@ div.items {
     margin: 0 0 48px 0;
     display: block;
     width: 280px;
-    line-height: 150%;
-    cursor: pointer; }
+    line-height: 150%; }
     div.items article a {
       color: #000000;
-      display: block; }
+      display: inline-block;
+      cursor: pointer; }
       @media (hover: hover) {
       div.items article:hover figure {
           opacity: 0.7; }
@@ -1002,12 +1002,7 @@ span.showMore {
 div.postCategories {
   margin: 12px 0 4px 0; }
 
-a.postCategories {
-  display: block;
-  padding: 12px 0 4px 0; }
-
-a.categoryTag,
-span.categoryTag {
+a.categoryTag {
   background-color: #CCECC6;
   font-size: 11px;
   display: inline-block;

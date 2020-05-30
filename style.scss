@@ -924,10 +924,10 @@ div.items {
 		display: block;
 		width: 280px;
 		line-height: 150%;
-		cursor: pointer;
 		a {
 			color: #000000;
-			display: block;
+			display: inline-block;
+			cursor: pointer;
 		}
 		@media (hover: hover) {
 			&:hover {
@@ -1095,12 +1095,7 @@ span.showMore {
 div.postCategories {
 	margin: 12px 0 4px 0;
 }
-a.postCategories {
-	display: block;
-	padding: 12px 0 4px 0;
-}
-a.categoryTag,
-span.categoryTag {
+a.categoryTag {
 	background-color: $categoryColorGreen;
 	font-size: 11px;
 	display: inline-block;
