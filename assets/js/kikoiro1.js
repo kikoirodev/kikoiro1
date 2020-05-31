@@ -246,4 +246,14 @@ $(function() {
 			});
 		}
 	}
+	$('div.postCategories').hover(
+	    function() {
+	        $(this).parent().find('h3 span').css({'border-bottom': '1px solid transparent'});
+	        $(this).parent().find('figure').css({'opacity': '1'});
+	    },
+	    function() {
+	        $(this).parent().find('h3 span').css({'border-bottom': ''});
+	        $(this).parent().find('figure').css({'opacity': ''});	        
+	    }
+	);
 });

@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.52
+Version: 2.53
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -858,19 +858,21 @@ div.items {
     display: block;
     width: 280px;
     line-height: 150%; }
+    div.items article a {
+      color: #000000;
+      display: inline-block;
+      cursor: pointer; }
+      @media (hover: hover) {
+      div.items article:hover figure {
+          opacity: 0.7; }
+      div.items article:hover h3 span {
+          border-bottom: 1px solid #636363; } }
     div.items article figure {
       margin: 0;
       height: 210px;
-      background: #ffffff; }
-      div.items article figure a {
-        -webkit-transition: opacity 0.3s;
-        -o-transition: opacity 0.3s;
+      background: #ffffff;
         transition: opacity 0.3s; }
-        @media (hover: hover) {
-          div.items article figure a:hover {
-            opacity: 0.7;
-            cursor: pointer; } }
-        div.items article figure a img {
+      div.items article figure a img {
           width: 280px;
           height: 210px;
           -o-object-fit: cover;
@@ -879,6 +881,9 @@ div.items {
       font-size: 18ox;
       line-height: 150%;
       margin: 0 0 6px 0; }
+      div.items article h3 span {
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s; }
     div.items article div.entry-content p {
       margin: 0; }
     div.items article div.postDate {
@@ -1075,29 +1080,43 @@ section.widget_top-posts ul {
   padding: 0; }
   section.widget_top-posts ul li {
     margin: 0 0 16px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
+    @media (hover: hover) {
+      section.widget_top-posts ul li:hover img {
+        cursor: pointer;
+        opacity: 0.7; }
+      section.widget_top-posts ul li:hover div.widgets-list-layout-links a {
+        border-bottom: 1px solid #636363; } }
     section.widget_top-posts ul li a img {
       float: none;
       max-width: 48px !important;
       width: 48px !important;
       height: 48px !important;
-      -webkit-transition: opacity 0.3s;
-      -o-transition: opacity 0.3s;
       transition: opacity 0.3s; }
-      @media (hover: hover) {
-        section.widget_top-posts ul li a img {
-          float: none; }
-          section.widget_top-posts ul li a img:hover {
-            cursor: pointer;
-            opacity: 0.7; } }
     section.widget_top-posts ul li div.widgets-list-layout-links {
       float: none;
       width: auto;
-      margin-left: 8px;
       display: inline-block;
-      line-height: 150%; }
+      line-height: 150%;
+      position: relative;
+      width: 100%; }
+      section.widget_top-posts ul li div.widgets-list-layout-links a {
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s; }
+        section.widget_top-posts ul li div.widgets-list-layout-links a:before {
+          content: "";
+          display: inline-block;
+          width: 8px;
+          height: 48px;
+          float: left; }
+        section.widget_top-posts ul li div.widgets-list-layout-links a:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1; }
 
 /* WP Popular Post */
 #wpp-8 ul {

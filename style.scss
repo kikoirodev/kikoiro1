@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.52
+Version: 2.53
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -924,19 +924,27 @@ div.items {
 		display: block;
 		width: 280px;
 		line-height: 150%;
-
+		a {
+			color: #000000;
+			display: inline-block;
+			cursor: pointer;
+		}
+		@media (hover: hover) {
+			&:hover {
+				figure {
+					opacity: 0.7;
+				}
+				h3 span {
+					border-bottom: 1px solid $underLineGray;
+				}
+			}
+		}
 		figure {
 			margin: 0;
 			height: 210px;
 			background: #ffffff;
+			transition: opacity 0.3s;
 			a {
-				transition: opacity 0.3s;
-				@media (hover: hover) {
-					&:hover {
-						opacity: 0.7;
-						cursor: pointer;
-					}
-				}
 				img {
 					width: 280px;
 					height: 210px;
@@ -948,8 +956,9 @@ div.items {
 			font-size: 18ox;
 			line-height: 150%;
 			margin: 0 0 6px 0;
-			a {
-				@extend .linkWithAnimatedUnderLine;
+			span {
+				border-bottom: 1px solid transparent;
+				transition: border-color 0.2s;
 			}
 		}
 		div.entry-content {
@@ -1180,6 +1189,17 @@ section.widget_top-posts {
 		li {
 			margin: 0 0 16px 0;
 			display: flex;
+			@media (hover: hover) {
+				&:hover {
+					img {
+						cursor: pointer;
+						opacity: 0.7;
+					}
+					div.widgets-list-layout-links a {
+						border-bottom: 1px solid $underLineGray;
+					}
+				}
+			}
 			a {
 				img {
 					float: none;
@@ -1187,22 +1207,34 @@ section.widget_top-posts {
 					width: 48px !important;
 					height: 48px !important;
 					transition: opacity 0.3s;
-					@media (hover: hover) {
-						&:hover {
-							cursor: pointer;
-							opacity: 0.7;
-						}
-						float: none;
-					}
 				}
 			}
 			div.widgets-list-layout-links {
 				float: none;
 				width: auto;
-				margin-left: 8px;
 				display: inline-block;
 				line-height: 150%;
+				position: relative;
+				width: 100%;
 				a {
+					border-bottom: 1px solid transparent;
+					transition: border-color 0.2s;
+					&:before {
+						content: "";
+						display: inline-block;
+						width: 8px;
+						height: 48px;
+						float: left;
+					}
+					&:after {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						z-index: 1;
+					}
 					@extend .linkWithAnimatedUnderLine;
 				}
 			}

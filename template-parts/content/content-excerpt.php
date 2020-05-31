@@ -29,8 +29,10 @@
 		}
 		$output .= '</div>';
 		echo $output;
-		the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
 	?>
-	<?php echo wp_trim_excerpt(); ?>
-	<div class="postDate"><?php echo get_the_date(); ?></div>
+	<a href="<?php echo esc_url( get_permalink() ); ?>">
+		<?php the_title( '<h3 class="entry-title"><span>', '</span></h3>' ); ?>
+		<?php echo wp_trim_excerpt(); ?>
+		<div class="postDate"><?php echo get_the_date(); ?></div>
+	</a>
 </article><!-- #post-<?php the_ID(); ?> -->
