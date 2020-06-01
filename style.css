@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.53
+Version: 2.54
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -862,27 +862,31 @@ div.items {
       color: #000000;
       display: inline-block;
       cursor: pointer; }
-      @media (hover: hover) {
+    @media (hover: hover) {
       div.items article:hover figure {
-          opacity: 0.7; }
+        opacity: 0.7; }
       div.items article:hover h3 span {
-          border-bottom: 1px solid #636363; } }
+        border-bottom: 1px solid #636363; } }
     div.items article figure {
       margin: 0;
       height: 210px;
       background: #ffffff;
-        transition: opacity 0.3s; }
+      -webkit-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
       div.items article figure a img {
-          width: 280px;
-          height: 210px;
-          -o-object-fit: cover;
-             object-fit: cover; }
+        width: 280px;
+        height: 210px;
+        -o-object-fit: cover;
+           object-fit: cover; }
     div.items article h3 {
       font-size: 18ox;
       line-height: 150%;
       margin: 0 0 6px 0; }
       div.items article h3 span {
         border-bottom: 1px solid transparent;
+        -webkit-transition: border-color 0.2s;
+        -o-transition: border-color 0.2s;
         transition: border-color 0.2s; }
     div.items article div.entry-content p {
       margin: 0; }
@@ -931,14 +935,14 @@ div.items {
       -ms-flex-pack: justify;
           justify-content: space-between; }
 
-.linkWithAnimatedUnderLine, #headerNavigation ul li a, h2.topSection a, #featured article h3 a, #allAbout div.allAboutItems article.allAboutCategory h3 a, #allAbout div.allAboutItems article.allAboutCategory ul li a, div.items article h3 a, section.widget_top-posts ul li div.widgets-list-layout-links a, #wpp-8 ul li a.wpp-post-title, #footerNavigation li.menu a, #main section.article article div.author a, #main section.article article div.categoryPath span a.categoryPath, div.saboxplugin-wrap div.saboxplugin-authorname a, div.saboxplugin-wrap div.saboxplugin-web a, nav.post-navigation div.nav-links div.nav-next a span.post-title, nav.post-navigation div.nav-links div.nav-previous a span.post-title, #breadCrumb span.paths a.path span, figcaption a, #academicContents div article h3 a, .linkContent li a, blockquote cite a, #main.about #page #cooperation ul li a, #main.member #page #members div.person h2.name a, #main.member #page #members div.person div.web a, #main.member #recruiting ul li a, .references ul li a, .references ol li a, .references li a {
+.linkWithAnimatedUnderLine, #headerNavigation ul li a, h2.topSection a, #featured article h3 a, #allAbout div.allAboutItems article.allAboutCategory h3 a, #allAbout div.allAboutItems article.allAboutCategory ul li a, #sideBar section ul.mediaList li a.text, section.widget_top-posts ul li div.widgets-list-layout-links a, #wpp-8 ul li a.wpp-post-title, #footerNavigation li.menu a, #main section.article article div.author a, #main section.article article div.categoryPath span a.categoryPath, div.saboxplugin-wrap div.saboxplugin-authorname a, div.saboxplugin-wrap div.saboxplugin-web a, nav.post-navigation div.nav-links div.nav-next a span.post-title, nav.post-navigation div.nav-links div.nav-previous a span.post-title, #breadCrumb span.paths a.path span, figcaption a, #academicContents div article h3 a, .linkContent li a, blockquote cite a, #main.about #page #cooperation ul li a, #main.member #page #members div.person h2.name a, #main.member #page #members div.person div.web a, #main.member #recruiting ul li a, .references ul li a, .references ol li a, .references li a {
   border-bottom: 1px solid transparent;
   -webkit-transition: border-color 0.2s;
   -o-transition: border-color 0.2s;
   transition: border-color 0.2s;
   text-decoration: none;
   color: #000000; }
-  .linkWithAnimatedUnderLine:hover, #headerNavigation ul li a:hover, h2.topSection a:hover, #featured article h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory ul li a:hover, div.items article h3 a:hover, section.widget_top-posts ul li div.widgets-list-layout-links a:hover, #wpp-8 ul li a.wpp-post-title:hover, #footerNavigation li.menu a:hover, #main section.article article div.author a:hover, #main section.article article div.categoryPath span a.categoryPath:hover, div.saboxplugin-wrap div.saboxplugin-authorname a:hover, div.saboxplugin-wrap div.saboxplugin-web a:hover, nav.post-navigation div.nav-links div.nav-next a span.post-title:hover, nav.post-navigation div.nav-links div.nav-previous a span.post-title:hover, #breadCrumb span.paths a.path span:hover, figcaption a:hover, #academicContents div article h3 a:hover, .linkContent li a:hover, blockquote cite a:hover, #main.about #page #cooperation ul li a:hover, #main.member #page #members div.person h2.name a:hover, #main.member #page #members div.person div.web a:hover, #main.member #recruiting ul li a:hover, .references li a:hover {
+  .linkWithAnimatedUnderLine:hover, #headerNavigation ul li a:hover, h2.topSection a:hover, #featured article h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory ul li a:hover, #sideBar section ul.mediaList li a.text:hover, section.widget_top-posts ul li div.widgets-list-layout-links a:hover, #wpp-8 ul li a.wpp-post-title:hover, #footerNavigation li.menu a:hover, #main section.article article div.author a:hover, #main section.article article div.categoryPath span a.categoryPath:hover, div.saboxplugin-wrap div.saboxplugin-authorname a:hover, div.saboxplugin-wrap div.saboxplugin-web a:hover, nav.post-navigation div.nav-links div.nav-next a span.post-title:hover, nav.post-navigation div.nav-links div.nav-previous a span.post-title:hover, #breadCrumb span.paths a.path span:hover, figcaption a:hover, #academicContents div article h3 a:hover, .linkContent li a:hover, blockquote cite a:hover, #main.about #page #cooperation ul li a:hover, #main.member #page #members div.person h2.name a:hover, #main.member #page #members div.person div.web a:hover, #main.member #recruiting ul li a:hover, .references li a:hover {
     border-bottom: 1px solid #636363; }
 
 .linkWithAnimatedUnderLineWhite, #main section.article article div.author.coverImage a, #main section.article article div.categoryPath span a.categoryPath.coverImage {
@@ -1058,12 +1062,12 @@ a.newTag, span.newTag {
     margin: 24px 0 64px 0; }
     #sideBar section ul.mediaList li {
       margin: 0 0px 0.5em 0px; }
-      #sideBar section ul.mediaList li a {
+      #sideBar section ul.mediaList li a.image {
         -webkit-transition: opacity 0.2s;
         -o-transition: opacity 0.2s;
         transition: opacity 0.2s; }
         @media (hover: hover) {
-          #sideBar section ul.mediaList li a:hover {
+          #sideBar section ul.mediaList li a.image:hover {
             cursor: pointer;
             opacity: 0.7; } }
     #sideBar section ul.mediaList img {
@@ -1080,6 +1084,8 @@ section.widget_top-posts ul {
   padding: 0; }
   section.widget_top-posts ul li {
     margin: 0 0 16px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
     @media (hover: hover) {
       section.widget_top-posts ul li:hover img {
@@ -1092,6 +1098,8 @@ section.widget_top-posts ul {
       max-width: 48px !important;
       width: 48px !important;
       height: 48px !important;
+      -webkit-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
       transition: opacity 0.3s; }
     section.widget_top-posts ul li div.widgets-list-layout-links {
       float: none;
@@ -1102,6 +1110,8 @@ section.widget_top-posts ul {
       width: 100%; }
       section.widget_top-posts ul li div.widgets-list-layout-links a {
         border-bottom: 1px solid transparent;
+        -webkit-transition: border-color 0.2s;
+        -o-transition: border-color 0.2s;
         transition: border-color 0.2s; }
         section.widget_top-posts ul li div.widgets-list-layout-links a:before {
           content: "";
@@ -1529,10 +1539,9 @@ div.saboxplugin-wrap {
     background-color: transparent;
     padding: 0;
     border: 0 !important;
-    /* これがないとマウスオンのときにSarariのみピクピク動く */
+    /* これがないとマウスオンのときにSafariのみピクピク動く */
     -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    /* */ }
+            transform: translateZ(0); }
     div.saboxplugin-wrap div.saboxplugin-socials a {
       margin: 0 !important;
       position: relative;
@@ -2885,7 +2894,7 @@ iframe {
         background-color: transparent;
         padding: 0;
         border: 0 !important;
-        /* これがないとマウスオンのときにSarariのみピクピク動く */
+        /* これがないとマウスオンのときにSafariのみピクピク動く */
         -webkit-transform: translateZ(0);
                 transform: translateZ(0);
         /* */ }
