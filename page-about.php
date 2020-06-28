@@ -92,7 +92,7 @@ get_header();
             <div class="showMore"><a href="/about/members"><span class="showMore">プロジェクトメンバー一覧</span></a></div>
         </section>
         <section id="cooperation">
-            <h2>協力・協賛</h2>
+            <h2>協力・協賛・きこいろボランティアメンバーの皆さん</h2>
             <ul>
                 <li><a href="https://www.phonak.com/jp/ja.html">ソノヴァ・ジャパン株式会社</a></li>
                 <li>デザイン・イラスト制作： 荒屋デザイン 小野寺真希</li>

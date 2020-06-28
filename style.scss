@@ -1157,6 +1157,9 @@ a.newTag, span.newTag {
 			margin: 24px 0 64px 0;
 			li {
 				a {
+					font-size: 1.2rem;
+					letter-spacing: 0.1rem;
+					font-weight: 700;
 					&.image { 
 						transition: opacity 0.2s;	
 						@media (hover: hover) {
@@ -2859,8 +2862,10 @@ iframe {
 			}
 			ul.mediaList {
 				text-align: center;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
 				li {
-					display: inline;
 					margin: 0 16px 16px 16px;
 				}
 				img {

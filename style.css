@@ -1062,6 +1062,10 @@ a.newTag, span.newTag {
     margin: 24px 0 64px 0; }
     #sideBar section ul.mediaList li {
       margin: 0 0px 0.5em 0px; }
+      #sideBar section ul.mediaList li a {
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+        font-weight: 700; }
       #sideBar section ul.mediaList li a.image {
         -webkit-transition: opacity 0.2s;
         -o-transition: opacity 0.2s;
@@ -2464,9 +2468,11 @@ iframe {
       #sideBar section ul.categoryList li {
         font-weight: bold; }
     #sideBar section ul.mediaList {
-      text-align: center; }
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
       #sideBar section ul.mediaList li {
-        display: inline;
         margin: 0 16px 16px 16px; }
       #sideBar section ul.mediaList img {
         vertical-align: middle;

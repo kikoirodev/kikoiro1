@@ -177,8 +177,9 @@ get_header();
 					<h4>MEDIA</h4>
 					<ul class="mediaList">
 						<li><a href="/cafe10"><img src="/wp-content/themes/kikoiro1/assets/images/media_iwatenp.jpg" class="lazyload image" alt="岩手日報" /></a></li>
-						<li><a href="https://www.iwanichi.co.jp/2019/12/16/467354/"><img src="/wp-content/themes/kikoiro1/assets/images/media_iwatenn.png" class="lazyload image" alt="岩手日日" /></a></li>
-						<li><a href="https://www.yomiuri.co.jp/local/kansai/news/20190914-OYO1T50024/" class="text">読売新聞</a></li>
+						<li><a href="https://www.iwanichi.co.jp/2019/12/16/467354/" target="_new"><img src="/wp-content/themes/kikoiro1/assets/images/media_iwatenn.png" class="lazyload image" alt="岩手日日" /></a></li>
+						<li><a href="https://www.yomiuri.co.jp/local/kansai/news/20190914-OYO1T50024/" class="text" target="_new">読売新聞</a></li>
+						<li><a href="https://www.nhk.or.jp/heart-net/program/rounan/1319/" class="text" target="_new">NHK</a></li>
 					</ul>
 				</section>
 			</div>
