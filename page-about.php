@@ -99,13 +99,6 @@ get_header();
                 echo $cooperation_text;
             ?>
         </section>
-        <section id="volunteer">
-            <h2>きこいろ<br class="dblock410">ボランティアメンバーの皆さん</h2>
-            <?php
-                $volunteer_text = SCF::get( 'volunteer_text', 1201 );
-                echo $volunteer_text;
-            ?>
-        </section>
     </section>
 	</main>
 </div>
