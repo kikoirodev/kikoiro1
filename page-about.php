@@ -92,12 +92,19 @@ get_header();
             <div class="showMore"><a href="/about/members"><span class="showMore">プロジェクトメンバー一覧</span></a></div>
         </section>
         <section id="cooperation">
-            <h2>協力・協賛・きこいろボランティアメンバーの皆さん</h2>
-            <ul>
-                <li><a href="https://www.phonak.com/jp/ja.html">ソノヴァ・ジャパン株式会社</a></li>
-                <li>デザイン・イラスト制作： 荒屋デザイン 小野寺真希</li>
-                <li>サイトデザイン・開発・ディレクション： 木村博信</li>
-            </ul>
+            <h2>協力・協賛</h2>
+            <?php
+                //Smart Custom Fieldsで設定 https://2inc.org/blog/2014/10/09/4426/
+                $cooperation_text = SCF::get( 'cooperation_text', 1201 );
+                echo $cooperation_text;
+            ?>
+        </section>
+        <section id="volunteer">
+            <h2>きこいろボランティアメンバーの皆さん</h2>
+            <?php
+                $volunteer_text = SCF::get( 'volunteer_text', 1201 );
+                echo $volunteer_text;
+            ?>
         </section>
     </section>
 	</main>
