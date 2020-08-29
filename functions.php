@@ -719,6 +719,12 @@ function twentynineteen_colors_css_wrap() {
 }
 add_action( 'wp_head', 'twentynineteen_colors_css_wrap' );
 
+
+function kikoiro_admin_style(){  
+    wp_enqueue_style( 'my_admin_style', get_template_directory_uri().'/admin-style.css') ;
+}
+add_action( 'admin_enqueue_scripts', 'kikoiro_admin_style' );
+
 /**
  * SVG Icons class.
  */
