@@ -39,7 +39,7 @@ function show_cafe_map() {
 	if( is_mobile() ){
 		$output = <<<EOF
 <figure class="cafe_map_sp">
-<img src="https://kikoiro.com/wp-content/themes/kikoiro1/assets/images/about-cafe/cafe_map_sp.png" usemap="#CafeMapSp" alt="片耳難聴カフェの開催場所" />
+<img src="https://kikoiro.com/wp-content/themes/kikoiro1/assets/images/about-cafe/cafe_map_sp.png" usemap="#CafeMapSp" alt="片耳難聴カフェの開催場所" width="600" height="800" />
 <map name="CafeMapSp">
   <area shape="rect" coords="143,283,289,344" href="https://kikoiro.com/cafe1/" alt="岩手" target="_new" />
   <area shape="rect" coords="438,216,584,274" href="https://kikoiro.com/cafe10/" alt="大宮" target="_new" />
@@ -50,7 +50,7 @@ EOF;
 	} else {
 		$output = <<<EOF
  <figure class="cafe_map_pc">
-<img src="https://kikoiro.com/wp-content/themes/kikoiro1/assets/images/about-cafe/cafe_map_pc.png" usemap="#CafeMapPc" alt="片耳難聴カフェの開催場所" />
+<img src="https://kikoiro.com/wp-content/themes/kikoiro1/assets/images/about-cafe/cafe_map_pc.png" usemap="#CafeMapPc" alt="片耳難聴カフェの開催場所" width="800" height="800" />
 <map name="CafeMapPc">
   <area shape="rect" coords="633,260,773,314" href="https://kikoiro.com/cafe10/" alt="岩手" target="_new" />
   <area shape="rect" coords="267,358,409,415" href="https://kikoiro.com/cafe1/" alt="大宮" target="_new" />
