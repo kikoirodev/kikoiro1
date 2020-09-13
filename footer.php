@@ -26,5 +26,13 @@
       </div>
 </footer>
 <?php wp_footer(); ?>
+<?php if( is_page( 'about/cafe' ) )://片耳難聴カフェ クリッカブルマップ レスポンシブ用script ?>
+<script src="/wp-content/themes/kikoiro1/assets/js/jquery.rwdImageMaps.min.js"></script>
+<script>
+  jQuery(document).ready(function(e) {
+    jQuery('img[usemap]').rwdImageMaps();
+  });
+</script>
+<?php endif; ?>
 </body>
 </html>
