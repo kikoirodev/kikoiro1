@@ -754,3 +754,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * オリジナルの関数をまとめて設置します
+ */
+require get_template_directory() . '/inc/kikoiro-functions.php';

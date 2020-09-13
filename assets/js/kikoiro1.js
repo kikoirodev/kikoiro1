@@ -246,6 +246,8 @@ $(function() {
 			});
 		}
 	}
+
+	//TOPページ「ニュース & コラム」のhover領域を制御
 	$('div.postCategories').hover(
 	    function() {
 	        $(this).parent().find('h3 span').css({'border-bottom': '1px solid transparent'});
@@ -253,7 +255,7 @@ $(function() {
 	    },
 	    function() {
 	        $(this).parent().find('h3 span').css({'border-bottom': ''});
-	        $(this).parent().find('figure').css({'opacity': ''});	        
+	        $(this).parent().find('figure').css({'opacity': ''});
 	    }
 	);
 });
