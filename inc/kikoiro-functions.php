@@ -81,7 +81,8 @@ function kikoiro_show_google_calendar() {
 		  events: {
 		    googleCalendarId: 'ja.japanese#holiday@group.v.calendar.google.com'
 		  },
-			locale: 'ja'
+			locale: 'ja',
+			schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'
         });
         calendar.render();
       });
