@@ -49,3 +49,44 @@ EOF;
 
 	return $output;
 }
+
+/** Smart Custom fieldでオプションページを使うことになったらコメントアウト外す
+ * @param string $page_title ページのtitle属性値
+ * @param string $menu_title 管理画面のメニューに表示するタイトル
+ * @param string $capability メニューを操作できる権限（manage_options とか）
+ * @param string $menu_slug オプションページのスラッグ。ユニークな値にすること。
+ * @param string|null $icon_url メニューに表示するアイコンの URL
+ * @param int $position メニューの位置
+ */
+// add_action( 'init', function() {
+// 	SCF::add_options_page( 
+// 		'カスタム設定',
+// 		'カスタム設定',
+// 		'manage_options',
+// 		'my-options',
+// 		'dashicons-admin-settings',
+// 		80
+// 	);
+// } );
+
+
+function kikoiro_show_google_calendar() {
+	echo <<< EOF
+	<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+		  googleCalendarApiKey: 'AIzaSyA8wSdmCk4CWxJpUGp5IlNYOXADCpP7fcY',
+		  events: {
+		    googleCalendarId: 'ja.japanese#holiday@group.v.calendar.google.com'
+		  },
+			locale: 'ja'
+        });
+        calendar.render();
+      });
+
+	</script>
+EOF;
+}
+add_action( 'wp_head', 'kikoiro_show_google_calendar', 10 );

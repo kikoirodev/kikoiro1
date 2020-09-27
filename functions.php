@@ -725,6 +725,14 @@ function kikoiro_admin_style(){
 }
 add_action( 'admin_enqueue_scripts', 'kikoiro_admin_style' );
 
+function kikoiro_enqueue_scripts() {
+	//Googleカレンダー表示に必要なファイル一式
+	wp_enqueue_script( 'fullcalendar-cdn-main-js', '//cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.3.2/main.min.js', array(), '5.3.2', false );
+	wp_enqueue_script( 'fullcalendar-cdn-all-js', '//cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.3.2/locales-all.min.js', array(), '5.3.2', false );
+	wp_enqueue_style( 'fullcalendar-css', '//cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.css' );
+}
+add_action( 'wp_enqueue_scripts', 'kikoiro_enqueue_scripts' );
+
 /**
  * SVG Icons class.
  */
