@@ -72,22 +72,25 @@ EOF;
 
 function kikoiro_show_google_calendar() {
 	echo <<< EOF
-	<script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-		  googleCalendarApiKey: 'AIzaSyA8wSdmCk4CWxJpUGp5IlNYOXADCpP7fcY',
-		  events: {
-		    googleCalendarId: 'ja.japanese#holiday@group.v.calendar.google.com'
-		  },
-			locale: 'ja',
-			schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'
-        });
-        calendar.render();
-      });
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	var calendarEl = document.getElementById('calendar');
+	var calendar = new FullCalendar.Calendar(calendarEl, {
+		initialView: 'dayGridMonth',
+		googleCalendarApiKey: 'AIzaSyA8wSdmCk4CWxJpUGp5IlNYOXADCpP7fcY',
+		events: {
+			googleCalendarId: 'kikoiro.com@gmail.com'
+		},
+		dayCellContent: function(e) {
+		  e.dayNumberText = e.dayNumberText.replace('日', '');
+		},
+		locale: 'ja',
+		schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'
+	});
+	calendar.render();
+});
 
-	</script>
+</script>
 EOF;
 }
 add_action( 'wp_head', 'kikoiro_show_google_calendar', 10 );
