@@ -1,4 +1,9 @@
 @charset "UTF-8";
-.components-panel__row{
+/* プラグインと干渉して非表示になっていた投稿者選択エリアを表示 */
+.components-panel__row {
   display: flex!important;
+}
+
+.components-base-control__field {
+  display: block!important;
 }
