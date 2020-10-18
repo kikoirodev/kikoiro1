@@ -87,6 +87,7 @@
           <?php 
             $catNewsAndColumn = get_category_by_slug('news-and-column');
             $catAllAbout = get_category_by_slug('all-about-uhl');
+            $catLeaflet = get_category_by_slug('leaflet');
             $catUncategorized = get_category_by_slug('uncategorized');
             $args = array(
             'show_option_all'    => '',
@@ -97,7 +98,7 @@
             'hide_empty'         => 1,
             'use_desc_for_title' => 0,
             'child_of'           => $catNewsAndColumn->term_id,
-            'exclude'            => "" . $catUncategorized->term_id . "," . $catAllAbout->term_id,
+            'exclude'            => "" . $catUncategorized->term_id . "," . $catAllAbout->term_id . "," . $catLeaflet->term_id,
             'title_li'           => __( '' ),
             'show_option_none'   => __( '' ),
             'echo'               => 1,
@@ -108,6 +109,7 @@
         </ul>
       </li>
       <li><a href="/join">入会のご案内</a></li>
+      <li><a href="/leaflet-kikoiro">リーフレットのご案内</a></li>
       <li><a href="/contact">お問い合わせ</a></li>
     </ul>
   </div>

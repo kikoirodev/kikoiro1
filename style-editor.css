@@ -1308,3 +1308,8 @@ ul.wp-block-archives li ul,
   line-height: 1.6;
   color: #767676;
 }
+
+/* プラグインと干渉して非表示になっていた投稿者選択エリアを表示 */
+.components-base-control__field {
+  display: block!important;
+}
