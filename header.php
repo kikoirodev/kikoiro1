@@ -108,8 +108,8 @@
           ?>
         </ul>
       </li>
+      <li><a href="/leaflet-kikoiro">リーフレット</a></li>
       <li><a href="/join">入会のご案内</a></li>
-      <li><a href="/leaflet-kikoiro">リーフレットのご案内</a></li>
       <li><a href="/contact">お問い合わせ</a></li>
     </ul>
   </div>
