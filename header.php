@@ -87,7 +87,7 @@
           <?php 
             $catNewsAndColumn = get_category_by_slug('news-and-column');
             $catAllAbout = get_category_by_slug('all-about-uhl');
-            $catLeaflet = get_category_by_slug('leaflet');
+            $catLeaflet = get_category_by_slug('tool');
             $catUncategorized = get_category_by_slug('uncategorized');
             $args = array(
             'show_option_all'    => '',
