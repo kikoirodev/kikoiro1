@@ -117,7 +117,7 @@ get_header();
 						$postsPerPage = 12; //1ページに表示する最大件数
 						//postsPerPage + 1をクエリし、ページャーが必要かどうかを判断する
 						query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . 
-									'&tag__not_in=' . getTagIdWithSlug('') . 
+									'&tag__not_in=' . getTagIdWithSlug('allabout_subpage') . 
 									'&posts_per_page=' . ($postsPerPage + 1));
 						$addedPostCount = 0;
 						$loadedPostCount = 0;
