@@ -258,4 +258,8 @@ $(function() {
 	        $(this).parent().find('figure').css({'opacity': ''});
 	    }
 	);
+
+	//TOPページ「ニュース & コラム」でallabout_subpageの記事があった場合、非表示
+	$('.topContainer #newsAndColumn article:has(.allabout_subpage)').css({'display': 'none'});
+
 });

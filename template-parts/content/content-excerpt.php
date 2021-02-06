@@ -24,7 +24,7 @@
 		$output = '<div class="postCategories">';
 		if ( $categories ) {
 			foreach ( $categories as $category ) {
-				$output .= '<a href="' . get_category_link( $category->term_id ) . '" class="categoryTag">' . $category->cat_name . '</a>';
+				$output .= '<a href="' . get_category_link( $category->term_id ) . '" class="categoryTag <?php echo $category->slug; ?>">' . $category->cat_name . '</a>';
 			}
 		}
 		$output .= '</div>';
