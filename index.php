@@ -64,6 +64,7 @@ get_header();
 						if ($itemCount >= 5) {
 							echo '<div class="listBottom"><span class="showMore">Show More</span></div>';
 						}
+						wp_reset_query();
 					?>
 				</article>
 				<article class="allAboutCategory">
@@ -84,6 +85,7 @@ get_header();
 						if ($itemCount >= 5) {
 							echo '<div class="listBottom"><span class="showMore">Show More</span></div>';
 						}
+						wp_reset_query();
 					?>
 				</article>
 				<article class="allAboutCategory">
@@ -104,7 +106,8 @@ get_header();
 						if ($itemCount >= 5) {
 							echo '<div class="listBottom"><span class="showMore">Show More</span></div>';
 						}
-					?>					
+						wp_reset_query();
+					?>
 				</article>
 			</div>
 		</section>
@@ -116,14 +119,21 @@ get_header();
 						$maxInitialPostsToShow = 6; //初期表示件数。
 						$postsPerPage = 12; //1ページに表示する最大件数
 						//postsPerPage + 1をクエリし、ページャーが必要かどうかを判断する
-						query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . 
-									'&tag__not_in=' . getTagIdWithSlug('allabout_subpage') . 
-									'&posts_per_page=' . ($postsPerPage + 1));
+						$args = Array(
+							'post_status' => 'publish', 
+							'cat' => getNotNewsAndColumnCategoryIDsString(true),
+							'tag__not_in' => array(
+								getTagIdWithSlug('allabout_subpage'),
+								getTagIdWithSlug('new')
+							),
+							'posts_per_page' => ($postsPerPage + 1),
+						);
+						$news_query = new WP_Query( $args );
 						$addedPostCount = 0;
 						$loadedPostCount = 0;
-						if ( have_posts() ) {
-							while ( have_posts() ) {
-								the_post();
+						if ( $news_query->have_posts() ) {
+							while ( $news_query->have_posts() ) {
+								$news_query->the_post();
 								if ($addedPostCount < $maxInitialPostsToShow) {
 									if (!has_tag('new')) {
 										get_template_part( 'template-parts/content/content-excerpt' );
@@ -141,7 +151,10 @@ get_header();
 						if ($loadedPostCount > $maxInitialPostsToShow) {
 							echo '<span class="showMore" id="showMoreNews">Show More</span>';
 						}
+						//このあとの一覧は、load_next_posts_for_home()で制御
 						echoKikoiroPager($loadedPostCount > $postsPerPage, true, "category/news-and-column/");
+
+						wp_reset_postdata();
 					?>
 				</div>
 			</div>

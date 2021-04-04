@@ -168,18 +168,25 @@ add_filter('pre_get_posts','wpb_search_filter');
 function load_next_posts_for_home() {
 	$message_id = $_REQUEST['message_id'];
 	if ($message_id != "com.kikoiro.load-next-6posts-for-home") {
-    	wp_send_json_error("NG");
+		wp_send_json_error("NG");
 	}
 	else {
-		query_posts('post_status=publish&cat=' . getNotNewsAndColumnCategoryIDsString(true) . 
-					'&tag__not_in=' . getTagIdWithSlug('') . 
-					'&posts_per_page=12');
+		$args = Array(
+			'post_status' => 'publish', 
+			'cat' => getNotNewsAndColumnCategoryIDsString(true),
+			'tag__not_in' =>  array(
+								getTagIdWithSlug('allabout_subpage'),
+								getTagIdWithSlug('new')
+							),
+			'posts_per_page' => 12,
+		);
+		$news_ajax_query = new WP_Query( $args );
 		$source = "";
 		$addedPostCount = 0;
 		$maxInitialPostsToShow = 6;
-		if ( have_posts() ) {
-			while ( have_posts() ) {
-				the_post();
+		if ( $news_ajax_query->have_posts() ) {
+			while ( $news_ajax_query->have_posts() ) {
+				$news_ajax_query->the_post();
 				if ($addedPostCount < $maxInitialPostsToShow) {
 					if (!has_tag('new')) {
 						$addedPostCount++;
@@ -193,6 +200,7 @@ function load_next_posts_for_home() {
 				$source .= $return;
 			}
 		}
+		wp_reset_postdata();
     	wp_send_json_success($source);
 	}
 }
