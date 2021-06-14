@@ -13,14 +13,21 @@
 ?><!doctype html>
 <html lang='ja' dir='ltr'>
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154223458-1"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KN778NL');</script>
+<!-- End Google Tag Manager -->
+<?php /*<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154223458-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-154223458-1');
-</script>
+</script> */ ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="/wp-content/themes/kikoiro1/assets/js/kikoiro1.js?date=<?php fileUpdatedTime("/wp-content/themes/kikoiro1/assets/js/kikoiro1.js") ?>" defer></script>
@@ -41,7 +48,11 @@
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 </head>
-<body class="drawer drawer--right">
+<body <?php body_class( "drawer drawer--right" ); ?>>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN778NL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <?php wp_body_open(); ?>
 <header id="header">
   <div id="logoContainer">
@@ -53,6 +64,7 @@
         <li><a href="/about">きこいろについて</a></li>
         <li><a href="/category/all-about-uhl">片耳難聴のすべて</a></li>
         <li><a href="/category/news-and-column">ニュース &amp; コラム</a></li>
+        <li><a href="/leaflet-kikoiro/">リーフレット</a></li><li><a href="/original-mark/">マーク</a></li>
         <li><a href="/join">入会のご案内</a></li>
     </ul>
     <div id="searchButton">
@@ -109,6 +121,7 @@
         </ul>
       </li>
       <li><a href="/leaflet-kikoiro">リーフレット</a></li>
+      <li><a href="/original-mark">マーク</a></li>
       <li><a href="/join">入会のご案内</a></li>
       <li><a href="/contact">お問い合わせ</a></li>
     </ul>
