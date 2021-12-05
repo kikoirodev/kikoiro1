@@ -16,10 +16,12 @@
       	<ul id="footerNavigation">
 			<li class="menu brandOrange"><a href="/about">きこいろについて</a></li
 			><li class="menu brandGreen"><a href="/join">入会のご案内</a></li
-			><li class="menu brandYellow"><a href="/terms">利用規約</a></li
+			><li class="menu brandGreen"><a href="https://congrant.com/project/kikoiro/3650" target="_blank" rel="noopener noreferrer">寄付で応援</a></li
+      ><li class="menu brandYellow"><a href="/terms">利用規約</a></li
 			><li class="menu brandYellow"><a href="/policy">プライバシーポリシー</a></li
 			><li class="menu brandBlue"><a href="/contact">お問い合わせ</a></li
-			><li class="twitter">
+			><li class="menu brandBlue"><a href="/sitemap">サイトマップ</a></li
+      ><li class="twitter">
         <?php 
         if(is_front_page()): ?>
           <a href="https://twitter.com/kikoiro" target="_blank" rel="noopener noreferrer" id="sns-footer-twitter">

@@ -123,7 +123,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><a href="/leaflet-kikoiro">リーフレット</a></li>
       <li><a href="/original-mark">マーク</a></li>
       <li><a href="/join">入会のご案内</a></li>
+      <li><a href="https://congrant.com/project/kikoiro/3650" target="_blank" rel="noopener noreferrer">寄付で応援</a></li
+      >
       <li><a href="/contact">お問い合わせ</a></li>
+      <li><a href="/sitemap">サイトマップ</a></li>
     </ul>
   </div>
 </nav>
