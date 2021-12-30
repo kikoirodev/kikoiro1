@@ -94,3 +94,16 @@ document.addEventListener('DOMContentLoaded', function() {
 EOF;
 }
 add_action( 'wp_head', 'kikoiro_show_google_calendar', 10 );
+
+
+//カスタム設定ページを追加します 参考：https://2inc.org/blog/2016/06/06/5280/
+//権限参考 https://ja.wordpress.org/support/article/roles-and-capabilities/#manage_options
+ /**
+ * @param string $page_title ページのtitle属性値
+ * @param string $menu_title 管理画面のメニューに表示するタイトル
+ * @param string $capability メニューを操作できる権限（maange_options とか）
+ * @param string $menu_slug オプションページのスラッグ。ユニークな値にすること。
+ * @param string|null $icon_url メニューに表示するアイコンの URL
+ * @param int $position メニューの位置
+ */
+SCF::add_options_page( 'メディア掲載情報', 'メディア掲載情報', 'edit_posts', 'media-options' );

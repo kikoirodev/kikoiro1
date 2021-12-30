@@ -1157,28 +1157,12 @@ a.newTag, span.newTag {
 			margin: 24px 0 64px 0;
 			li {
 				a {
-					font-size: 1.2rem;
-					letter-spacing: 0.1rem;
-					font-weight: 700;
-					&.image { 
-						transition: opacity 0.2s;	
-						@media (hover: hover) {
-							&:hover {
-								cursor: pointer;
-								opacity: 0.7;
-							}
-						}
-					}
-					&.text {
-						@extend .linkWithAnimatedUnderLine;
+					@extend .linkWithAnimatedUnderLine;
+					@media screen and (max-width:876px){
+						font-weight: 700;
 					}
 				}
 				margin: 0 0px 0.5em 0px;
-			}
-			img {
-				height: auto;
-				max-width: 120px;
-				max-height: 48px;
 			}
 		}
 	}
@@ -3347,7 +3331,7 @@ iframe {
 					}
 				}
 			}
-			#cooperation {
+			#cooperation,#media {
 				ul {
 					li {
 						a {

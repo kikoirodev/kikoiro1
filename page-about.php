@@ -99,13 +99,31 @@ get_header();
                 echo $cooperation_text;
             ?>
         </section>
-        <section id="cooperation">
+        <section id="media">
             <h2>メディア掲載情報</h2>
             <?php
                 $media_text = SCF::get( 'media_text', 1201 );
                 echo $media_text;
             ?>
-            
+            <ul>
+            <?php
+    $media_items = SCF::get_option_meta('media-options', 'media_items');
+    foreach ($media_items as $media_item) { 
+
+        if($media_item['media_link_url']  && ( $media_item['media_menu_text'] || $media_item['media_link_text'] ) ){
+            $media_name = $media_item['media_menu_text'];
+            if( $media_item['media_link_text'] ){
+                $media_name = $media_item['media_link_text'];
+            }
+?>
+        <li>
+            <a href="<?php echo $media_item['media_link_url']; ?>" target="_blank" rel="noopener noreferrer"><?php echo $media_item['media_publish_date']; ?>　<?php echo $media_name; ?></a>                        
+        </li>
+<?php
+        }
+    }                            
+?> 
+        </ul>    
         </section>
     </section>
 	</main>

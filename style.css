@@ -1170,7 +1170,7 @@ div.items article div.postDate {
           justify-content: space-between;
 }
 
-.linkWithAnimatedUnderLine, #headerNavigation ul li a, h2.topSection a, #featured article h3 a, #allAbout div.allAboutItems article.allAboutCategory h3 a, #allAbout div.allAboutItems article.allAboutCategory ul li a, #sideBar section ul.mediaList li a.text, section.widget_top-posts ul li div.widgets-list-layout-links a, #wpp-8 ul li a.wpp-post-title, #footerNavigation li.menu a, #main section.article article div.author a, #main section.article article div.categoryPath span a.categoryPath, div.saboxplugin-wrap div.saboxplugin-authorname a, div.saboxplugin-wrap div.saboxplugin-web a, nav.post-navigation div.nav-links div.nav-next a span.post-title, nav.post-navigation div.nav-links div.nav-previous a span.post-title, #breadCrumb span.paths a.path span, figcaption a, #academicContents div article h3 a, .linkContent li a, blockquote cite a, #main.about #page #cooperation ul li a, #main.member #page #members div.person h2.name a, #main.member #page #members div.person div.web a, #main.member #recruiting ul li a, .references ul li a, .references ol li a, .references li a {
+.linkWithAnimatedUnderLine, #headerNavigation ul li a, h2.topSection a, #featured article h3 a, #allAbout div.allAboutItems article.allAboutCategory h3 a, #allAbout div.allAboutItems article.allAboutCategory ul li a, #sideBar section ul.mediaList li a, section.widget_top-posts ul li div.widgets-list-layout-links a, #wpp-8 ul li a.wpp-post-title, #footerNavigation li.menu a, #main section.article article div.author a, #main section.article article div.categoryPath span a.categoryPath, div.saboxplugin-wrap div.saboxplugin-authorname a, div.saboxplugin-wrap div.saboxplugin-web a, nav.post-navigation div.nav-links div.nav-next a span.post-title, nav.post-navigation div.nav-links div.nav-previous a span.post-title, #breadCrumb span.paths a.path span, figcaption a, #academicContents div article h3 a, .linkContent li a, blockquote cite a, #main.about #page #cooperation ul li a, #main.about #page #media ul li a, #main.member #page #members div.person h2.name a, #main.member #page #members div.person div.web a, #main.member #recruiting ul li a, .references ul li a, .references ol li a, .references li a {
   border-bottom: 1px solid transparent;
   -webkit-transition: border-color 0.2s;
   transition: border-color 0.2s;
@@ -1178,7 +1178,7 @@ div.items article div.postDate {
   color: #000000;
 }
 
-.linkWithAnimatedUnderLine:hover, #headerNavigation ul li a:hover, h2.topSection a:hover, #featured article h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory ul li a:hover, #sideBar section ul.mediaList li a.text:hover, section.widget_top-posts ul li div.widgets-list-layout-links a:hover, #wpp-8 ul li a.wpp-post-title:hover, #footerNavigation li.menu a:hover, #main section.article article div.author a:hover, #main section.article article div.categoryPath span a.categoryPath:hover, div.saboxplugin-wrap div.saboxplugin-authorname a:hover, div.saboxplugin-wrap div.saboxplugin-web a:hover, nav.post-navigation div.nav-links div.nav-next a span.post-title:hover, nav.post-navigation div.nav-links div.nav-previous a span.post-title:hover, #breadCrumb span.paths a.path span:hover, figcaption a:hover, #academicContents div article h3 a:hover, .linkContent li a:hover, blockquote cite a:hover, #main.about #page #cooperation ul li a:hover, #main.member #page #members div.person h2.name a:hover, #main.member #page #members div.person div.web a:hover, #main.member #recruiting ul li a:hover, .references li a:hover {
+.linkWithAnimatedUnderLine:hover, #headerNavigation ul li a:hover, h2.topSection a:hover, #featured article h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory ul li a:hover, #sideBar section ul.mediaList li a:hover, section.widget_top-posts ul li div.widgets-list-layout-links a:hover, #wpp-8 ul li a.wpp-post-title:hover, #footerNavigation li.menu a:hover, #main section.article article div.author a:hover, #main section.article article div.categoryPath span a.categoryPath:hover, div.saboxplugin-wrap div.saboxplugin-authorname a:hover, div.saboxplugin-wrap div.saboxplugin-web a:hover, nav.post-navigation div.nav-links div.nav-next a span.post-title:hover, nav.post-navigation div.nav-links div.nav-previous a span.post-title:hover, #breadCrumb span.paths a.path span:hover, figcaption a:hover, #academicContents div article h3 a:hover, .linkContent li a:hover, blockquote cite a:hover, #main.about #page #cooperation ul li a:hover, #main.about #page #media ul li a:hover, #main.member #page #members div.person h2.name a:hover, #main.member #page #members div.person div.web a:hover, #main.member #recruiting ul li a:hover, .references li a:hover {
   border-bottom: 1px solid #636363;
 }
 
@@ -1321,28 +1321,10 @@ a.newTag, span.newTag {
   margin: 0 0px 0.5em 0px;
 }
 
-#sideBar section ul.mediaList li a {
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
-  font-weight: 700;
-}
-
-#sideBar section ul.mediaList li a.image {
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-}
-
-@media (hover: hover) {
-  #sideBar section ul.mediaList li a.image:hover {
-    cursor: pointer;
-    opacity: 0.7;
+@media screen and (max-width: 876px) {
+  #sideBar section ul.mediaList li a {
+    font-weight: 700;
   }
-}
-
-#sideBar section ul.mediaList img {
-  height: auto;
-  max-width: 120px;
-  max-height: 48px;
 }
 
 /* Wordpress.com Jetpack Popular Post */
@@ -3757,7 +3739,7 @@ iframe {
   padding: 0.1em 1em;
 }
 
-#main.about #page #cooperation ul li {
+#main.about #page #cooperation ul li, #main.about #page #media ul li {
   margin-bottom: 0.5em;
 }
 

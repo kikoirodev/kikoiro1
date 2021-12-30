@@ -186,6 +186,30 @@ get_header();
 					</ul>
 				</section>
 				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area') ) : endif; ?>
+				<section>
+					<h4>MEDIA</h4>
+					<ul class="mediaList">
+					<?php
+						$media_items = SCF::get_option_meta('media-options', 'media_items');
+						$media_items = array_reverse($media_items);//古い順に並べる
+						foreach ($media_items as $media_item) { 
+
+							if($media_item['media_link_url']  && ( $media_item['media_menu_text'] || $media_item['media_link_text'] ) ){
+								$media_name = $media_item['media_menu_text'];
+								if( !$media_name ){
+									$media_name = $media_item['media_link_text'];
+								}
+					?>
+							<li>
+								<a href="<?php echo $media_item['media_link_url']; ?>" target="_blank" rel="noopener noreferrer"><?php echo $media_name; ?></a>                        
+							</li>
+					<?php
+							}
+						}                            
+					?> 
+					</ul>
+				</section>
+
 			</div>
 		</section>
 	</main>
