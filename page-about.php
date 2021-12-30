@@ -99,6 +99,14 @@ get_header();
                 echo $cooperation_text;
             ?>
         </section>
+        <section id="cooperation">
+            <h2>メディア掲載情報</h2>
+            <?php
+                $media_text = SCF::get( 'media_text', 1201 );
+                echo $media_text;
+            ?>
+            
+        </section>
     </section>
 	</main>
 </div>
