@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.70
+Version: 2.73
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -4017,3 +4017,88 @@ div.annotation {
 .widget_twitter_timeline {
 	margin-bottom: 40px;
 }
+
+
+//20210116: アコーディオンのスタイル追加
+.acd-check{
+    display: none;
+}
+.acd-label{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+	margin-top: 16px;
+	border-bottom: 1px solid #999999;
+    padding-bottom: 8px;
+	margin-bottom: 8px;
+}
+.acd-label:after{
+    box-sizing: border-box;
+    content: '+ 開く';
+    display: block;
+    border: 1px solid #000;
+	border-radius: 8px;
+	font-weight: 700;
+    padding: 10px 20px;
+	padding: 4px 0;
+	background-color: #ffffff;	
+	width: 5em;
+	text-align: center;
+}
+.acd-content{
+    display: block;
+    height: 0;
+    opacity: 0;
+    transition: .5s;
+    visibility: hidden;
+}
+.acd-check:checked + .acd-label:after{
+    content: '- 閉じる';
+}
+.acd-check:checked + .acd-label + .acd-content{
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* リンク集 */
+.page-id-9256 .section-link {
+	margin-top: 40px;
+	margin-bottom: 80px;
+}
+.page-id-9256 #main section.article article div.entry-content .section-link h2 {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 28px;
+	margin: 0;
+}
+.page-id-9256 .section-link table {
+	border-collapse: collapse;
+}
+.page-id-9256 .section-link td {
+    vertical-align: top;
+	padding: 16px 0;
+}
+.page-id-9256 .section-link td:first-of-type{
+	width: 30%;
+	padding-right: 16px;
+}
+
+.page-id-9256 .section-link table a,
+.page-id-9256 .section-link ul a {
+	color:#000000;
+	text-decoration: underline;
+ }
+
+ .page-id-9256 #main section.article article div.entry-content .section-link p,
+ .page-id-9256 #main section.article article div.entry-content .section-link ul {
+    font-size: 14px;
+	margin-bottom: 8px;
+ }
+
+ .page-id-9256 .description {
+	 background-color: #ffffff;
+	 padding: 16px 16px 8px;
+	 margin-bottom: 1.5em;
+ }
