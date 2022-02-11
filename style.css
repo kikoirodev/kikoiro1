@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.73
+Version: 2.74
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -4540,15 +4540,15 @@ div.annotation ul li a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   position: relative;
   width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 16px;
-  border-bottom: 1px solid #999999;
   padding-bottom: 8px;
-  margin-bottom: 8px;
 }
 
 .acd-label:after {
@@ -4564,6 +4564,15 @@ div.annotation ul li a:hover {
   background-color: #ffffff;
   width: 5em;
   text-align: center;
+  position: absolute;
+  right: 0;
+}
+
+.acd-label .heading {
+  width: 100%;
+  border-bottom: 1px solid #999999;
+  padding-bottom: 8px;
+  font-weight: 700;
 }
 
 .acd-content {
@@ -4591,7 +4600,7 @@ div.annotation ul li a:hover {
   margin-bottom: 80px;
 }
 
-.page-id-9256 #main section.article article div.entry-content .section-link h2 {
+.page-id-9256 #main section.article article div.entry-content .section-link .heading {
   display: inline-block;
   font-size: 20px;
   line-height: 28px;
@@ -4627,6 +4636,6 @@ div.annotation ul li a:hover {
 .page-id-9256 .description {
   background-color: #ffffff;
   padding: 16px 16px 8px;
-  margin-bottom: 1.5em;
+  margin-top: 8px;
 }
 /*# sourceMappingURL=style.css.map */

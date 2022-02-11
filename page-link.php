@@ -30,7 +30,7 @@ get_header();
 				<?php
 				$pid = get_page_by_path('link');
 				$pid = $get_page_id->ID;
-				$cats = ['学会・関係者組織など','当事者の組織など','支援窓口など', '海外の情報'];
+				$cats = ['学会・関係者組織など','支援窓口など','当事者の組織など', '海外の情報'];
 				$i = 0;
 				foreach ($cats as $cat) {
 					$items = 'リンク集：'. $cat;
@@ -46,11 +46,13 @@ get_header();
 				$link_items = SCF::get($items , $pid);
 						?>
 						<input id="acd-check<?php echo $i ?>" class="acd-check" type="checkbox">
-						<label class="acd-label" for="acd-check<?php echo $i ?>"><h2><?php echo $cat ?></h2></label>                        
-						<div class="acd-content">
+						<label class="acd-label" for="acd-check<?php echo $i ?>">
+							<span class="heading"><?php echo $cat ?></span>
 							<?php if($link_description){ 
 								echo '<div class="description">' . $link_description . '</div>';
 							} ?>
+						</label>                        
+						<div class="acd-content">
 							<?php if( $link_wysiwig  ){ echo $link_wysiwig; } ?>
 				<?php if( $link_items ){ ?>
 					<table><tr>
