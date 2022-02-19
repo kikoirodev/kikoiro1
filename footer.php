@@ -19,7 +19,8 @@
 			><li class="menu brandGreen"><a href="https://congrant.com/project/kikoiro/3650" target="_blank" rel="noopener noreferrer">寄付で応援</a></li
       ><li class="menu brandYellow"><a href="/terms">利用規約</a></li
 			><li class="menu brandYellow"><a href="/policy">プライバシーポリシー</a></li
-			><li class="menu brandBlue"><a href="/contact">お問い合わせ</a></li
+			><li class="menu brandBlue"><a href="/link">聞こえのリンク集</a></li
+      ><li class="menu brandBlue"><a href="/contact">お問い合わせ</a></li
 			><li class="menu brandBlue"><a href="/sitemap">サイトマップ</a></li
       ><li class="twitter">
         <?php 
