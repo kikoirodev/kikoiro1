@@ -22,6 +22,13 @@
 		}
 	?>
 	<div class="entry-content">
+		<div class="thumbnail">
+	    <?php if (has_post_thumbnail()) : ?>
+	        <?php the_post_thumbnail('full'); ?>
+	    <?php else : ?>
+	        <img src="<?php bloginfo('template_url'); ?>/img/noimage.gif" width="100" height="100" alt="デフォルト画像" />
+	    <?php endif ; ?>
+		</div>
 		<?php
 		the_content(
 			sprintf(

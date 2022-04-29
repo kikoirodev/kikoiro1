@@ -20,11 +20,14 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 				get_template_part( 'template-parts/content/content', 'single' );
-				echo do_shortcode('[Sassy_Social_Share]');
 
-				echo '<h3 id="aboutAuthor">著者紹介</h3>';
-				if ( function_exists( 'wpsabox_author_box' ) ) {
-					echo wpsabox_author_box();
+				if( !is_singular( 'news' ) ){
+					echo do_shortcode('[Sassy_Social_Share]');
+
+					echo '<h3 id="aboutAuthor">著者紹介</h3>';
+					if ( function_exists( 'wpsabox_author_box' ) ) {
+						echo wpsabox_author_box();
+					}
 				}
 
 				if ( is_singular( 'attachment' ) ) {
@@ -54,9 +57,11 @@ get_header();
 					echo $source;
 				}
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
+				if( !is_singular( 'news' ) ){
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) {
+						comments_template();
+					}
 				}
 
 			endwhile;

@@ -27,6 +27,8 @@
 					$paths .= '<span><a href="' . get_category_link($cat0->term_id) . '" class="categoryPath">' . $cat0->cat_name . '</a></span>';
 				}
 			}
+		} elseif( is_singular( 'news' ) ){
+			$paths .= '<span><a href="' . get_home_url() . '/news" class="categoryPath">プレスリリース</a></span>';
 		}
 		echo $paths;
 		echo '</div>';

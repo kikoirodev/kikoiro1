@@ -125,6 +125,10 @@ get_header();
 ?> 
         </ul>    
         </section>
+        <section id="news">
+            <h2>プレスリリース</h2>
+            <?php get_template_part( 'template-parts/content/content','news-list');   ?>
+        </section>
     </section>
 	</main>
 </div>
