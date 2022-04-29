@@ -32,6 +32,15 @@ function twentynineteen_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'twentynineteen_body_classes' );
 
+function add_page_slug_class_name( $classes ) {
+  if ( is_page() ) {
+    $page = get_post( get_the_ID() );
+    $classes[] = 'page-' . $page->post_name;
+  }
+  return $classes;
+}
+add_filter( 'body_class', 'add_page_slug_class_name' );
+
 /**
  * Adds custom class to the array of posts classes.
  */

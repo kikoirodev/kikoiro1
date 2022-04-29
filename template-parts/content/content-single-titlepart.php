@@ -28,7 +28,7 @@
 				}
 			}
 		} elseif( is_singular( 'news' ) ){
-			$paths .= '<span><a href="' . get_home_url() . '/news" class="categoryPath">プレスリリース</a></span>';
+			$paths .= '<span><a href="' . get_home_url() . '/news" class="categoryPath">ニュースリリース</a></span>';
 		}
 		echo $paths;
 		echo '</div>';
