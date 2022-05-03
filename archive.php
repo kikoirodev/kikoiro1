@@ -29,7 +29,8 @@ get_header();
 			echo '<h1 class="page-title">';
 			if ($isAuthor) {
 				echo get_the_author() . " の記事一覧";
-			} else {
+			}
+			else {
 				single_cat_title();
 			}
 			echo '</h1>';
