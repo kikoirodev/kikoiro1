@@ -20,7 +20,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 				get_template_part( 'template-parts/content/content', 'page' );
-				get_template_part( 'template-parts/content/content','news-archive');
+				get_template_part( 'template-parts/content/content','news-list');
 			endwhile;
 			?>
 		</section>
