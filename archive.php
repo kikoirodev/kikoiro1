@@ -29,8 +29,6 @@ get_header();
 			echo '<h1 class="page-title">';
 			if ($isAuthor) {
 				echo get_the_author() . " の記事一覧";
-			} elseif( is_post_type_archive( 'news' ) ) {
-				echo "プレスリリース一覧";
 			} else {
 				single_cat_title();
 			}
