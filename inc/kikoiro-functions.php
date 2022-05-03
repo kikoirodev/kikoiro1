@@ -107,22 +107,3 @@ add_action( 'wp_head', 'kikoiro_show_google_calendar', 10 );
  * @param int $position メニューの位置
  */
 SCF::add_options_page( 'メディア掲載情報', 'メディア掲載情報', 'edit_posts', 'media-options' );
-
-
-function kikoiro_pre_get_posts( $query ) {
-    if ( is_admin() || ! $query->is_main_query() ){
-         return;
-    }
-    if ( $query->is_post_type_archive( 'news' ) ) {
-    //if ( $query->is_archive() ) {
-      $query->set('post_type', 'news');
-       return;
-    }
-}
-add_action('pre_get_posts','kikoiro_pre_get_posts');
-
-function kikoiro_show_news_list() {
-	get_template_part( 'template-parts/content','news-list');
-    return;
-}
-add_shortcode('short_cord_string', 'kikoiro_show_news_list');
