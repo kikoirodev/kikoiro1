@@ -161,6 +161,16 @@ get_header();
 			<div id="sideBar">
 				<section>
 					<h4>CATEGORIES</h4>
+					<?php 
+						wp_nav_menu( array( 
+							'theme_location' => 'category' ,
+							'menu_class' => 'categoryList',
+						) ); 
+					?>
+
+					<?php 
+					//20220605: 「片耳難聴のすべて」配下に子カテゴリとして移動あり、表示されなくなっていたため調整
+					/*
 					<ul class="categoryList">
 					<?php 
 						$catNewsAndColumn = get_category_by_slug('news-and-column');
@@ -175,7 +185,8 @@ get_header();
 						'hide_empty'         => 1,
 						'use_desc_for_title' => 0,
 						'child_of'           => $catNewsAndColumn->term_id,
-						'exclude'            => "" . $catUncategorized->term_id . "," . $catAllAbout->term_id,
+						//'exclude'            => "" . $catUncategorized->term_id . "," . $catAllAbout->term_id,
+						'exclude'            => $catUncategorized->term_id,
 						'title_li'           => __( '' ),
 						'show_option_none'   => __( '' ),
 						'echo'               => 1,
@@ -184,8 +195,14 @@ get_header();
 						wp_list_categories( $args ); 
 					?>
 					</ul>
+					 */ ?>
 				</section>
 				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area') ) : endif; ?>
+
+				<section class="press">
+					<h4>プレスリリース</h4>
+            		<?php get_template_part( 'template-parts/content/content','news-list');   ?>
+        		</section>
 				<section>
 					<h4>MEDIA</h4>
 					<ul class="mediaList">
