@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.77
+Version: 2.80
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -4656,36 +4656,76 @@ div.annotation ul li a:hover {
   }
 }
 
-.page-news tr {
+.release-list tr {
   display: block;
   padding-bottom: 8px;
 }
 
 @media (max-width: 876px) {
-  .page-news tr {
+  .release-list tr {
     padding-bottom: 24px;
   }
 }
 
 @media (max-width: 876px) {
-  .page-news tr td {
+  .release-list tr td {
     display: block;
   }
 }
 
-.page-news tr td:first-child {
+.release-list tr td:first-child {
   width: 120px;
   vertical-align: top;
 }
 
 @media (max-width: 876px) {
-  .page-news tr td:first-child {
+  .release-list tr td:first-child {
     width: auto;
   }
 }
 
-.page-news table a {
+.release-list a {
   text-decoration: underline;
   color: #333333;
+}
+
+.home .release-list-wrap {
+  max-height: 300px;
+  overflow-y: scroll;
+  border: #ccc solid 1px;
+  padding: 8px;
+  border-radius: 0.25em;
+  margin-bottom: 50px;
+}
+
+.home .release-list tr {
+  padding: 8px 8px 16px;
+  border-bottom: #ccc 1px solid;
+}
+
+.home .release-list tr:last-child {
+  border-bottom: 0;
+}
+
+.home .release-list td {
+  display: block;
+}
+
+.home .release-list .date {
+  font-size: 12px;
+  color: #666;
+}
+
+.home .release-list a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.home #sideBar .press h4 {
+  margin-bottom: 24px;
+}
+
+.page-news .release-list-wrap {
+  margin-bottom: 80px;
 }
 /*# sourceMappingURL=style.css.map */

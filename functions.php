@@ -514,6 +514,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 				'menu-1' => __( 'Primary', 'twentynineteen' ),
 				'footer' => __( 'Footer Menu', 'twentynineteen' ),
 				'social' => __( 'Social Links Menu', 'twentynineteen' ),
+				'category' => __( 'CATEGORIES', 'twentynineteen' ),
 			)
 		);
 
