@@ -200,7 +200,7 @@ get_header();
 				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area') ) : endif; ?>
 
 				<section class="press">
-					<h4>プレスリリース</h4>
+					<h4>PRESS RELEASE</h4>
             		<?php get_template_part( 'template-parts/content/content','news-list');   ?>
         		</section>
 				<section>
