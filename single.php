@@ -25,9 +25,7 @@ get_header();
 					echo do_shortcode('[Sassy_Social_Share]');
 
 					echo '<h3 id="aboutAuthor">著者紹介</h3>';
-					if ( function_exists( 'wpsabox_author_box' ) ) {
-						echo wpsabox_author_box();
-					}
+					get_template_part( 'template-parts/content/content', 'single-author' );
 				}
 
 				if ( is_singular( 'attachment' ) ) {

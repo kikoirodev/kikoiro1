@@ -7,3 +7,8 @@
 .components-base-control__field {
   display: block!important;
 }
+
+/* WordPressデフォルトのプロフィール情報はこのコードで表示可能 WordPress.comの仕様で更新できないため、現在 非表示のまま */
+/*.user-description-wrap {
+  display: table-row;
+}*/
