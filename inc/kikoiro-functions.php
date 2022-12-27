@@ -106,4 +106,7 @@ add_action( 'wp_head', 'kikoiro_show_google_calendar', 10 );
  * @param string|null $icon_url メニューに表示するアイコンの URL
  * @param int $position メニューの位置
  */
-SCF::add_options_page( 'メディア掲載情報', 'メディア掲載情報', 'edit_posts', 'media-options' );
+include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+if (is_plugin_active('smart-custom-fields/smart-custom-fields.php')) {
+	SCF::add_options_page( 'メディア掲載情報', 'メディア掲載情報', 'edit_posts', 'media-options' );
+}
