@@ -234,7 +234,7 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 
 	return $nav_menu;
 }
-add_filter( 'wp_nav_menu', 'twentynineteen_add_ellipses_to_nav', 10, 2 );
+//add_filter( 'wp_nav_menu', 'twentynineteen_add_ellipses_to_nav', 10, 2 );
 
 /**
  * WCAG 2.0 Attributes for Dropdown Menus

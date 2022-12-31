@@ -60,13 +60,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div id="headerNavigation">
     <a href="/" id="smallLogoContainer" class="initialHide"><img src="/wp-content/themes/kikoiro1/assets/images/logo.png" srcset="/wp-content/themes/kikoiro1/assets/images/logo.png 1x, /wp-content/themes/kikoiro1/assets/images/logo@2x.png 2x" alt="きこいろ" id="smallLogo" /></a>
-      <ul>
-        <li><a href="/about">きこいろについて</a></li>
-        <li><a href="/category/all-about-uhl">片耳難聴のすべて</a></li>
-        <li><a href="/category/news-and-column">ニュース &amp; コラム</a></li>
-        <li><a href="/leaflet-kikoiro/">リーフレット</a></li><li><a href="/original-mark/">マーク</a></li>
-        <li><a href="/join">入会のご案内</a></li>
-    </ul>
+    <?php 
+      wp_nav_menu( array( 
+        'theme_location' => 'main-menu' 
+      ) ); 
+    ?>
     <div id="searchButton">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-labelledby="openSearchBarButton" role="img">
         <title id="openSearchBarButton">検索する</title>
@@ -90,44 +88,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="drawer-menu">
     <?php searchFieldForDrawer(); ?>
     <h2>CONTENTS</h2>
-    <ul>
-      <li><a href="/">サイトトップ</a></li>
-      <li><a href="/about">きこいろについて</a></li>
-      <li><a href="/category/all-about-uhl">片耳難聴のすべて</a></li>
-      <li class="hasChildList"><a href="/category/news-and-column">ニュース &amp; コラム</a>
-        <ul>
-          <?php 
-            $catNewsAndColumn = get_category_by_slug('news-and-column');
-            $catAllAbout = get_category_by_slug('all-about-uhl');
-            $catLeaflet = get_category_by_slug('tool');
-            $catUncategorized = get_category_by_slug('uncategorized');
-            $args = array(
-            'show_option_all'    => '',
-            'orderby'            => 'ID',
-            'order'              => 'ASC',
-            'style'              => 'list',
-            'show_count'         => 0,
-            'hide_empty'         => 1,
-            'use_desc_for_title' => 0,
-            'child_of'           => $catNewsAndColumn->term_id,
-            'exclude'            => "" . $catUncategorized->term_id . "," . $catAllAbout->term_id . "," . $catLeaflet->term_id,
-            'title_li'           => __( '' ),
-            'show_option_none'   => __( '' ),
-            'echo'               => 1,
-            'depth'              => 1
-            );
-            wp_list_categories( $args ); 
-          ?>
-        </ul>
-      </li>
-      <li><a href="/leaflet-kikoiro">リーフレット</a></li>
-      <li><a href="/original-mark">マーク</a></li>
-      <li><a href="/join">入会のご案内</a></li>
-      <li><a href="https://congrant.com/project/kikoiro/3650" target="_blank" rel="noopener noreferrer">寄付で応援</a></li
-      >
-      <li><a href="/link">聞こえのリンク集</a></li>
-      <li><a href="/contact">お問い合わせ</a></li>
-      <li><a href="/sitemap">サイトマップ</a></li>
-    </ul>
+    <?php 
+      wp_nav_menu( array( 
+        'theme_location' => 'sp-menu' 
+      ) ); 
+    ?>
   </div>
 </nav>

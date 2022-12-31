@@ -110,3 +110,12 @@ include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if (is_plugin_active('smart-custom-fields/smart-custom-fields.php')) {
 	SCF::add_options_page( 'メディア掲載情報', 'メディア掲載情報', 'edit_posts', 'media-options' );
 }
+
+function register_my_menus() { 
+	register_nav_menus( array( //複数のナビゲーションメニューを登録する関数
+	//'「メニューの位置」の識別子' => 'メニューの説明の文字列',
+	  'main-menu' => 'PCヘッダーメニュー',
+	  'sp-menu'  => 'SPメニュー',
+	) );
+  }
+  add_action( 'after_setup_theme', 'register_my_menus' );
