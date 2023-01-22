@@ -157,6 +157,20 @@ get_header();
 						wp_reset_postdata();
 					?>
 				</div>
+				<div class="youtube items" id="youtube">
+					<h2 class="topSection">動画</h2>
+					<?php 
+							$top_youtube = SCF::get_option_meta('top-options', 'top_youtube_area');
+							$top_youtube_btn_text = SCF::get_option_meta('top-options', 'top_youtube_btn_text');
+							$top_youtube_btn_url = SCF::get_option_meta('top-options', 'top_youtube_btn_url');
+							echo $top_youtube;
+					 ?>
+				</div>
+				<?php if(  $top_youtube_btn_url && $top_youtube_btn_text ): ?>
+				<a href="<?php echo $top_youtube_btn_url; ?>">
+					<span class="showMore"><?php echo $top_youtube_btn_text; ?></span>
+				</a>
+				<?php endif; ?>
 			</div>
 			<div id="sideBar">
 				<section>

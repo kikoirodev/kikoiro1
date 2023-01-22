@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.83
+Version: 2.84
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -2374,7 +2374,7 @@ blockquote {
 	}
 }
 
-figure.wp-block-embed-youtube {
+body:not(.home):not(.page-movie) figure.wp-block-embed-youtube {
 	margin-block-start: 0 !important;
     margin-block-end: 0 !important;
     margin-inline-start: 0 !important;
@@ -4187,4 +4187,58 @@ div.annotation {
 
 .page-news .release-list-wrap {
 	margin-bottom: 80px;
+}
+
+#itemsContainer {
+	margin-bottom:96px;
+}
+ #itemsContainer #youtube {
+	display:block;
+} 
+body.home #youtube h2 {
+	width: auto;
+}
+
+body.home .youtube + span.showMore {
+	margin: 16px auto 96px;
+}
+
+.movie-area {
+	margin:16px auto 96px;
+}
+.movie-wrap {
+	display:flex;
+	justify-content: space-between;
+	margin-bottom:64px;
+}
+.movie-wrap .movie-item {
+	flex-basis:49%;
+}
+
+span.showMore a {
+	color:#000000;
+}
+span.showMore:hover a{
+	color: #ECA07E;
+}
+
+
+.page-movie #main section.article article div.entry-content h2 {
+	margin-top:0;
+}
+
+.page-movie #main section.article article div.entry-content,
+.page-movie #breadCrumb.single {
+	width:1000px;
+	max-width:100%;
+}
+
+@media (max-width: 876px) {
+	.movie-wrap {
+		display:block;
+	}
+	.page-movie #main section.article article div.entry-content,
+	.page-movie #breadCrumb.single{
+		max-width: calc( 100% - 32px );
+	}
 }
