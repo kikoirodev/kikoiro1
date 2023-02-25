@@ -43,6 +43,11 @@
           <a href="https://www.instagram.com/kikoiro/" target="_blank" rel="noopener noreferrer" id="sns-footer-instagram">
           <span class="footerSnsButton"><?php echoInstagramSvg("footerShareInstagram") ?></span></a></li>
         <?php endif; ?>
+        <?php if(is_front_page()): ?>
+          <li class="youtube">
+          <a href="https://www.youtube.com/channel/UChbxzAIsYuKnpZq_Bx-HYUQ" target="_blank" rel="noopener noreferrer" id="sns-footer-youtube">
+          <span class="footerSnsButton"><?php echoYoutubeSvg("footerShareYoutube") ?></span></a></li>
+        <?php endif; ?>
       	</ul>
       	<p id="copy">&copy;きこいろ <?php echo date("Y"); ?></p>
       </div>
