@@ -24,7 +24,7 @@ get_header();
         <?php the_content(); ?>
         	<div class="movie-area">
                 <?php 
-                    $movies = SCF::get( '動画一覧', 7377 );
+                    $movies = SCF::get( '動画一覧', 10990 );
                     foreach ($movies as $movie):
                 ?>
                     <div class="movie-wrap">
@@ -33,7 +33,7 @@ get_header();
                         </div>
                         <div class="movie-item">
                             <?php echo $movie['movie_description']; ?>
-                            <span class="showMore"><a href="<?php echo $movie['movie_btn_url']; ?>"><?php echo $movie['movie_btn_text']; ?></a></span>
+                            <span class="showMore"><a href="<?php echo $movie['movie_btn_url']; ?>" target="_blank"><?php echo $movie['movie_btn_text']; ?></a></span>
                         </div>
                     </div>
                 <?php endforeach; ?>

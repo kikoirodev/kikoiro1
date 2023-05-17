@@ -37,17 +37,12 @@
           <a href="https://www.facebook.com/share.php?u=https://kikoiro.com/" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"  id="sns-footer-facebook">
         <?php endif; ?>
           <span class="footerSnsButton"><?php echoFacebookSvg("footerShareFacebook") ?></span></a></li>
-
-        <?php if(is_front_page()): ?>
           <li class="instagram">
           <a href="https://www.instagram.com/kikoiro/" target="_blank" rel="noopener noreferrer" id="sns-footer-instagram">
           <span class="footerSnsButton"><?php echoInstagramSvg("footerShareInstagram") ?></span></a></li>
-        <?php endif; ?>
-        <?php if(is_front_page()): ?>
           <li class="youtube">
           <a href="https://www.youtube.com/channel/UChbxzAIsYuKnpZq_Bx-HYUQ" target="_blank" rel="noopener noreferrer" id="sns-footer-youtube">
           <span class="footerSnsButton"><?php echoYoutubeSvg("footerShareYoutube") ?></span></a></li>
-        <?php endif; ?>
       	</ul>
       	<p id="copy">&copy;きこいろ <?php echo date("Y"); ?></p>
       </div>
