@@ -73,24 +73,42 @@ get_header();
                 <p class="origin">→<a href="/about/origin">「きこいろ」の由来</a></p>
             </article>
         </section>
+
         <section id="aboutMembers">
             <h2>MEMBERS</h2>
             <div id="memberImages">
             <?php
-                $items = array('<img src="https://kikoiro.com/wp-content/uploads/2019/10/okano-1.png" alt="岡野 由実" class="lazyload" />',
-                    '<img src="https://kikoiro.com/wp-content/uploads/2019/10/asano.png" alt="麻野 美和" class="lazyload" />',
-                    '<img src="https://kikoiro.com/wp-content/uploads/2019/11/tsuji.png" alt="辻 慎也" class="lazyload" />',
-                    '<img src="https://kikoiro.com/wp-content/uploads/2019/12/takaki.jpg" alt="高木 健" class="lazyload" />',
-                    '<img src="https://kikoiro.com/wp-content/uploads/2019/12/mizuna.png" alt="みずな" class="lazyload" />');
-                shuffle($items);
-                foreach ($items as $item) {
-                    echo $item;
+                $members = SCF::get('メンバー設定', 1490);
+
+                foreach ($members as $member) {
+                    $name = '';
+                    $img_url = '';
+                    $slug = $member['user_slug'];
+                    $u_id = get_user_by('slug', $slug) ? get_user_by('slug', $slug)->ID : null;
+
+                    if ($u_id) {
+                        $name = mb_convert_kana(get_the_author_meta('display_name', $u_id), 's');
+                        $img_id = SCF::get_user_meta($u_id, 'profile_image');
+                    } else {
+                        $name = $member['user_name'];
+                        $img_id = $member['profile_image'];
+                    }
+
+                    $img_url = wp_get_attachment_url($img_id);
+                    
+                    if ($img_url && $name) {
+                        echo '<img src="' . esc_url($img_url) . '" alt="' . esc_attr($name) . '" class="lazyload" />';
+                    }
                 }
             ?>
-
             </div>
-            <div class="showMore"><a href="/about/members"><span class="showMore">プロジェクトメンバー一覧</span></a></div>
+            <div class="showMore">
+                <a href="/about/members">
+                    <span class="showMore">プロジェクトメンバー一覧</span>
+                </a>
+            </div>
         </section>
+
         <section id="cooperation">
             <h2>協力・協賛</h2>
             <?php
