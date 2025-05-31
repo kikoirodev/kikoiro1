@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.91
+Version: 2.93
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -1167,7 +1167,7 @@ div.items article div.postDate {
           justify-content: space-between;
 }
 
-.linkWithAnimatedUnderLine, #headerNavigation ul li a, h2.topSection a, #featured article h3 a, #allAbout div.allAboutItems article.allAboutCategory h3 a, #allAbout div.allAboutItems article.allAboutCategory ul li a, #sideBar section ul.mediaList li a, section.widget_top-posts ul li div.widgets-list-layout-links a, #wpp-8 ul li a.wpp-post-title, #footerNavigation li.menu a, #main section.article article div.author a, #main section.article article div.categoryPath span a.categoryPath, div.saboxplugin-wrap div.saboxplugin-authorname a, div.saboxplugin-wrap div.saboxplugin-web a, nav.post-navigation div.nav-links div.nav-next a span.post-title, nav.post-navigation div.nav-links div.nav-previous a span.post-title, #breadCrumb span.paths a.path span, figcaption a, #academicContents div article h3 a, .linkContent li a, blockquote cite a, #main.about #page #cooperation ul li a, #main.about #page #media ul li a, #main.member #page #members div.person h2.name a, #main.member #page #members div.person div.web a, #main.member #recruiting ul li a, .references ul li a, .references ol li a, .references li a {
+.linkWithAnimatedUnderLine, #headerNavigation ul li a, h2.topSection a, #featured article h3 a, #allAbout div.allAboutItems article.allAboutCategory h3 a, #allAbout div.allAboutItems article.allAboutCategory ul li a, section.widget_top-posts ul li div.widgets-list-layout-links a, #wpp-8 ul li a.wpp-post-title, #footerNavigation li.menu a, #main section.article article div.author a, #main section.article article div.categoryPath span a.categoryPath, div.saboxplugin-wrap div.saboxplugin-authorname a, div.saboxplugin-wrap div.saboxplugin-web a, nav.post-navigation div.nav-links div.nav-next a span.post-title, nav.post-navigation div.nav-links div.nav-previous a span.post-title, #breadCrumb span.paths a.path span, figcaption a, #academicContents div article h3 a, .linkContent li a, blockquote cite a, #main.about #page #cooperation ul li a, #main.about #page #media ul li a, #main.member #page #members div.person h2.name a, #main.member #page #members div.person div.web a, #main.member #recruiting ul li a, .references ul li a, .references ol li a, .references li a {
   border-bottom: 1px solid transparent;
   -webkit-transition: border-color 0.2s;
   transition: border-color 0.2s;
@@ -1175,7 +1175,7 @@ div.items article div.postDate {
   color: #000000;
 }
 
-.linkWithAnimatedUnderLine:hover, #headerNavigation ul li a:hover, h2.topSection a:hover, #featured article h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory ul li a:hover, #sideBar section ul.mediaList li a:hover, section.widget_top-posts ul li div.widgets-list-layout-links a:hover, #wpp-8 ul li a.wpp-post-title:hover, #footerNavigation li.menu a:hover, #main section.article article div.author a:hover, #main section.article article div.categoryPath span a.categoryPath:hover, div.saboxplugin-wrap div.saboxplugin-authorname a:hover, div.saboxplugin-wrap div.saboxplugin-web a:hover, nav.post-navigation div.nav-links div.nav-next a span.post-title:hover, nav.post-navigation div.nav-links div.nav-previous a span.post-title:hover, #breadCrumb span.paths a.path span:hover, figcaption a:hover, #academicContents div article h3 a:hover, .linkContent li a:hover, blockquote cite a:hover, #main.about #page #cooperation ul li a:hover, #main.about #page #media ul li a:hover, #main.member #page #members div.person h2.name a:hover, #main.member #page #members div.person div.web a:hover, #main.member #recruiting ul li a:hover, .references li a:hover {
+.linkWithAnimatedUnderLine:hover, #headerNavigation ul li a:hover, h2.topSection a:hover, #featured article h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory h3 a:hover, #allAbout div.allAboutItems article.allAboutCategory ul li a:hover, section.widget_top-posts ul li div.widgets-list-layout-links a:hover, #wpp-8 ul li a.wpp-post-title:hover, #footerNavigation li.menu a:hover, #main section.article article div.author a:hover, #main section.article article div.categoryPath span a.categoryPath:hover, div.saboxplugin-wrap div.saboxplugin-authorname a:hover, div.saboxplugin-wrap div.saboxplugin-web a:hover, nav.post-navigation div.nav-links div.nav-next a span.post-title:hover, nav.post-navigation div.nav-links div.nav-previous a span.post-title:hover, #breadCrumb span.paths a.path span:hover, figcaption a:hover, #academicContents div article h3 a:hover, .linkContent li a:hover, blockquote cite a:hover, #main.about #page #cooperation ul li a:hover, #main.about #page #media ul li a:hover, #main.member #page #members div.person h2.name a:hover, #main.member #page #members div.person div.web a:hover, #main.member #recruiting ul li a:hover, .references li a:hover {
   border-bottom: 1px solid #636363;
 }
 
@@ -1308,20 +1308,48 @@ a.newTag, span.newTag {
   background-color: #dddddd;
 }
 
+#sideBar section.sidebar-list {
+  margin: 24px 0 64px 0;
+}
+
+#sideBar section.sidebar-list a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 876px) {
+  #sideBar section.sidebar-list a {
+    font-weight: 700;
+  }
+}
+
+#sideBar section.sidebar-list .showMore {
+  height: 32px;
+  line-height: 28px;
+  font-size: 12px;
+  width: 120px;
+}
+
+#sideBar section.sidebar-list .showMore a {
+  text-decoration: none;
+  display: block;
+}
+
+#sideBar section.sidebar-list .showMore:hover {
+  color: #ECA07E;
+}
+
+#sideBar section.sidebar-list .showMore:hover a {
+  color: #ECA07E;
+}
+
 #sideBar section ul.mediaList {
   list-style-type: none;
   padding: 0;
-  margin: 24px 0 64px 0;
 }
 
 #sideBar section ul.mediaList li {
   margin: 0 0px 0.5em 0px;
-}
-
-@media screen and (max-width: 876px) {
-  #sideBar section ul.mediaList li a {
-    font-weight: 700;
-  }
 }
 
 /* Wordpress.com Jetpack Popular Post */
@@ -3253,15 +3281,7 @@ iframe {
     font-weight: bold;
   }
   #sideBar section ul.mediaList {
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    display: block;
   }
   #sideBar section ul.mediaList li {
     margin: 0 16px 16px 16px;

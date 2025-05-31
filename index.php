@@ -217,13 +217,15 @@ get_header();
 					<h4>PRESS RELEASE</h4>
             		<?php get_template_part( 'template-parts/content/content','news-list');   ?>
         		</section>
-				<section>
+				<section class="media sidebar-list">
 					<h4>MEDIA</h4>
 					<ul class="mediaList">
 					<?php
 						$media_items = SCF::get_option_meta('media-options', 'media_items');
 						$media_items = array_reverse($media_items);//古い順に並べる
+						$count = 0;
 						foreach ($media_items as $media_item) { 
+							if ($count >= 3) break; // 最初の3件だけ表示
 
 							if($media_item['media_link_url']  && ( $media_item['media_menu_text'] || $media_item['media_link_text'] ) ){
 								$media_name = $media_item['media_menu_text'];
@@ -235,11 +237,29 @@ get_header();
 								<a href="<?php echo $media_item['media_link_url']; ?>" target="_blank" rel="noopener noreferrer"><?php echo $media_name; ?></a>                        
 							</li>
 					<?php
+							$count++;
 							}
 						}                            
 					?> 
 					</ul>
+					<span class="showMore"><a href="<?php echo esc_url( home_url( '/media' ) ); ?>" title="続きを表示">And More</a></span>
 				</section>
+				<?php
+					$seminar_items = SCF::get('seminar-pickup', 14559);
+					if( $seminar_items ):
+				?>
+				<section class="seminar sidebar-list">
+					<h4>SEMINAR</h4>
+					<ul class="mediaList">
+					<?php
+						echo $seminar_items;                   
+					?> 
+					</ul>
+					<span class="showMore"><a href="<?php echo esc_url( home_url( '/seminar' ) ); ?>" title="続きを表示">And More</a></span>
+				</section>
+				<?php
+					endif;
+				?>
 
 			</div>
 		</section>
