@@ -157,19 +157,21 @@ get_header();
 						wp_reset_postdata();
 					?>
 				</div>
-				<div class="youtube items" id="youtube">
-					<h2 class="topSection">動画</h2>
-					<?php 
-							$top_youtube = SCF::get_option_meta('top-options', 'top_youtube_area');
-							$top_youtube_btn_text = SCF::get_option_meta('top-options', 'top_youtube_btn_text');
-							$top_youtube_btn_url = SCF::get_option_meta('top-options', 'top_youtube_btn_url');
-							echo $top_youtube;
-					 ?>
-				</div>
-				<?php if(  $top_youtube_btn_url && $top_youtube_btn_text ): ?>
-				<a href="<?php echo $top_youtube_btn_url; ?>">
-					<span class="showMore"><?php echo $top_youtube_btn_text; ?></span>
-				</a>
+				<?php if ( class_exists('SCF') ): ?>
+					<div class="youtube items" id="youtube">
+						<h2 class="topSection">動画</h2>
+						<?php 
+								$top_youtube = SCF::get_option_meta('top-options', 'top_youtube_area');
+								$top_youtube_btn_text = SCF::get_option_meta('top-options', 'top_youtube_btn_text');
+								$top_youtube_btn_url = SCF::get_option_meta('top-options', 'top_youtube_btn_url');
+								echo $top_youtube;
+						?>
+					</div>
+					<?php if(  $top_youtube_btn_url && $top_youtube_btn_text ): ?>
+						<a href="<?php echo $top_youtube_btn_url; ?>">
+							<span class="showMore"><?php echo $top_youtube_btn_text; ?></span>
+						</a>
+					<?php endif; ?>
 				<?php endif; ?>
 			</div>
 			<div id="sideBar">
@@ -217,47 +219,40 @@ get_header();
 					<h4>PRESS RELEASE</h4>
             		<?php get_template_part( 'template-parts/content/content','news-list');   ?>
         		</section>
-				<section class="media sidebar-list">
-					<h4>MEDIA</h4>
-					<ul class="mediaList">
-					<?php
-						$media_items = SCF::get_option_meta('media-options', 'media_items');
-						$media_items = array_reverse($media_items);//古い順に並べる
-						$count = 0;
-						foreach ($media_items as $media_item) { 
-							if ($count >= 3) break; // 最初の3件だけ表示
-
-							if($media_item['media_link_url']  && ( $media_item['media_menu_text'] || $media_item['media_link_text'] ) ){
-								$media_name = $media_item['media_menu_text'];
-								if( !$media_name ){
-									$media_name = $media_item['media_link_text'];
-								}
-					?>
-							<li>
-								<a href="<?php echo $media_item['media_link_url']; ?>" target="_blank" rel="noopener noreferrer"><?php echo $media_name; ?></a>                        
-							</li>
-					<?php
-							$count++;
-							}
-						}                            
-					?> 
-					</ul>
-					<span class="showMore"><a href="<?php echo esc_url( home_url( '/media' ) ); ?>" title="続きを表示">And More</a></span>
-				</section>
+				
 				<?php
-					$seminar_items = SCF::get('seminar-pickup', 14559);
-					if( $seminar_items ):
+					if ( class_exists('SCF') ):
+					$media_items = SCF::get('media-pickup', 14557); //ローカル 14403
+					if( $media_items ):
 				?>
-				<section class="seminar sidebar-list">
-					<h4>SEMINAR</h4>
-					<ul class="mediaList">
-					<?php
-						echo $seminar_items;                   
-					?> 
-					</ul>
-					<span class="showMore"><a href="<?php echo esc_url( home_url( '/seminar' ) ); ?>" title="続きを表示">And More</a></span>
-				</section>
+						<section class="media sidebar-list">
+							<h4>MEDIA</h4>
+							<div class="mediaList">
+							<?php
+								echo $media_items;                   
+							?> 
+							</div>
+							<span class="showMore"><a href="<?php echo esc_url( home_url( '/media' ) ); ?>" title="続きを表示">And More</a></span>
+						</section>
+					<?php endif; ?>
+				<?php endif; ?>
+
 				<?php
+					if ( class_exists('SCF') ):
+						$seminar_items = SCF::get('seminar-pickup', 14559); //ローカル 14405
+						if( $seminar_items ):
+				?>
+							<section class="seminar sidebar-list">
+								<h4>SEMINAR</h4>
+								<div class="mediaList">
+								<?php
+									echo $seminar_items;                   
+								?> 
+								</div>
+								<span class="showMore"><a href="<?php echo esc_url( home_url( '/seminar' ) ); ?>" title="続きを表示">And More</a></span>
+							</section>
+				<?php
+						endif;
 					endif;
 				?>
 

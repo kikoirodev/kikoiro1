@@ -119,29 +119,16 @@ get_header();
         </section>
         <section id="media">
             <h2>メディア掲載情報</h2>
+            <p style="text-align: center;">取材依頼は<a style="color: #000; border-bottom: 1px solid #636363;" href="https://kikoiro.com/contact/">お問い合わせ</a>からお願いいたします。</p>
             <?php
-                $media_text = SCF::get( 'media_text', 1201 );
-                echo $media_text;
-            ?>
-            <ul>
-            <?php
-    $media_items = SCF::get_option_meta('media-options', 'media_items');
-    foreach ($media_items as $media_item) { 
-
-        if($media_item['media_link_url']  && ( $media_item['media_menu_text'] || $media_item['media_link_text'] ) ){
-            $media_name = $media_item['media_menu_text'];
-            if( $media_item['media_link_text'] ){
-                $media_name = $media_item['media_link_text'];
-            }
-?>
-        <li>
-            <a href="<?php echo $media_item['media_link_url']; ?>" target="_blank" rel="noopener noreferrer"><?php echo $media_item['media_publish_date']; ?>　<?php echo $media_name; ?></a>                        
-        </li>
-<?php
-        }
-    }                            
-?> 
-        </ul>    
+                if ( class_exists('SCF') ):
+                    $media_items = SCF::get('media-pickup', 14557); //ローカル 14403
+                    if( $media_items ):
+                        echo $media_items;                   
+            ?> 
+                    <span class="showMore"><a href="<?php echo esc_url( home_url( '/media' ) ); ?>" title="続きを表示">And More</a></span>
+                <?php endif; ?>
+            <?php endif; ?> 
         </section>
     </section>
 	</main>

@@ -108,8 +108,10 @@ add_action( 'wp_head', 'kikoiro_show_google_calendar', 10 );
  */
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if (is_plugin_active('smart-custom-fields/smart-custom-fields.php')) {
-	SCF::add_options_page( 'メディア掲載情報', 'メディア掲載情報', 'edit_posts', 'media-options' );
-	SCF::add_options_page( 'トップページ設定', 'トップページ設定', 'edit_posts', 'top-options' );
+	if ( class_exists('SCF') ) {
+		//SCF::add_options_page( 'メディア掲載情報', 'メディア掲載情報', 'edit_posts', 'media-options' );
+		SCF::add_options_page( 'トップページ設定', 'トップページ設定', 'edit_posts', 'top-options' );
+	}
 }
 
 function register_my_menus() { 
