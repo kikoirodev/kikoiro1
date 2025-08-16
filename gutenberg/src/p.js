@@ -1,7 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/editor';
 import { createBlock } from '@wordpress/blocks';
-import { InspectorControls } from '@wordpress/editor';
+import { InspectorControls } from '@wordpress/block-editor'; //最新
 import { CheckboxControl, TextControl, PanelBody } from '@wordpress/components';
 import { getClassNameFromProperty } from './tools.js';
 
@@ -75,7 +75,6 @@ registerBlockType( 'kikoiro1/p', {
             </InspectorControls>,
             <RichText 
                 tagName="p" 
-                multiline="false"
                 id={`${props.attributes.id}`}
                 className={ `${(props.attributes.useAsAnchor === true) ? 'anchorLink' : ''} ${getClassNameFromProperty(props.attributes, 'className')}`}
                 value={ content } 
@@ -86,7 +85,6 @@ registerBlockType( 'kikoiro1/p', {
         return (
             <RichText.Content
                 tagName="p" 
-                multiline="false"
                 id={`${props.attributes.id}`}
                 className={ `${(props.attributes.useAsAnchor === true) ? 'anchorLink' : ''} ${getClassNameFromProperty(props.attributes, 'className')}`}
                 value={ props.attributes.content } />
