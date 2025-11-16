@@ -256,19 +256,10 @@ function jetpack_custom_thumb_size( $get_image_options ) {
 add_filter( 'jetpack_top_posts_widget_image_options', 'jetpack_custom_thumb_size' );
 
 function isNewsAndColumnCagetory() {
-    global $post;
-    if (get_post_type($post) === 'notice') {
-        $terms = get_the_terms($post->ID, 'notice_cat');
-        return !empty($terms) && !is_wp_error($terms);
-    }
-    $categories = get_the_category($post->ID);
-    if (empty($categories) || !isset($categories[0])) return false;
-    $currentCategory = get_category($categories[0]->cat_ID, false);
-    if (!$currentCategory || is_wp_error($currentCategory)) { return false; }
-    if ($currentCategory->parent == 0) { return false; }
-    $parentCategory = get_category($currentCategory->parent, false);
-    if (!$parentCategory || is_wp_error($parentCategory)) { return false; }
-    return $parentCategory->slug == "news-and-column";
+	$currentCategory = get_category(the_category_ID(false), false);
+	if ($currentCategory->parent == 0) { return false; }
+	$parentCategory = get_category($currentCategory->parent, false);
+	return $parentCategory->slug == "news-and-column";
 }
 
 function countPostsInNewsAndColumn($excludePostsWithNewTag = false) {
