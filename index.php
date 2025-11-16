@@ -42,31 +42,33 @@ get_header();
 			}
 		?>
 		</section>
+		<?php
+			$notice_query = new WP_Query([
+				'post_type'      => 'notice',
+				'posts_per_page' => -1,
+				'post_status'    => 'publish',
+				'orderby'        => 'date',
+				'order'          => 'DESC'
+			]);
+			if ($notice_query->have_posts()) :
+		?>
 		<section id="notice">
 			<h2 class="topSection">お知らせ</h2>
 			<div class="release-list-wrap">
 				<table class="release-list">
 					<tbody>
 					<?php
-					$notice_query = new WP_Query([
-						'post_type'      => 'notice',
-						'posts_per_page' => -1,
-						'post_status'    => 'publish',
-						'orderby'        => 'date',
-						'order'          => 'DESC'
-					]);
-					if ($notice_query->have_posts()) :
-						while ($notice_query->have_posts()) : $notice_query->the_post();
-							$date = get_the_date('Y年m月d日');
-							$terms = get_the_terms(get_the_ID(), 'notice_cat');
-							$cat = $terms && !is_wp_error($terms) ? join(', ', wp_list_pluck($terms, 'name')) : '';
-							$title = get_the_title();
-							// SCF対応：外部リンク用カスタムフィールド
-							$url = SCF::get('notice_link', get_the_ID());
-							$link = $url ? esc_url($url) : get_permalink();
+					while ($notice_query->have_posts()) : $notice_query->the_post();
+						$date = get_the_date('Y年m月d日');
+						$terms = get_the_terms(get_the_ID(), 'notice_cat');
+						$cat = $terms && !is_wp_error($terms) ? join(', ', wp_list_pluck($terms, 'name')) : '';
+						$title = get_the_title();
+						// SCF対応：外部リンク用カスタムフィールド
+						$url = SCF::get('notice_link', get_the_ID());
+						$link = $url ? esc_url($url) : get_permalink();
 					?>
 					<tr>
-						<td
+						<td>
 							<span class="date"><?php echo esc_html($date); ?></span>
 							<?php if ($cat) : ?>
 								<span class="cat"><?php echo esc_html($cat); ?></span>
@@ -80,13 +82,15 @@ get_header();
 					</tr>
 					<?php
 						endwhile;
-					endif;
-					wp_reset_postdata();
 					?>
 					</tbody>
 				</table>
 			</div>
 		</section>
+		<?php
+		endif;
+		wp_reset_postdata();
+		?>
 		<section id="allAbout">
 			<h2 class="topSection"><a href="/category/all-about-uhl">片耳難聴のすべて</a><br/><span>片耳難聴の専門家による専門的なガイダンスとアドバイス</span></h2>
 			<div class="allAboutItems">
