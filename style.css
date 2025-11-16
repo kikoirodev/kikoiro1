@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.96
+Version: 2.97
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -1310,6 +1310,10 @@ a.newTag, span.newTag {
 
 #sideBar section.sidebar-list {
   margin: 24px 0 64px 0;
+}
+
+#sideBar section.sidebar-list.press {
+  margin: 24px 0 50px 0;
 }
 
 #sideBar section.sidebar-list a {
@@ -4745,7 +4749,7 @@ div.annotation ul li a:hover {
   border: #ccc solid 1px;
   padding: 8px;
   border-radius: 0.25em;
-  margin-bottom: 50px;
+  margin-bottom: 14px;
 }
 
 .home .release-list tr {
@@ -4773,6 +4777,108 @@ div.annotation ul li a:hover {
 
 .home #sideBar .press h4 {
   margin-bottom: 24px;
+}
+
+.home #notice {
+  margin-top: 64px;
+}
+
+@media screen and (max-width: 767px) {
+  .home #notice {
+    padding: 0 16px;
+  }
+}
+
+.home #notice .release-list-wrap {
+  background: #ffffff;
+  border: 0;
+  border-radius: 0;
+  padding: 2em;
+}
+
+@media screen and (max-width: 767px) {
+  .home #notice .release-list-wrap {
+    padding: 1em;
+  }
+}
+
+.home #notice .release-list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .home #notice .release-list {
+    display: block;
+    width: 100%;
+  }
+}
+
+.home #notice .release-list tbody {
+  width: 100%;
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .home #notice .release-list {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home #notice .release-list tr {
+    display: table-row;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home #notice .release-list tr {
+    display: block;
+    border: 0;
+  }
+}
+
+.home #notice .release-list tr:last-of-type td {
+  padding: 0;
+}
+
+.home #notice .release-list tr td {
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 768px) {
+  .home #notice .release-list tr td {
+    display: table-cell;
+    padding: 0 0 11px;
+  }
+  .home #notice .release-list tr td:first-child {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home #notice .release-list tr td {
+    width: 100%;
+  }
+}
+
+.home #notice .release-list .cat {
+  background-color: #CCECC6;
+  font-size: 11px;
+  display: inline-block;
+  line-height: 100%;
+  padding: 3px 4px 3px 4px;
+  margin: 0 24px 0 8px;
+  color: #000000;
+  min-width: 32px;
+  text-align: center;
+}
+
+.home #notice .release-list a {
+  text-decoration: underline;
 }
 
 .page-news .release-list-wrap {

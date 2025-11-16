@@ -42,6 +42,48 @@ get_header();
 			}
 		?>
 		</section>
+		<section id="notice">
+			<h2 class="topSection">お知らせ</h2>
+			<div class="release-list-wrap">
+				<table class="release-list">
+					<tbody>
+					<?php
+					// SCFプラグイン「お知らせ」グループをオプションページ（top-options）から取得
+					if (class_exists('SCF')) {
+						$notices = SCF::get_option_meta('top-options', 'お知らせ');
+						if (!empty($notices)) :
+							foreach ($notices as $notice) :
+								$date = isset($notice['notice_date']) ? esc_html($notice['notice_date']) : '';
+								$cat = isset($notice['notice_cat']) ? esc_html($notice['notice_cat']) : '';
+								$title = isset($notice['notice_title']) ? esc_html($notice['notice_title']) : '';
+								$link = isset($notice['notice_link']) ? esc_url($notice['notice_link']) : '';
+								if ($date || $title || $link) :
+					?>
+					<tr>
+					<td>
+						<span class="date"><?php echo $date ?></span>
+						<?php if ($cat) : ?>
+						<span class="cat"><?php echo $cat ?></span>&nbsp;
+						<?php endif; ?>
+					</td>
+					<td>
+						<?php if ($link && $title) : ?>
+						<a href="<?php echo $link; ?>" target="_blank" rel="noopener noreferrer"> <?php echo $title; ?> </a>
+						<?php elseif($title): ?>
+						<?php echo $title; ?>
+						<?php endif; ?>
+					</td>
+					</tr>
+					<?php
+								endif;
+							endforeach;
+						endif;
+					}
+					?>
+					</tbody>
+				</table>
+			</div>
+		</section>
 		<section id="allAbout">
 			<h2 class="topSection"><a href="/category/all-about-uhl">片耳難聴のすべて</a><br/><span>片耳難聴の専門家による専門的なガイダンスとアドバイス</span></h2>
 			<div class="allAboutItems">
@@ -215,9 +257,12 @@ get_header();
 				</section>
 				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area') ) : endif; ?>
 
-				<section class="press">
+				<section class="press sidebar-list">
 					<h4>PRESS RELEASE</h4>
-            		<?php get_template_part( 'template-parts/content/content','news-list');   ?>
+					<div class="mediaList">
+            			<?php get_template_part( 'template-parts/content/content','news-list');   ?>
+					</div>
+  					<span class="showMore"><a href="<?php echo esc_url( home_url( '/news' ) ); ?>" title="続きを表示">And More</a></span>
         		</section>
 				
 				<?php

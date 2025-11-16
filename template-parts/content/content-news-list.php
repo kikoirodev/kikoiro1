@@ -1,8 +1,12 @@
 <div class="release-list-wrap">
   <table class="release-list">
     <?php
+    $post_num = -1;
+    if(is_home()){
+      $post_num = 1;
+    }
     $args = array(
-      'posts_per_page' => -1, // 表示する投稿数
+      'posts_per_page' => $post_num, // 表示する投稿数
       'post_type' => 'news', // 取得する投稿タイプのスラッグ
       'orderby' => 'date', //日付で並び替え
       'order' => 'DESC' // 降順 or 昇順

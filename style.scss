@@ -3,7 +3,7 @@
 Theme Name: kikoiro1
 Author: Hironobu Kimura
 Author URI: https://www.emotionale.jp/
-Version: 2.96
+Version: 2.97
 
 kikoiro1 is based on Underscores twentynineteen by WordPress team.
 twentynineteen is distributed under the terms of the GNU GPL v2 or later.
@@ -1154,6 +1154,9 @@ a.newTag, span.newTag {
 		}
 		&.sidebar-list{
 			margin: 24px 0 64px 0;
+			&.press{
+				margin: 24px 0 50px 0;
+			}
 			a {
 				color: $defaultTextColor;
 				text-decoration: underline;
@@ -4202,7 +4205,7 @@ div.annotation {
 		border: #ccc solid 1px;
 		padding: 8px;
 		border-radius: 0.25em;
-		margin-bottom: 50px;
+		margin-bottom: 14px;
 	}
 	.release-list {
 		tr {
@@ -4226,6 +4229,78 @@ div.annotation {
 	}
 	#sideBar .press h4 {
 		margin-bottom: 24px;
+	}
+	#notice{
+		margin-top: 64px;
+		@media screen and (max-width:767px){
+			padding: 0 16px;
+		}
+		.release-list-wrap{
+			background: #ffffff;
+			border: 0;
+			border-radius: 0;
+    		padding: 2em;
+			@media screen and (max-width:767px){
+    			padding: 1em;
+			}
+		}
+		.release-list{
+			width: 100%;
+			display: flex;
+			@media screen and (max-width:767px){
+				display: block;
+				width: 100%;
+			}
+			tbody {
+				width: 100%;
+					display: block;
+			}
+				@media screen and (max-width:767px){
+					display: block;
+					width: 100%;
+				}
+			tr{
+				@media screen and (min-width:768px){
+					display: table-row;
+				}
+				@media screen and (max-width:767px){
+					display: block;
+					border: 0;
+				}
+				&:last-of-type td{
+					padding: 0;
+				}
+
+			}
+			tr td{
+				vertical-align: middle;
+				@media screen and (min-width:768px){
+					display:table-cell;
+					padding: 0 0 11px;
+					&:first-child{
+						width: auto;
+					}
+				}
+				@media screen and (max-width:767px){
+					width: 100%;
+				}
+			}
+			.cat {
+				background-color: #CCECC6;
+				font-size: 11px;
+				display: inline-block;
+				line-height: 100%;
+				padding: 3px 4px 3px 4px;
+				margin: 0 24px 0 8px;
+				color: #000000;
+				min-width: 32px;
+				text-align: center;
+			}
+			a{
+				    text-decoration: underline;
+			}
+		
+		}
 	}
 }
 
