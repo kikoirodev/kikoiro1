@@ -48,37 +48,40 @@ get_header();
 				<table class="release-list">
 					<tbody>
 					<?php
-					// SCFプラグイン「お知らせ」グループをオプションページ（top-options）から取得
-					if (class_exists('SCF')) {
-						$notices = SCF::get_option_meta('top-options', 'お知らせ');
-						if (!empty($notices)) :
-							foreach ($notices as $notice) :
-								$date = isset($notice['notice_date']) ? esc_html($notice['notice_date']) : '';
-								$cat = isset($notice['notice_cat']) ? esc_html($notice['notice_cat']) : '';
-								$title = isset($notice['notice_title']) ? esc_html($notice['notice_title']) : '';
-								$link = isset($notice['notice_link']) ? esc_url($notice['notice_link']) : '';
-								if ($date || $title || $link) :
+					$notice_query = new WP_Query([
+						'post_type'      => 'notice',
+						'posts_per_page' => -1,
+						'post_status'    => 'publish',
+						'orderby'        => 'date',
+						'order'          => 'DESC'
+					]);
+					if ($notice_query->have_posts()) :
+						while ($notice_query->have_posts()) : $notice_query->the_post();
+							$date = get_the_date('Y年m月d日');
+							$terms = get_the_terms(get_the_ID(), 'notice_cat');
+							$cat = $terms && !is_wp_error($terms) ? join(', ', wp_list_pluck($terms, 'name')) : '';
+							$title = get_the_title();
+							// SCF対応：外部リンク用カスタムフィールド
+							$url = SCF::get('notice_link', get_the_ID());
+							$link = $url ? esc_url($url) : get_permalink();
 					?>
 					<tr>
-					<td>
-						<span class="date"><?php echo $date ?></span>
-						<?php if ($cat) : ?>
-						<span class="cat"><?php echo $cat ?></span>&nbsp;
-						<?php endif; ?>
-					</td>
-					<td>
-						<?php if ($link && $title) : ?>
-						<a href="<?php echo $link; ?>" target="_blank" rel="noopener noreferrer"> <?php echo $title; ?> </a>
-						<?php elseif($title): ?>
-						<?php echo $title; ?>
-						<?php endif; ?>
-					</td>
+						<td
+							<span class="date"><?php echo esc_html($date); ?></span>
+							<?php if ($cat) : ?>
+								<span class="cat"><?php echo esc_html($cat); ?></span>
+							<?php endif; ?>
+						</td>
+						<td>
+							<a href="<?php echo $link; ?>"<?php if ($url): ?> target="_blank" rel="noopener"<?php endif; ?>>
+								<?php echo esc_html($title); ?>
+							</a>
+						</td>
 					</tr>
 					<?php
-								endif;
-							endforeach;
-						endif;
-					}
+						endwhile;
+					endif;
+					wp_reset_postdata();
 					?>
 					</tbody>
 				</table>
