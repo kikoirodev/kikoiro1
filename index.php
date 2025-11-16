@@ -29,7 +29,7 @@ get_header();
 		<?php 
 			query_posts('tag=new');
 			if (have_posts()) {
-				echo '<h2 id="featuredPost">FEATURED</h2>';
+				//echo '<h2 id="featuredPost">FEATURED</h2>';
 				the_post();
 				get_template_part('template-parts/content/content-excerpt-more');
 			}
@@ -53,7 +53,6 @@ get_header();
 			if ($notice_query->have_posts()) :
 		?>
 		<section id="notice">
-			<h2 class="topSection">お知らせ</h2>
 			<div class="release-list-wrap">
 				<table class="release-list">
 					<tbody>
