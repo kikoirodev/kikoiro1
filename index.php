@@ -42,15 +42,37 @@ get_header();
 			}
 		?>
 		</section>
+		
 		<?php
-			$notice_query = new WP_Query([
-				'post_type'      => 'notice',
-				'posts_per_page' => -1,
-				'post_status'    => 'publish',
-				'orderby'        => 'date',
-				'order'          => 'DESC'
-			]);
-			if ($notice_query->have_posts()) :
+			// ▼ オプションページ（admin.php?page=top-options）の SCF フィールドから取得
+			$pickup = SCF::get_option_meta('top-options', 'top_pickup_notice'); // 関連する投稿
+
+			// 返り値が「ID配列」だったり「配列の配列」だったりしても吸収して ID 配列に正規化
+			$pickup_ids = [];
+			if (!empty($pickup)) {
+				foreach ((array) $pickup as $v) {
+					if (is_numeric($v)) {
+						$pickup_ids[] = (int) $v;
+					} elseif (is_array($v)) {
+						// SCFの返却形式差異を吸収（id / ID どちらでも）
+						if (!empty($v['id']))  $pickup_ids[] = (int) $v['id'];
+						if (!empty($v['ID']))  $pickup_ids[] = (int) $v['ID'];
+					}
+				}
+				$pickup_ids = array_values(array_unique(array_filter($pickup_ids)));
+			}
+
+			// ▼ 取得できたら「指定IDのみ・指定順」でクエリ
+			if (!empty($pickup_ids)) {
+				$notice_query = new WP_Query([
+					'post_type'      => 'notice',
+					'post_status'    => 'publish',
+					'posts_per_page' => count($pickup_ids),
+					'post__in'       => $pickup_ids,
+					'orderby'        => 'post__in', // ← 選択した順を維持
+				]);
+			} 
+			if ( !empty($pickup_ids) && $notice_query->have_posts()) :
 		?>
 		<section id="notice">
 			<div class="release-list-wrap">
@@ -206,19 +228,29 @@ get_header();
 					?>
 				</div>
 				<?php if ( class_exists('SCF') ): ?>
-					<div class="youtube items" id="youtube">
-						<h2 class="topSection">動画</h2>
-						<?php 
-								$top_youtube = SCF::get_option_meta('top-options', 'top_youtube_area');
-								$top_youtube_btn_text = SCF::get_option_meta('top-options', 'top_youtube_btn_text');
-								$top_youtube_btn_url = SCF::get_option_meta('top-options', 'top_youtube_btn_url');
-								echo $top_youtube;
-						?>
-					</div>
-					<?php if(  $top_youtube_btn_url && $top_youtube_btn_text ): ?>
-						<a href="<?php echo $top_youtube_btn_url; ?>">
-							<span class="showMore"><?php echo $top_youtube_btn_text; ?></span>
-						</a>
+
+				<?php 
+					$top_youtube_embed_url = SCF::get_option_meta('top-options', 'top_youtube_embed_url');
+					$top_youtube_btn_text = SCF::get_option_meta('top-options', 'top_youtube_btn_text');
+					$top_youtube_btn_url = SCF::get_option_meta('top-options', 'top_youtube_btn_url');
+					if($top_youtube_embed_url):
+				?>
+						<div class="youtube items" id="youtube">
+							<h2 class="topSection">動画</h2>
+							<figure class="wp-block-embed aligncenter is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+								<div class="wp-block-embed__wrapper">
+									<span class="embed-youtube" style="text-align: center; display: block;">
+										<iframe class="youtube-player" width="640" height="360" src="<?php echo $top_youtube_embed_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+									</span>
+								</div>
+							</figure>
+							※字幕が必要な方は、設定ONにしてご覧ください。
+						</div>
+						<?php if(  $top_youtube_btn_url && $top_youtube_btn_text ): ?>
+							<a href="<?php echo $top_youtube_btn_url; ?>">
+								<span class="showMore"><?php echo $top_youtube_btn_text; ?></span>
+							</a>
+						<?php endif; ?>
 					<?php endif; ?>
 				<?php endif; ?>
 			</div>
