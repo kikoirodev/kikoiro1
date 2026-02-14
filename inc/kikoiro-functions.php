@@ -34,19 +34,22 @@ add_shortcode( 'cafe_map', 'show_cafe_map' );
 /*
   片耳難聴Cafeページにクリッカブルマップを表示
   https://kikoiro.com/about/cafe/
+  ツール: https://labs.d-s-b.jp/ImagemapGenerator/
+  地図：1xサイズのみ使用可能。PC/SP共通。
 -----------------------------------------*/
 function show_cafe_map() {
 		$output = <<<EOF
  <figure class="cafe_map_pc">
-<img src="https://kikoiro.com/wp-content/themes/kikoiro1/assets/images/about-cafe/cafe_map_pc.png" usemap="#CafeMapPc" alt="片耳難聴カフェの開催場所" width="800" height="800" />
+<img src="https://kikoiro.com/wp-content/themes/kikoiro1/assets/images/about-cafe/cafe_map_pc_20260214.png" usemap="#CafeMapPc" alt="片耳難聴カフェの開催場所" width="800" height="800" />
 <map name="CafeMapPc">
-  <area shape="rect" coords="633,260,773,314" href="https://kikoiro.com/cafe10/" alt="岩手" target="_new" />
-  <area shape="rect" coords="267,358,409,415" href="https://kikoiro.com/cafe2019/" alt="大宮" target="_new" />
-  <area shape="rect" coords="411,648,580,704" href="https://kikoiro.com/2020kanagawa/" alt="神奈川" target="_new" />
-  <area shape="rect" coords="269,663,410,718" href="https://kikoiro.com/2019osaka/" alt="大阪" target="_new" />
+   <area shape="rect" coords="266,358,412,417" href="https://kikoiro.com/cafe2019/" alt="大宮" target="_blank" rel="noopener" />
+  <area shape="rect" coords="63,499,190,564" href="https://kikoiro.com/cafe11/" alt="福岡" target="_blank" rel="noopener" />
+  <area shape="rect" coords="252,689,394,751" href="https://kikoiro.com/2019osaka/" alt="大阪" target="_blank" rel="noopener" />
+  <area shape="rect" coords="416,644,569,704" href="https://kikoiro.com/2020kanagawa/" alt="神奈川" target="_blank" rel="noopener" />
+  <area shape="rect" coords="570,596,708,654" href="https://kikoiro.com/report202510/" alt="渋谷" target="_blank" rel="noopener" />
+  <area shape="rect" coords="632,253,775,318" href="https://kikoiro.com/cafe10/" alt="岩手" target="_blank" rel="noopener" />
 </map></figure>
 EOF;
-//Note: 福岡 https://kikoiro.com/cafe11/
 	return $output;
 }
 
